@@ -18,8 +18,9 @@ class CreateProductsTable extends Migration
             $table->bigInteger('category_id')->default(0);
             $table->string('name')->default(null);
             $table->text('description')->nullable();
+            $table->string('img')->nullable();
             $table->float('price')->default(0);
-            $table->enum('type', ["V", "N", "D"])->comment("V => Veg, N => Nonveg, D => Drink")->default('V');
+            $table->enum('type', ["100ml", "200ml", "300ml"]);
             $table->tinyInteger('is_active')->default(0);
             $table->timestamps();
         });

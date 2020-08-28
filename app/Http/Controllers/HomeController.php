@@ -8,13 +8,19 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Validator;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller {
 
     public function index(Request $request) {
 
-        return view('home.index');
+        $categories = Category::where('id', 1)->with(['product'])->first();
+     //dd($categories->product->toArray());
+        return view('home.index', [
+            'categories' => $categories,
+        ]);
     }
 
     public function aboutPage() {

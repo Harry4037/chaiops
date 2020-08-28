@@ -55,152 +55,24 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="pricing-carte clearfix scrollbar" id="style-1">
+                      
+                        @if($categories)
+                        <div class="pricing-carte clearfix scrollbar" >
+                        @foreach($categories->product as $product)
                             <div class="cuisine-wrapper">
                                 <div class="cuisine clearfix">
                                     <div class="card-left">
-                                        <div class="cuisine-name">01 / Cappucino</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
+                                        <div class="cuisine-name">{{$product->name}}</div>
+                                        <div class="cuisine-detail">{{$product->description}}</div>
                                     </div>
                                     <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
+                                        <div class="cuisine-price">${{$product->price}}</div>
+                                        <div class="cuisine-heart">{{$product->type}}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Irish Coffee
-                                        </div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Brandy Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Cafe Mendoza</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Keoke Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / English Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Calypso Coffee
-                                        </div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Jamaican Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Shin Shin Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Baileys Irish Cream Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cuisine-wrapper">
-                                <div class="cuisine clearfix">
-                                    <div class="card-left">
-                                        <div class="cuisine-name">01 / Monk's Coffee</div>
-                                        <div class="cuisine-detail">Lorem ipsum Culpa in ut aute dolor minim irure elit pariatur mollit dolor</div>
-                                    </div>
-                                    <div class="card-right">
-                                        <div class="cuisine-price">$12.99</div>
-                                        <div class="cuisine-heart">
-                                            <i class="fa fa-heart"></i>10</div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="order-types-available row">
