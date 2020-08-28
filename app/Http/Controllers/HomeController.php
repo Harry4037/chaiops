@@ -28,7 +28,10 @@ class HomeController extends Controller {
     }
 
     public function menuPage() {
-        return view('home.menu');
+        $categories = Category::where('is_active', 1)->with(['product'])->get();
+        return view('home.menu', [
+            'categories' => $categories,
+        ]);
     }
 
     public function storePage() {
