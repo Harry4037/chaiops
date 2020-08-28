@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('site.index');
 Route::get('/menu', 'HomeController@menuPage');
+Route::get('/about', 'HomeController@aboutPage');
 Route::get('/store', 'HomeController@storePage');
 Route::get('/contact', 'HomeController@contactPage');
 Route::get('/cart', 'HomeController@cartPage');

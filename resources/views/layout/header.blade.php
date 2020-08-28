@@ -6,9 +6,10 @@
                      <div class="collapse navbar-collapse" id=coffeeNavbarPrimary>
                         <ul class="nav navbar-nav navbar-right">
                            <li><a href="/">Home</a></li>
+                           <li><a href=/about>About Us</a></li>
                            <li class=active><a href=/menu>Menu</a></li>
                            <li><a href=/store>store</a></li>
-                           <li><a href=/contact>Contact</a></li>
+                           <li><a href=/contact>Contact Us</a></li>
                            <li><a href=/cart>Cart <i class="fa fa-shopping-cart"><span class=cartitems>42</span></i></a></li>
                            @if(auth()->check())
                                         <li class="button-order-now">

@@ -17,6 +17,10 @@ class HomeController extends Controller {
         return view('home.index');
     }
 
+    public function aboutPage() {
+        return view('home.about');
+    }
+
     public function menuPage() {
         return view('home.menu');
     }
