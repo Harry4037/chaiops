@@ -30,3 +30,11 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 
 Route::match(['get', 'post'], '/forgot-password', 'LoginController@forgotPassword')->name('site.forgot');
 Route::match(['get', 'post'], '/reset-password/{code?}', 'LoginController@resetPassword')->name('site.reset');
+
+Route::get('/add-to-cart/{id}', 'CartController@addToCart');
+
+Route::patch('update-cart', 'CartController@update');
+ 
+Route::delete('remove-from-cart', 'CartController@remove');
+
+

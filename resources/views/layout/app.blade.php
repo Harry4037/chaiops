@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="/assets/styles/vendor.css">
         <link rel="stylesheet" href="/assets/styles/main.css">
         <script src="/assets/scripts/vendor/modernizr.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         </head>
         <body class="home-page">
             <!--[if lt IE 10]> <p class="browsehappy">You are using an
@@ -69,7 +71,7 @@
                                         <li>
                                             <a href="/cart">Cart
                                                 <i class="fa fa-shopping-cart">
-                                                    <span class="cartitems">42</span></i>
+                                                @if(session()->get('cart')) <span class="carttems">{{count(session()->get('cart'))}}</span>  @endif</i>
                                             </a>
                                         </li>
                                         @if(auth()->check())
@@ -98,10 +100,21 @@
         All Jquery Script link
   ===========================================-->
 
+  @yield('script')
+
+<script>
+
+//setup CSRF token for ajax forms
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
             <script src="/assets/scripts/vendor.js"></script>
             <script src="/assets/scripts/plugins.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
             <script src="/assets/scripts/main.js"></script>
-
+           
             </body>
 </html>

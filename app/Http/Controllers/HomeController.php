@@ -9,12 +9,32 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Validator;
 use App\Models\Category;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller {
 
     public function index(Request $request) {
+
+        if(session()->get('cart') and auth()->check()){
+            $user = auth()->user();
+            foreach(session('cart') as $id => $product ){
+
+                $check_product = Cart::where('product_id', $id)->where('user_id',$user->id)->first();
+                if($check_product){
+                    $check_product->quantity = $product['quantity'];
+                    $check_product->save();
+                }else{
+                    $cart = new Cart();
+                    $cart->user_id = $user->id;
+                    $cart->product_id = $id;
+                    $cart->quantity = $product['quantity'];
+                    $cart->save();
+                }
+               
+            }
+        }    
 
         $categories = Category::where('id', 1)->with(['product'])->first();
      //dd($categories->product->toArray());

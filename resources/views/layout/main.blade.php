@@ -11,10 +11,14 @@
       
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="/assets/styles/vendor.css">
         <link rel="stylesheet" href="/assets/styles/main.css">
         <script src="/assets/scripts/vendor/modernizr.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     
+
         </head>
         <body class="menu-page inner-page">
             <!--[if lt IE 10]> <p class="browsehappy">You are using an
@@ -36,11 +40,23 @@
   <!--=======================================
         All Jquery Script link
   ===========================================-->
+  @yield('script')
 
+<script>
+
+//setup CSRF token for ajax forms
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
             <script src="/assets/scripts/vendor.js"></script>
             <script src="/assets/scripts/plugins.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
             <script src="/assets/scripts/main.js"></script>
+        
+  
 
             </body>
 </html>
