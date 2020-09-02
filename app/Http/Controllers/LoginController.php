@@ -56,7 +56,7 @@ class LoginController extends Controller {
         }
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
+            // Authentication passed...        
             return redirect()->route("site.index");
         }
         return redirect()->back()->withErrors("Opps!! Your Email address or password is incorrect.");

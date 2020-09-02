@@ -10,7 +10,8 @@
                            <li class=active><a href=/menu>Menu</a></li>
                            <li><a href=/store>store</a></li>
                            <li><a href=/contact>Contact Us</a></li>
-                           <li><a href=/cart>Cart <i class="fa fa-shopping-cart"><span class=cartitems>42</span></i></a></li>
+                           <li><a href=/cart>Cart <i class="fa fa-shopping-cart">
+                                                @if(session()->get('cart')) <span class="carttems">{{count(session()->get('cart'))}}</span>  @endif</i></a></li>
                            @if(auth()->check())
                                         <li class="button-order-now">
                                             <a href="/dashboard">{{ auth()->user()->name }}</a>
