@@ -74,22 +74,38 @@
                     <div class=item-price> <span id=carttoutal>{{ $total }}</span> </div>
                 </div>
             </div>
+            @if(auth()->check() and $total != 0)
             <div class=mail-cart>
                 <h3><span>your</span> details</h3>
-                <form data-parsley-validate class="formcontact row" id=orderform>
-                    <div class=form-group> <input type=text class=form-control name=name placeholder=Name required
+                <form data-parsley-validate class="formcontact row" method="post" action="/checkout" id=orderfrm>
+                {{ csrf_field() }}
+                    <div class=form-group> <input type=text class=form-control name=name placeholder=Name @if(auth()->check()) value="{{auth()->user()->name}}" @endif required
                             data-parsley-required-message="Please insert Name"> </div>
-                    <div class=form-group> <input type=text class=form-control name=phone placeholder="Phone " required
+                    <div class=form-group> <input type=text class=form-control name=phone placeholder="Phone" @if(auth()->check()) value="{{auth()->user()->phone_number}}" @endif required
                             data-parsley-required-message="Please insert Phone No"> </div>
-                    <div class=form-group> <input type=email class=form-control name=email placeholder=Email required
+                    <div class=form-group> <input type=email class=form-control name=email placeholder=Email @if(auth()->check()) value="{{auth()->user()->email}}" @endif required
                             data-parsley-required-message="Please insert Email"> </div>
-                    <div class=form-group> <input type=text class=form-control name=address placeholder=Address required
+                    <div class=form-group> <input type=text class=form-control name=address placeholder=Address @if(auth()->check()) value="{{auth()->user()->address}}" @endif required
                             data-parsley-required-message="Please insert address"> </div>
-                    <input type=hidden name=products id=selectedProducts> <button type=submit id=send>order now</button>
-                    <div class=checkbox> <label> <input type=checkbox>Confirm and Proceed </label> </div>
+                            <input type="hidden" name="total" value="{{ $total }}">
+                     <button type=submit id=send>order now</button>
+              
                     <div class="ajaxmessage for-orderform hidden container"></div>
                 </form>
             </div>
+            @elseif(session()->get('cart'))
+            <div class="clearfix order-box">
+            <div class=complete-order>
+                <h2>Done with choosing?</h2>
+                <h5>Well done! Now complete your order</h5>
+            </div>
+            <div class=selected-item-no>
+                <p>You have selected <span>{{count(session()->get('cart'))}}</span> items</p>
+            </div>
+            <div class=order-btn> <a href='/signin' class=button-secondary>Create Account/Login In</a> </div>
+        </div>
+            @endif
+            
         </div>
     </div>
 </section>

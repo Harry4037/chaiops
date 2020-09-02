@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\UserAddress;
 use App\Models\User;
@@ -119,6 +121,54 @@ class CartController extends Controller {
             session()->flash('success', 'Product removed successfully');
         }
     }
+
+    public function checkout(Request $request)
+    {
+        if(auth()->check()) {
+
+                $user = auth()->user();
+                $check_product = Cart::where('user_id', $user->id)->with(['product'])->get();
+            //    dd($check_product->toArray());
+                if($check_product){
+                    $taxPrice = 0;
+                    $order = new Order();
+                    $order->user_id = $user->id;
+                    $order->item_total_amount = $request->total;
+                    $order->tax_amount = max(round($taxPrice), 0);
+                    $order->total_amount = max(round($request->total), 0);
+                    $order->order_type = "ONLINE";
+                    $order->address = $request->address;
+                    $order->name = $request->name;
+                    $order->mobile_number = $user->phone;
+                    $order->status = 1;
+                    $order->payment_text = "PENDING";
+                    $order->transaction_id = NULL;
+                    if ($order->save()) {
+                        foreach ($check_product as $cartItem) {
+                            $orderItem = new OrderItem();
+                            $orderItem->order_id = $order->id;
+                            $orderItem->product_id = $cartItem->product->id;
+                            $orderItem->product_name = $cartItem->product->name;
+                            $orderItem->type = $cartItem->product->type;
+                            $orderItem->per_item_price = $cartItem->product->price;
+                            $orderItem->quantity = $cartItem->quantity;
+                            $orderItem->total_price = round($cartItem->quantity * $cartItem->product->price);
+                            $orderItem->save();
+
+                        }
+                        Cart::where('user_id', $user->id)->delete(); 
+                        if(session()->get('cart')){
+                            session()->put('cart', NULL);
+                        }
+                   } 
+                 
+                   return view('home.order');     
+            }
+        }else{
+            return redirect()->to('/');
+        }
+    }
+
 
   
 }

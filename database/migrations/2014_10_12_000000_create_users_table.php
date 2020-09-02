@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('is_block_admin')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('reset_code')->nullable();
+            $table->string('address')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
