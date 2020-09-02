@@ -16,9 +16,6 @@ class UserRoleTableSeeder extends Seeder {
                     [
                     'name' => 'Admin',
                 ],
-                [
-                    'name' => 'SubAdmin',
-                ],
                     [
                     'name' => 'User',
                 ]
