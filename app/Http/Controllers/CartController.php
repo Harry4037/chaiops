@@ -11,27 +11,49 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\UserAddress;
 use App\Models\User;
+use Session ;
 
 class CartController extends Controller {
 
     public function addToCart(Request $request,$id)
     {
         $product = Product::find($id);
-
+        $key = session()->getId();
+      
         if(!$product) {
             abort(404);
         }
         $cart = session()->get('cart');
 
         if(auth()->check()){
-            $user = auth()->user();
-            $check_product = Cart::where('product_id', $id)->where('user_id',$user->id)->first();
+            $user_id = auth()->user()->id;
+            $session_id = NULL;
+            $check_product = Cart::where('product_id', $id)->where('user_id',$user_id)->orWhere('session_id',$session_id)->first();
             if($check_product){
+                $check_product->session_id = NULL;
+                $check_product->user_id = $user_id;
                 $check_product->quantity = $check_product->quantity +1;
                 $check_product->save();
             }else{
                 $cart = new Cart();
-                $cart->user_id = $user->id;
+                $check_product->session_id = NULL;
+                $check_product->user_id = $user_id;
+                $cart->product_id = $id;
+                $cart->quantity = 1;
+                $cart->save();
+            }
+        }else{
+            $user_id = NULL;
+            $session_id = $key;
+            $check_product = Cart::where('product_id', $id)->where('session_id',$session_id)->first();
+            if($check_product){
+                $check_product->quantity = $check_product->quantity +1;
+                $cart->session_id = $session_id;
+                $check_product->save();
+            }else{
+                $cart = new Cart();
+                $cart->user_id = NULL;
+                $cart->session_id = $session_id;
                 $cart->product_id = $id;
                 $cart->quantity = 1;
                 $cart->save();
