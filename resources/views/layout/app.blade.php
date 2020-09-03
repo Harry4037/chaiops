@@ -60,7 +60,9 @@
                                         <li>
                                             <a href="/menu">Menu</a>
                                         </li>
-                                      
+                                        <li>
+                                        <a href=/blog>Blog</a>
+                                        </li>
                                  
                                         <li>
                                             <a href="/store">store</a>

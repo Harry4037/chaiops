@@ -19,6 +19,9 @@ Route::get('/about', 'HomeController@aboutPage');
 Route::get('/store', 'HomeController@storePage');
 Route::get('/contact', 'HomeController@contactPage');
 Route::get('/cart', 'HomeController@cartPage');
+Route::post('/checkout', 'CartController@checkout');
+Route::get('/blog', 'BlogController@blog');
+Route::get('/blog/{id}', 'BlogController@blogDetails');
 
 Route::get('/signup', 'LoginController@signup')->name('site.login');
 Route::get('/signin', 'LoginController@signin');

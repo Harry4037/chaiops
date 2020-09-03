@@ -17,7 +17,16 @@
         <link rel="stylesheet" href="/assets/styles/main.css">
         <script src="/assets/scripts/vendor/modernizr.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     
+     <style>
+     .pagination>.active>span {
+        background-color: #dc8068 !important;
+    border-color: #dc8068 !important;
+     }
+
+     .pagination>li>a {
+        color: #337ab7;
+     }
+     </style>
 
         </head>
         <body class="menu-page inner-page">

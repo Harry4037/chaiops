@@ -32,7 +32,7 @@
                 ],
             },
             b = new google.maps.Map(document.getElementById("map-canvas"), a),
-            c = "images/map-marker.png",
+            c = "/images/map-marker.png",
             d = new google.maps.LatLng(-34.397, 150.644);
         new google.maps.Marker({ position: d, map: b, icon: c });
     }
