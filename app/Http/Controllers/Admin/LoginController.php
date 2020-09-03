@@ -189,4 +189,9 @@ class LoginController extends Controller {
         return view('admin.change-password');
     }
 
+    public function forgetPassword(Request $request) {
+
+        return view("admin.forget-password");
+    }
+
 }

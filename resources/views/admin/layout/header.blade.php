@@ -24,8 +24,8 @@
                     <svg class="c-icon mr-2">
                     <use xlink:href="{{ asset("icons/sprites/free.svg#cil-account-logout") }}"></use>
                     </svg>
-                    <form action="/" method="POST"> 
-                        <input type="hidden" name="_token" value="qWzVHMyVvRBehEgXArD66FQEuGtWTVdkVPnnzCGv"> 
+                    <form action="{{ route("admin.logout") }}" method="POST"> 
+                        {{ csrf_field() }}
                         <button type="submit" class="btn btn-ghost-dark btn-block">Logout</button>
                     </form>
                 </a>

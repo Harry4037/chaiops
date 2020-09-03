@@ -40,7 +40,8 @@ Route::delete('remove-from-cart', 'CartController@remove');
 Route::namespace('Admin')->prefix('admin')->group(function() {
     Route::match(['get', 'post'], '/', 'LoginController@showLoginForm')->name('admin.login-form');
     Route::match(['get', 'post'], '/login', 'LoginController@login')->name('admin.login');
-    Route::get('/logout', 'LoginController@logout')->name('admin.logout');
+    Route::post('/logout', 'LoginController@logout')->name('admin.logout');
+    Route::get('/forget-password', 'LoginController@forgetPassword')->name('admin.forget-password');
 });
 
 Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function() {
