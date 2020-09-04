@@ -37,14 +37,15 @@ Route::match(['get', 'post'], '/reset-password/{code?}', 'LoginController@resetP
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 
 Route::patch('update-cart', 'CartController@update');
- 
+
 Route::delete('remove-from-cart', 'CartController@remove');
 
 Route::namespace('Admin')->prefix('admin')->group(function() {
     Route::match(['get', 'post'], '/', 'LoginController@showLoginForm')->name('admin.login-form');
     Route::match(['get', 'post'], '/login', 'LoginController@login')->name('admin.login');
     Route::post('/logout', 'LoginController@logout')->name('admin.logout');
-    Route::get('/forget-password', 'LoginController@forgetPassword')->name('admin.forget-password');
+    Route::match(['get', 'post'], '/forget-password', 'LoginController@forgetPassword')->name('admin.forget-password');
+    Route::match(['get', 'post'], '/reset-password/{code}', 'LoginController@resetPassword')->name('admin.reset-password');
 });
 
 Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function() {

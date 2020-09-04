@@ -27,6 +27,7 @@
                 <div class="col-md-6">
                     <div class="card-group">
                         <div class="card p-4">
+                            @include('errors.errors-and-messages')
                             <div class="card-body">
                                 <h1>Login</h1>
                                 <p class="text-muted">Sign In to your account</p>
@@ -84,6 +85,10 @@ $(document).ready(function () {
 //        errorElement: 'div',
     });
 });
+
+setTimeout(function () {
+    $(".alert").fadeOut();
+}, 3000);
         </script>
         <style>
             .error{

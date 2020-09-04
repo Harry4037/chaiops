@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserAddress;
+use App\Notifications\ForgetPassword;
 use Validator;
 
 class LoginController extends Controller {
@@ -190,8 +192,67 @@ class LoginController extends Controller {
     }
 
     public function forgetPassword(Request $request) {
+        if ($request->isMethod("post")) {
+            $validator = Validator::make($request->all(), [
+                        'email' => 'bail|required|email',
+            ]);
+            if ($validator->fails()) {
+                return redirect()->route('admin.forget-password')->withErrors($validator)->withInput();
+            }
 
+            $user = User::where(["email" => $request->email, "user_role_id" => 1])->first();
+            if (!$user) {
+                return redirect()->back()->with('error', "Email Address not found in our database.")->withInput();
+            }
+            $user->forget_password_token = Str::random(10);
+            $user->save();
+
+            try {
+                $user->notify(new ForgetPassword($user->forget_password_token));
+            } catch (\Exception $ex) {
+                //error
+            }
+            return redirect()->route('admin.forget-password')->with("status", "Reset password link has been sent.");
+        }
         return view("admin.forget-password");
+    }
+
+    public function resetPassword(Request $request, $code) {
+        $user = User::where(["forget_password_token" => $code, "user_role_id" => 1])->first();
+        if ($user) {
+
+            if ($request->isMethod("POST")) {
+
+                $validator = Validator::make($request->all(), [
+                            'password' => 'bail|required',
+                ]);
+                if ($validator->fails()) {
+                    return redirect()->route('admin.reset-password', [
+                                "code" => $code
+                            ])->withErrors($validator)->withInput();
+                }
+
+                $user->forget_password_token = NULL;
+                $user->password = $request->password;
+                $user->save();
+
+                return view("admin.reset-password", [
+                    "is_update" => true,
+                    "user" => null
+                ]);
+            }
+
+            return view("admin.reset-password", [
+                "user" => $user,
+                "code" => $code,
+                "is_update" => false
+            ]);
+        } else {
+            return view("admin.reset-password", [
+                "user" => NULL,
+                "is_update" => false
+            ]);
+        }
     }
 
 }

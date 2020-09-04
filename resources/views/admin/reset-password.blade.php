@@ -22,9 +22,9 @@
                         <div class="card p-4">
                             @include('errors.errors-and-messages')
                             <div class="card-body">
-                                <h1>Forget Pasword</h1>
-                                <p class="text-muted">Enter your e-mail address</p>
-                                <form method="POST" action="{{ route('admin.forget-password') }}" id="forgetForm">
+                                @if($user)
+                                <h2>Update Pasword</h2>
+                                <form method="POST" action="{{ route('admin.reset-password', $code) }}" id="resetForm">
                                     {{ csrf_field() }}
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -34,42 +34,61 @@
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input style="width: 90%;" type="email" class="form-control" placeholder="Email" name="email">
+                                        <input style="width: 90%;" type="password" class="form-control" placeholder="Password" name="password" id="password">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg class="c-icon">
+                                                <use xlink:href="{{ asset("assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked")}}"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input style="width: 90%;" type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <button class="btn btn-primary px-4" type="submit">Submit</button>
                                         </div>
+                                    </div>
                                 </form>
+                                @elseif($is_update)
+                                <h2 class="text-muted text-center">Congratulation!! Your Password has been updated.</h2>
+                                @else
+                                <h2 class="text-muted text-center">Invalid Link</h2>
+                                @endif
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
+        <script>
 $(document).ready(function () {
 
-    $("#forgetForm").validate({
+    $("#resetForm").validate({
         rules: {
-            email: {
+            password: {
                 required: true,
-                email: true
+            },
+            confirm_password: {
+                required: true,
+                equalTo: "#password"
             },
         },
-//        errorElement: 'div',
+        //        errorElement: 'div',
     });
 });
 
 setTimeout(function () {
     $(".alert").fadeOut();
 }, 3000);
-    </script>
-    <style>
-        .error{
-            color: red;
-        }
-    </style>
-</body>
+        </script>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
+    </body>
 </html>
