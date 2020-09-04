@@ -19,6 +19,9 @@ const mix = require('laravel-mix');
 //mix.copy('resources/vendors/pace-progress/css/pace.min.css', 'public/css');
 mix.copy('node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css', 'public/css');
 mix.copy('node_modules/cropperjs/dist/cropper.css', 'public/css');
+mix.copy('node_modules/datatables/media/css/jquery.dataTables.css', 'public/css');
+mix.copy('node_modules/font-awesome/css/font-awesome.css', 'public/css');
+mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
 //main css
 mix.sass('resources/sass/style.scss', 'public/css');
 
@@ -33,6 +36,8 @@ mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js');
 mix.copy('node_modules/@coreui/chartjs/dist/js/coreui-chartjs.bundle.js', 'public/js');
 
 mix.copy('node_modules/cropperjs/dist/cropper.js', 'public/js');
+//DataTable
+mix.copy('node_modules/datatables/media/js/jquery.dataTables.js', 'public/js');
 // details scripts
 mix.copy('resources/js/coreui/main.js', 'public/js');
 mix.copy('resources/js/coreui/colors.js', 'public/js');

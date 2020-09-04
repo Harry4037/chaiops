@@ -26,4 +26,4 @@
 </div>
 
 @endif
-<div style="display: none;" class="alert text-center" role="alert"></div>
+<div style="display: none;" class="alert text-center msg" role="alert"></div>

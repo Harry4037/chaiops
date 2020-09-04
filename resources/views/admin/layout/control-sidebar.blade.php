@@ -5,12 +5,18 @@
         <img class="c-sidebar-brand-minimized" src="{{asset("assets/brand/coreui-signet-white.svg")}}" width="118" height="46" alt="Logo">-->
         CHAIOPS
     </div>
-    
+
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="/admin">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
                 Dashboard
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.user.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                User Managment
             </a>
         </li>
     </ul>

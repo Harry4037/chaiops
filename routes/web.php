@@ -50,4 +50,10 @@ Route::namespace('Admin')->prefix('admin')->group(function() {
 
 Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+    
+    Route::prefix('user')->group(function() {
+        Route::get('/index', 'UserController@index')->name('admin.user.index');
+        Route::get('/list', 'UserController@userList')->name('admin.user.list');
+        Route::post('/update-status', 'UserController@userStatus')->name('admin.user.status');
+    });
 });

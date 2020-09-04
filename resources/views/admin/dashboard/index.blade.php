@@ -628,3 +628,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+
+<script src="{{ asset("js/coreui-chartjs.bundle.js")}}"></script>
+<script src="{{ asset("js/main.js") }}" defer></script>
+@endsection
