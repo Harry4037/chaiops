@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', 'HomeController@index')->name('site.index');
-Route::get('/menu', 'HomeController@menuPage');
-Route::get('/about', 'HomeController@aboutPage');
-Route::get('/store', 'HomeController@storePage');
-Route::get('/contact', 'HomeController@contactPage');
-Route::get('/cart', 'HomeController@cartPage');
+Route::get('/menu', 'HomeController@menuPage')->name('site.menu');
+Route::get('/about', 'HomeController@aboutPage')->name('site.about');
+Route::get('/store', 'HomeController@storePage')->name('site.store');
+Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
+Route::get('/cart', 'HomeController@cartPage')->name('site.cart');
 Route::post('/checkout', 'CartController@checkout');
-Route::get('/blog', 'BlogController@blog');
+Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
 
 Route::get('/signup', 'LoginController@signup')->name('site.login');
-Route::get('/signin', 'LoginController@signin');
+Route::get('/signin', 'LoginController@signin')->name('site.signin');
 Route::get('/dashboard', 'HomeController@dashboard')->name('site.dashboard');
 
 Route::post('/register', 'LoginController@register')->name('site.signup');
