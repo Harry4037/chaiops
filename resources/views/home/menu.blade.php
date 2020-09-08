@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="banner clearfix">
-    <div class=banner-img> <img src=assets/images/cup.png alt=""> </div>
+    <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=""> </div>
     <div class=banner-text>
         <h2>Our special & exclusive <span>Menu</span></h2>
     </div>
@@ -84,7 +84,7 @@
     <div class=contact-us>
         <div class=add>
             <div class=add-inner-wrapper>
-                <h2> <img src=assets/images/contact-img.png alt=""> <span>Coffee and you</span> </h2>
+                <h2> <img src="{{ asset("assets/images/contact-img.png")}}" alt=""> <span>Coffee and you</span> </h2>
                 <h3><span>44</span> Park Street</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>

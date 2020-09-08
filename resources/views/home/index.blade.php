@@ -17,17 +17,17 @@
             <p>SINCE 1939</p>
             <div class="banner-img-holder">
                 <!-- <img src="/assets/images/banner/banner01.png" alt="Banner Images"> -->
-                <img class="logo-cup" src="/assets/images/banner/logo-cup.png" alt="Banner Images">
-                <img class="logo" src="/assets/images/banner/logo.png" alt="Banner Images">
-                <img class="cup" src="/assets/images/banner/cup.png" alt="Banner Images">
-                <img class="premium-text" src="/assets/images/banner/txt2.png" alt="Banner Images">
-                <img class="coffee-text" src="/assets/images/banner/txt1.png" alt="Banner Images">
+                <img class="logo-cup" src="{{ asset("assets/images/banner/logo-cup.png")}}" alt="Banner Images">
+                <img class="logo" src="{{ asset("assets/images/banner/logo.png")}}" alt="Banner Images">
+                <img class="cup" src="{{ asset("assets/images/banner/cup.png")}}" alt="Banner Images">
+                <img class="premium-text" src="{{ asset("assets/images/banner/txt2.png")}}" alt="Banner Images">
+                <img class="coffee-text" src="{{ asset("assets/images/banner/txt1.png")}}" alt="Banner Images">
                 <div class="coffee-drop">
-                    <img src="/assets/images/banner/coffee-drop3.png" alt="Banner Images">
+                    <img src="{{ asset("assets/images/banner/coffee-drop3.png")}}" alt="Banner Images">
                 </div>
             </div>
         </div>
-        <a href="/menu" class="button-menu">Menu</a>
+        <a href="{{route('site.menu')}}" class="button-menu">Menu</a>
     </div>
 </div>
 </div>
@@ -47,7 +47,7 @@
             <div class="pricing-detail">
                 <figure>
                     <div class="image">
-                        <img src="/assets/images/coffee-cup.png" alt="">
+                        <img src="{{ asset("assets/images/coffee-cup.png")}}" alt="">
                     </div>
                     <figcaption>
                         <h3>Good Morning</h3>
@@ -138,12 +138,12 @@
 <section class="midpage-banner1 banner-section">
     <div class="container">
         <div class="img-holder">
-            <img class="milk-cup" src="/assets/images/milk-pour-cup.png" alt="">
-            <img class="cup" src="/assets/images/pour-cup.png" alt="">
+            <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png")}}" alt="">
+            <img class="cup" src="{{ asset("assets/images/pour-cup.png")}}" alt="">
             <div class="milk">
-                <img src="/assets/images/milk-pour2.png" alt="">
+                <img src="{{ asset("assets/images/milk-pour2.png")}}" alt="">
             </div>
-            <img class="milk-drop" src="/assets/images/milk-drops.png" alt="">
+            <img class="milk-drop" src="{{ asset("assets/images/milk-drops.png")}}" alt="">
         </div>
         <!-- <img src="/assets/images/milk-pour-cup.png" alt=""> -->
         <div class="banner1-details">
@@ -168,7 +168,7 @@
             </div>
         </div>
         <div class="row">
-            <img src="/assets/images/service-img.jpg" class="service-side-img" alt="">
+            <img src="{{ asset("assets/images/service-img.jpg")}}" class="service-side-img" alt="">
             <div class="service-details">
                 <h3>Coffee and You</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt voluptatum
@@ -229,7 +229,7 @@
         </div>
         <div class="reservation-form clearfix">
             <div class="imgLiquidFill imgLiquid">
-                <img src="/assets/images/book-table-img.jpg" alt="">
+                <img src="{{ asset("assets/images/book-table-img.jpg")}}" alt="">
             </div>
             <form
                 id="reservation-form"
@@ -313,7 +313,7 @@
     <div class="container">
         <div class="row">
             <figure class="offer-detail">
-                <img src="/assets/images/percent-off.png" alt="offer image">
+                <img src="{{ asset("assets/images/percent-off.png")}}" alt="offer image">
                 <figcaption>
                     <p>On all flavors</p>
                     <h3>Friday Special</h3>
@@ -323,7 +323,7 @@
             <div class="coupon-code">
                 <div class="code-wrapper">
                     <a class="coupon button-primary type2" href="#">
-                        <img src="/assets/images/qr-code.jpg" alt="qr code">
+                        <img src="{{ asset("assets/images/qr-code.jpg")}}" alt="qr code">
                         <span>FS21321sdfsdfer1</span>
                     </a>
                 </div>
@@ -367,7 +367,7 @@
             <div class="store-product-wrapper grid-item type1">
                 <div class="store-product">
                     <div class="imgLiquidFill imgLiquid item-image">
-                        <img src="/assets/images/blog-list/blog-img2.jpg" alt="product item">
+                        <img src="{{ asset("assets/images/blog-list/blog-img2.jpg")}}" alt="product item">
                     </div>
                     <div class="product-detail">
                         <div class="product-rate">$22</div>
@@ -558,7 +558,7 @@
             <ul class="clearfix testimonial-owl">
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/member1.jpg" alt="">
+                        <img src="{{ asset("assets/images/testimonial/member1.jpg")}}" alt="">
                     </div>
                     <div class="name-text">
                         <h3>William</h3>
@@ -569,7 +569,7 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/member02.jpg" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member02.jpg")}}" alt="image">
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
@@ -580,7 +580,7 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/memeber03.jpg" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/memeber03.jpg")}}" alt="image">
                     </div>
                     <div class="name-text">
                         <h3>jhon</h3>
@@ -591,7 +591,7 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/member04.jpg" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member04.jpg")}}" alt="image">
                     </div>
                     <div class="name-text">
                         <h3>david</h3>
@@ -602,7 +602,7 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/member05.jpg" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member05.jpg")}}" alt="image">
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
@@ -613,7 +613,7 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="/assets/images/testimonial/member06.jpg" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member06.jpg")}}" alt="image">
                     </div>
                     <div class="name-text">
                         <h3>luiz</h3>
@@ -625,7 +625,7 @@
             </ul>
         </div>
         <figure class="testimonial-text clearfix">
-            <img src="/assets/images/testi-img.png" alt="">
+            <img src="{{ asset("assets/images/testi-img.png")}}" alt="">
             <figcaption>
                 <h3>Our happy coffee lover and their awesome comments</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt porro aliquid
@@ -648,9 +648,9 @@
         </div>
         <div class="event-container" id="event-owl">
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -681,9 +681,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 2</h3>
@@ -714,9 +714,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 3</h3>
@@ -747,9 +747,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 5</h3>
@@ -780,9 +780,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -813,9 +813,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="/assets/images/star-fav.png" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="/assets/images/event-img.jpg" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -852,12 +852,12 @@
     <div class="container clearfix">
         <div class="banner4-img-holder">
             <img
-                src="/assets/images/homepage/ipad.png"
+                src="{{ asset("assets/images/homepage/ipad.png")}}"
                 height="473"
                 width="581"
                 class="ipad"
                 alt="">
-            <img src="/assets/images/homepage/cap.png" height="206" width="240" class="cap" alt="">
+            <img src="{{ asset("assets/images/homepage/cap.png")}}" height="206" width="240" class="cap" alt="">
         </div>
         <div class="banner4-details">
             <h3>Our shop</h3>
@@ -886,7 +886,7 @@
         <div class="add">
             <div class="add-inner-wrapper">
                 <h2>
-                    <img src="/assets/images/contact-img.png" alt="">
+                    <img src="{{ asset("assets/images/contact-img.png")}}" alt="">
                     <span>Coffee and you</span>
                 </h2>
                 <h3>

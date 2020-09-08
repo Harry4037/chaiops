@@ -25,7 +25,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="brand">
-                                <a href="/">
+                                <a href="{{route('site.index')}}">
                                     <p>SINCE 1939</p>
                                     <img src="{{ asset("assets/images/logo.png")}}" alt="Brand Logo" class="logo">
                                 </a>
@@ -43,7 +43,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
                             </div>
-                            <a href="/" class="header-logo">Coffee and You
+                            <a href="{{route('site.index')}}" class="header-logo">Coffee and You
                                 <img src="{{ asset("assets/images/small-logo.png")}}" alt="">
                             </a>
                             <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
@@ -56,6 +56,9 @@
                                         <a href="{{route('site.menu')}}">Menu</a>
                                     </li>
                                     <li>
+                                        <a href="{{route('site.franchise')}}">Franchise</a>
+                                    </li>
+                                    <li>
                                         <a href="{{route('site.blog')}}">Blog</a>
                                     </li>
 
@@ -63,7 +66,7 @@
                                         <a href="{{route('site.store')}}">store</a>
                                     </li>
                                     <li>
-                                        <a href="{{route("site.contact")}}">Contact Us</a>
+                                        <a href="{{route('site.contact')}}">Contact Us</a>
                                     </li>
                                     <li>
                                         <a href="{{route('site.cart')}}">Cart
@@ -108,10 +111,10 @@ $.ajaxSetup({
     }
 });
                 </script>
-                <script src="/assets/scripts/vendor.js"></script>
-                <script src="/assets/scripts/plugins.js"></script>
+                <script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
+                <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-                <script src="/assets/scripts/main.js"></script>
+                <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
 
                 </body>
                 </html>

@@ -13,9 +13,9 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="/assets/styles/vendor.css">
-        <link rel="stylesheet" href="/assets/styles/main.css">
-        <script src="/assets/scripts/vendor/modernizr.js"></script>
+        <link rel="stylesheet" href="{{ asset("assets/styles/vendor.css")}}">
+        <link rel="stylesheet" href="{{ asset("assets/styles/main.css")}}">
+        <!-- <script src="/assets/scripts/vendor/modernizr.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <style>
      .pagination>.active>span {
@@ -60,10 +60,11 @@ $.ajaxSetup({
     }
 });
 </script>
-            <script src="/assets/scripts/vendor.js"></script>
-            <script src="/assets/scripts/plugins.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-            <script src="/assets/scripts/main.js"></script>
+<script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
+                <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+                <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
+
         
   
 

@@ -15,7 +15,7 @@
 
 
             <div class="banner clearfix">
-               <div class=banner-img> <img src=images/cup.png alt=image> </div>
+               <div class=banner-img> <img src="{{ asset("images/cup.png")}}" alt=image> </div>
                <div class=banner-text>
                   <h2>Our special & exclusive <span>My Account</span></h2>
                </div>

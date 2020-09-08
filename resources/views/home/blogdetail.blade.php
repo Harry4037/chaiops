@@ -3,7 +3,7 @@
 @section('content')
 <div class="banner clearfix">
                         <div class="banner-img">
-                            <img src="/assets/images/blogBannerImgs/banner-img1.png" alt="">
+                            <img src="{{ asset("assets/images/blogBannerImgs/banner-img1.png")}}" alt="">
                         </div>
                         <div class="banner-text">
                             <h2>Our special & exclusive
@@ -33,7 +33,7 @@
                <h2>{{$data->title}}</h2>
             </div>
             <div class=author-details>
-               <div class="imgLiquid imgLiquidFill auth-icon"> <img src=/assets/images/blog-list/author-icon.png alt=""> </div>
+               <div class="imgLiquid imgLiquidFill auth-icon"> <img src="{{ asset("assets/images/blog-list/author-icon.png")}}" alt=""> </div>
                <h5>Author, <span>Western</span></h5>
             </div>
             <div class=blog-details-wrap>
@@ -64,7 +64,7 @@
                     <div class="add">
                         <div class="add-inner-wrapper">
                             <h2>
-                                <img src="/assets/images/contact-img.png" alt="">
+                                <img src="{{ asset("assets/images/contact-img.png")}}" alt="">
                                 <span>Coffee and you</span>
                             </h2>
                             <h3>

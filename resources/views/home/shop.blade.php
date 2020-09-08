@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="banner clearfix">
-               <div class=banner-img> <img src=assets/images/cup.png alt=image> </div>
+               <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=image> </div>
                <div class=banner-text>
                   <h2>Our special & exclusive <span>product</span></h2>
                </div>
@@ -45,7 +45,7 @@
                </div>
                <div class="store-product-wrapper grid-item type3">
                   <div class=store-product>
-                     <div class="imgLiquidFill imgLiquid item-image"> <img src=assets/images/order-type2.png alt="product item"> </div>
+                     <div class="imgLiquidFill imgLiquid item-image"> <img src="{{ asset("assets/images/order-type2.png")}}" alt="product item"> </div>
                      <div class=product-detail>
                         <div class=product-rate>$39</div>
                         <h3>Frappuccino</h3>

@@ -22,7 +22,7 @@ Route::get('/cart', 'HomeController@cartPage')->name('site.cart');
 Route::post('/checkout', 'CartController@checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
-Route::get('/franchise', 'HomeController@franchise');
+Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
 
 Route::get('/signup', 'LoginController@signup')->name('site.login');
 Route::get('/signin', 'LoginController@signin')->name('site.signin');

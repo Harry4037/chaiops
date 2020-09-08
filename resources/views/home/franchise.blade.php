@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="banner clearfix">
-               <div class=banner-img> <img src=images/cup.png alt=image> </div>
+               <div class=banner-img> <img src="{{ asset("images/cup.png")}}" alt=image> </div>
                <div class=banner-text>
                   <h2>Our special & exclusive <span>Franchise</span></h2>
                </div>
@@ -16,12 +16,12 @@
                 <div class="container clearfix">
                     <div class="banner4-img-holder">
                         <img
-                            src="images/homepage/ipad.png"
+                            src="{{ asset("images/homepage/ipad.png")}}"
                             height="473"
                             width="581"
                             class="ipad"
                             alt="">
-                        <img src="images/homepage/cap.png" height="206" width="240" class="cap" alt="">
+                        <img src="{{ asset("images/homepage/cap.png")}}" height="206" width="240" class="cap" alt="">
                     </div>
                     <div class="banner4-details">
                         <h3>Become the Part of</h3>
@@ -53,7 +53,7 @@
                    
                     <div class="reservation-form clearfix">
                         <div class="imgLiquidFill imgLiquid">
-                            <img src="images/book-table-img.jpg" alt="">
+                            <img src="{{ asset("images/book-table-img.jpg")}}" alt="">
                         </div>
                         <form
                             id="reservation-form"

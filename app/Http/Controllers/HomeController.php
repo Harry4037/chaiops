@@ -36,7 +36,6 @@ class HomeController extends Controller {
         }
 
         $categories = Category::where('id', 1)->with(['product'])->first();
-        
         return view('home.index', [
             'categories' => $categories,
         ]);

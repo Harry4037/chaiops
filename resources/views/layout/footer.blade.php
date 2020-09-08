@@ -5,25 +5,30 @@
                         <h2>Let's visit our</h2>
                         <h3>Shop Today</h3>
                         <div>
-                            <img src="/assets/images/logo.png" alt="">
+                            <img src="{{ asset("assets/images/logo.png")}}" alt="">
                         </div>
-                        <a href="/store" class="order-btn">Order your coffee now !</a>
+                        <a href="{{route('site.menu')}}" class="order-btn">Order your coffee now !</a>
                         <div class="footer-nav-wrapper">
                             <ul class="footer-nav clearfix">
-                                <li>
-                                    <a href="/">Home</a>
-                                </li>
-                                <li><a href=/about>About Us</a></li>
-                                <li>
-                                    <a href="/menu">Menu</a>
-                                </li>
-                               
-                                <li>
-                                    <a href="/cart">Cart</a>
-                                </li>
-                                <li>
-                                    <a href="/contact">Contact Us</a>
-                                </li>
+                            <li>
+                                        <a href="{{route('site.index')}}">Home</a>
+                                    </li>
+                                    <li><a href="{{route('site.about')}}">About Us</a></li>
+                                    <li>
+                                        <a href="{{route('site.menu')}}">Menu</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('site.franchise')}}">Franchise</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('site.blog')}}">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('site.store')}}">store</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('site.contact')}}">Contact Us</a>
+                                    </li>
                             </ul>
                         </div>
                     </div>

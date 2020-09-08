@@ -3,7 +3,7 @@
 @section('content')
 <div class="banner clearfix">
     <div class="banner-img">
-        <img src="assets/images/cup.png" alt="image">
+        <img src="{{ asset("assets/images/cup.png")}}" alt="image">
     </div>
     <div class="banner-text">
         <h2>

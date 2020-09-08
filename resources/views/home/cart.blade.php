@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="banner clearfix">
-    <div class=banner-img> <img src=assets/images/cup.png alt=image> </div>
+    <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=image> </div>
     <div class=banner-text>
         <h2>Our special & exclusive <span>product</span></h2>
     </div>
@@ -14,7 +14,7 @@
 <section class=cartpage>
     <div class=container>
         <div class="cartHeader clearfix">
-            <h1 class=logo> <a href="/"> <img src=assets/images/logo.png alt=image> </a> </h1>
+            <h1 class=logo> <a href="/"> <img src="{{ asset("assets/images/logo.png")}}" alt=image> </a> </h1>
             <div class=orderId>
                 <div>
                     <p class=datetime></p>

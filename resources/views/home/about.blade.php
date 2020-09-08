@@ -14,7 +14,7 @@
 </style>
 <div class="banner clearfix">
                             <div class=banner-img>
-                              <img src=assets/images/cup.png alt="">
+                              <img src="{{ asset("assets/images/cup.png")}}" alt="">
                               </div>
                               <div class=banner-text>
                                 <h2>Our special & exclusive 
@@ -51,7 +51,7 @@
                               </div>
                               <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
                                 <div class="color1">
-                                  <img class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;" src="assets/images/g5.jpg" alt="">
+                                  <img class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;" src="{{ asset("assets/images/g5.jpg")}}" alt="">
                                   </a>
                                 </div>
                               </div>
@@ -61,12 +61,12 @@
                         <section class="midpage-banner1 banner-section">
                           <div class="container">
                             <div class="img-holder">
-                              <img class="milk-cup" src="assets/images/milk-pour-cup.png" alt="">
-                                <img class="cup" src="assets/images/pour-cup.png" alt="">
+                              <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png")}}" alt="">
+                                <img class="cup" src="{{ asset("assets/images/pour-cup.png")}}" alt="">
                                   <div class="milk">
-                                    <img src="assets/images/milk-pour2.png" alt="">
+                                    <img src="{{ asset("assets/images/milk-pour2.png")}}" alt="">
                                     </div>
-                                    <img class="milk-drop" src="assets/images/milk-drops.png" alt="">
+                                    <img class="milk-drop" src="{{ asset("assets/images/milk-drops.png")}}" alt="">
                                     </div>
                                     <!-- <img src="images/milk-pour-cup.png" alt=""> -->
                                     <div class="banner1-details">
@@ -93,7 +93,7 @@
                                                   <div class="row justify-content-start align-items-center">
                                                     <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
                                                       <div class="color"></div>
-                                                      <img class="img-fluid"  style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;"src="assets/images/g5.jpg" alt="">
+                                                      <img class="img-fluid"  style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;"src="{{ asset("assets/images/g5.jpg")}}" alt="">
                                                       </a>
                                                     </div>
                                                     <div class="col-lg-6 video-left">
