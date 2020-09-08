@@ -64,5 +64,11 @@ class HomeController extends Controller {
     public function cartPage() {
         return view('home.cart');
     }
+    public function franchise() {
+        return view('home.franchise');
+    }
+    public function dashboard() {
+        return view('home.dashboard');
+    }
 
 }
