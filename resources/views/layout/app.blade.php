@@ -80,7 +80,7 @@
                                     </li>
                                     @else
                                     <li class="button-order-now">
-                                        <a href="{{route('site.signin')}}">Login / Sign Up</a>
+                                        <a href="{{route('site.login')}}">Login / Sign Up</a>
                                     </li>
                                     @endif
                                 </ul>

@@ -23,9 +23,10 @@ Route::post('/checkout', 'CartController@checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
+Route::post('/franchise', 'HomeController@franchiseSubmit');
 
-Route::get('/signup', 'LoginController@signup')->name('site.login');
-Route::get('/signin', 'LoginController@signin')->name('site.signin');
+
+Route::get('/signin', 'LoginController@signin')->name('site.login');
 Route::get('/dashboard', 'HomeController@dashboard')->name('site.dashboard');
 
 Route::post('/register', 'LoginController@register')->name('site.signup');

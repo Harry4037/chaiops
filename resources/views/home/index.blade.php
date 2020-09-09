@@ -17,17 +17,23 @@
             <p>SINCE 1939</p>
             <div class="banner-img-holder">
                 <!-- <img src="/assets/images/banner/banner01.png" alt="Banner Images"> -->
-                <img class="logo-cup" src="{{ asset("assets/images/banner/logo-cup.png")}}" alt="Banner Images">
-                <img class="logo" src="{{ asset("assets/images/banner/logo.png")}}" alt="Banner Images">
-                <img class="cup" src="{{ asset("assets/images/banner/cup.png")}}" alt="Banner Images">
-                <img class="premium-text" src="{{ asset("assets/images/banner/txt2.png")}}" alt="Banner Images">
-                <img class="coffee-text" src="{{ asset("assets/images/banner/txt1.png")}}" alt="Banner Images">
+                <img class="logo-cup" src="{{ asset("assets/images/banner/logo-cup.png") }}"
+                    alt="Banner Images">
+                <img class="logo" src="{{ asset("assets/images/banner/logo.png") }}"
+                    alt="Banner Images">
+                <img class="cup" src="{{ asset("assets/images/banner/cup.png") }}"
+                    alt="Banner Images">
+                <img class="premium-text" src="{{ asset("assets/images/banner/txt2.png") }}"
+                    alt="Banner Images">
+                <img class="coffee-text" src="{{ asset("assets/images/banner/txt1.png") }}"
+                    alt="Banner Images">
                 <div class="coffee-drop">
-                    <img src="{{ asset("assets/images/banner/coffee-drop3.png")}}" alt="Banner Images">
+                    <img src="{{ asset("assets/images/banner/coffee-drop3.png") }}"
+                        alt="Banner Images">
                 </div>
             </div>
         </div>
-        <a href="{{route('site.menu')}}" class="button-menu">Menu</a>
+        <a href="{{ route('site.menu') }}" class="button-menu">Menu</a>
     </div>
 </div>
 </div>
@@ -47,7 +53,7 @@
             <div class="pricing-detail">
                 <figure>
                     <div class="image">
-                        <img src="{{ asset("assets/images/coffee-cup.png")}}" alt="">
+                        <img src="{{ asset("assets/images/coffee-cup.png") }}" alt="">
                     </div>
                     <figcaption>
                         <h3>Good Morning</h3>
@@ -57,93 +63,93 @@
             </div>
 
             @if($categories)
-            <div class="pricing-carte clearfix scrollbar" >
-                @foreach($categories->product as $product)
-                <div class="cuisine-wrapper">
-                    <div class="cuisine clearfix">
-                        <div class="card-left">
-                            <div class="cuisine-name">{{$product->name}}</div>
-                            <div class="cuisine-detail">{{$product->description}}</div>
+                <div class="pricing-carte clearfix scrollbar">
+                    @foreach($categories->product as $product)
+                        <div class="cuisine-wrapper">
+                            <div class="cuisine clearfix">
+                                <div class="card-left">
+                                    <div class="cuisine-name">{{ $product->name }}</div>
+                                    <div class="cuisine-detail">{{ $product->description }}</div>
+                                </div>
+                                <div class="card-right">
+                                    <div class="cuisine-price">${{ $product->price }}</div>
+                                    <div class="cuisine-heart">{{ $product->type }}</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-right">
-                            <div class="cuisine-price">${{$product->price}}</div>
-                            <div class="cuisine-heart">{{$product->type}}</div>
+                    @endforeach
+            @endif
+        </div>
+    </div>
+    <div class="order-types-available row">
+        <div class="row">
+            <div class="order-type-wrapper">
+                <div class="order-type type-one">
+                    <figure class="clearfix">
+                        <div class="img-holder">
+                            <img src="/assets/images/order-type1.png" alt="">
                         </div>
-                    </div>
+                        <figcaption>
+                            <h3>
+                                <span>Strong</span>
+                                afternoon</h3>
+                            <a class="button-primary btn" href="#">Order Now</a>
+                        </figcaption>
+                    </figure>
                 </div>
-                @endforeach
-                @endif
             </div>
-        </div>
-        <div class="order-types-available row">
-            <div class="row">
-                <div class="order-type-wrapper">
-                    <div class="order-type type-one">
-                        <figure class="clearfix">
-                            <div class="img-holder">
-                                <img src="/assets/images/order-type1.png" alt="">
-                            </div>
-                            <figcaption>
-                                <h3>
-                                    <span>Strong</span>
-                                    afternoon</h3>
-                                <a class="button-primary btn" href="#">Order Now</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+            <div class="order-type-wrapper">
+                <div class="order-type type-two">
+                    <figure>
+                        <div class="img-holder">
+                            <img src="/assets/images/order-type2.png" alt="">
+                        </div>
+                        <figcaption>
+                            <h3>
+                                <span>Cookie</span>
+                                & more</h3>
+                            <a class="button-primary btn" href="#">Order Now</a>
+                        </figcaption>
+                    </figure>
                 </div>
-                <div class="order-type-wrapper">
-                    <div class="order-type type-two">
-                        <figure>
-                            <div class="img-holder">
-                                <img src="/assets/images/order-type2.png" alt="">
-                            </div>
-                            <figcaption>
-                                <h3>
-                                    <span>Cookie</span>
-                                    & more</h3>
-                                <a class="button-primary btn" href="#">Order Now</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="order-type-wrapper">
-                    <div class="order-type type-three">
-                        <figure>
-                            <div class="img-holder">
-                                <img src="/assets/images/order-type3.png" alt="">
-                            </div>
-                            <figcaption>
-                                <h3>
-                                    <span>Special</span>
-                                    flavors</h3>
-                                <a class="button-primary btn" href="#">Order Now</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+            </div>
+            <div class="order-type-wrapper">
+                <div class="order-type type-three">
+                    <figure>
+                        <div class="img-holder">
+                            <img src="/assets/images/order-type3.png" alt="">
+                        </div>
+                        <figcaption>
+                            <h3>
+                                <span>Special</span>
+                                flavors</h3>
+                            <a class="button-primary btn" href="#">Order Now</a>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
-        <div class="book-order row">
-            <div class="book-details">
-                <h3>Book your coffee now</h3>
-                <h5>Call NOW @ our toll free number</h5>
-            </div>
-            <div class="order-number">
-                <h2>+0987654321</h2>
-            </div>
+    </div>
+    <div class="book-order row">
+        <div class="book-details">
+            <h3>Book your coffee now</h3>
+            <h5>Call NOW @ our toll free number</h5>
         </div>
+        <div class="order-number">
+            <h2>+0987654321</h2>
+        </div>
+    </div>
     </div>
 </section>
 <section class="midpage-banner1 banner-section">
     <div class="container">
         <div class="img-holder">
-            <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png")}}" alt="">
-            <img class="cup" src="{{ asset("assets/images/pour-cup.png")}}" alt="">
+            <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png") }}" alt="">
+            <img class="cup" src="{{ asset("assets/images/pour-cup.png") }}" alt="">
             <div class="milk">
-                <img src="{{ asset("assets/images/milk-pour2.png")}}" alt="">
+                <img src="{{ asset("assets/images/milk-pour2.png") }}" alt="">
             </div>
-            <img class="milk-drop" src="{{ asset("assets/images/milk-drops.png")}}" alt="">
+            <img class="milk-drop" src="{{ asset("assets/images/milk-drops.png") }}" alt="">
         </div>
         <!-- <img src="/assets/images/milk-pour-cup.png" alt=""> -->
         <div class="banner1-details">
@@ -168,7 +174,8 @@
             </div>
         </div>
         <div class="row">
-            <img src="{{ asset("assets/images/service-img.jpg")}}" class="service-side-img" alt="">
+            <img src="{{ asset("assets/images/service-img.jpg") }}" class="service-side-img"
+                alt="">
             <div class="service-details">
                 <h3>Coffee and You</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt voluptatum
@@ -229,12 +236,9 @@
         </div>
         <div class="reservation-form clearfix">
             <div class="imgLiquidFill imgLiquid">
-                <img src="{{ asset("assets/images/book-table-img.jpg")}}" alt="">
+                <img src="{{ asset("assets/images/book-table-img.jpg") }}" alt="">
             </div>
-            <form
-                id="reservation-form"
-                class="clearfix"
-                data-parsley-validate="data-parsley-validate">
+            <form id="reservation-form" class="clearfix" data-parsley-validate="data-parsley-validate">
                 <h3>Online
                     <span>Reservation Form</span></h3>
                 <div class="row">
@@ -273,34 +277,20 @@
                 <div class="row">
                     <div class="form-group name-sectn">
                         <label for="name">Your Name</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="name"
-                            id="name"
-                            placeholder="Name"
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name"
                             required="required">
                     </div>
                     <div class="form-group mail-sectn">
                         <label for="inputEmail">Your Email ID</label>
-                        <input
-                            type="email"
-                            class="form-control"
-                            name="inputEmail"
-                            id="inputEmail"
-                            placeholder="Email"
+                        <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email"
                             required="required">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="contactMessage">Leave a message</label>
                     <div>
-                        <textarea
-                            name="contactMessage"
-                            class="form-control"
-                            id="contactMessage"
-                            placeholder="Write your text"
-                            required="required"></textarea>
+                        <textarea name="contactMessage" class="form-control" id="contactMessage"
+                            placeholder="Write your text" required="required"></textarea>
                     </div>
                 </div>
                 <button type="submit" class="button-type-three">Order Now</button>
@@ -313,7 +303,7 @@
     <div class="container">
         <div class="row">
             <figure class="offer-detail">
-                <img src="{{ asset("assets/images/percent-off.png")}}" alt="offer image">
+                <img src="{{ asset("assets/images/percent-off.png") }}" alt="offer image">
                 <figcaption>
                     <p>On all flavors</p>
                     <h3>Friday Special</h3>
@@ -323,7 +313,7 @@
             <div class="coupon-code">
                 <div class="code-wrapper">
                     <a class="coupon button-primary type2" href="#">
-                        <img src="{{ asset("assets/images/qr-code.jpg")}}" alt="qr code">
+                        <img src="{{ asset("assets/images/qr-code.jpg") }}" alt="qr code">
                         <span>FS21321sdfsdfer1</span>
                     </a>
                 </div>
@@ -367,7 +357,8 @@
             <div class="store-product-wrapper grid-item type1">
                 <div class="store-product">
                     <div class="imgLiquidFill imgLiquid item-image">
-                        <img src="{{ asset("assets/images/blog-list/blog-img2.jpg")}}" alt="product item">
+                        <img src="{{ asset("assets/images/blog-list/blog-img2.jpg") }}"
+                            alt="product item">
                     </div>
                     <div class="product-detail">
                         <div class="product-rate">$22</div>
@@ -375,13 +366,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="1"
-                            data-productname="Café Bombón"
-                            data-productprice="22"
-                            data-productimage="images/blog-list/blog-img2.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="1" data-productname="Café Bombón"
+                            data-productprice="22" data-productimage="images/blog-list/blog-img2.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -397,13 +383,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="2"
-                            data-productname="Irish coffee"
-                            data-productprice="29"
-                            data-productimage="images/book-table-img.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="2" data-productname="Irish coffee"
+                            data-productprice="29" data-productimage="images/book-table-img.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -419,13 +400,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="3"
-                            data-productname="Frappuccino"
-                            data-productprice="39"
-                            data-productimage="images/order-type2.png">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="3" data-productname="Frappuccino"
+                            data-productprice="39" data-productimage="images/order-type2.png">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -441,13 +417,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="4"
-                            data-productname="Eiskaffee"
-                            data-productprice="20"
-                            data-productimage="images/store/store-product.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="4" data-productname="Eiskaffee"
+                            data-productprice="20" data-productimage="images/store/store-product.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -463,13 +434,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="5"
-                            data-productname="Iced Coffee"
-                            data-productprice="19"
-                            data-productimage="images/blog-list/blog-img1.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="5" data-productname="Iced Coffee"
+                            data-productprice="19" data-productimage="images/blog-list/blog-img1.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -485,13 +451,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="6"
-                            data-productname="Cortado"
-                            data-productprice="79"
-                            data-productimage="images/blog-list/blog-img3.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="6" data-productname="Cortado"
+                            data-productprice="79" data-productimage="images/blog-list/blog-img3.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -507,13 +468,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="7"
-                            data-productname="Mochasippi"
-                            data-productprice="49"
-                            data-productimage="images/blog-list/blog-img4.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="7" data-productname="Mochasippi"
+                            data-productprice="49" data-productimage="images/blog-list/blog-img4.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -529,13 +485,8 @@
                         <p>1 pack 250 gm</p>
                     </div>
                     <div class="clearfix add-buy">
-                        <a
-                            href="#"
-                            class="add-cart addToCart"
-                            data-productid="8"
-                            data-productname="Vienna Coffee"
-                            data-productprice="39"
-                            data-productimage="images/blog-dtl/coffeebeans.jpg">Add to Cart</a>
+                        <a href="#" class="add-cart addToCart" data-productid="8" data-productname="Vienna Coffee"
+                            data-productprice="39" data-productimage="images/blog-dtl/coffeebeans.jpg">Add to Cart</a>
                         <a href="#" class="buy-btn">Buy now</a>
                     </div>
                 </div>
@@ -558,7 +509,7 @@
             <ul class="clearfix testimonial-owl">
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/member1.jpg")}}" alt="">
+                        <img src="{{ asset("assets/images/testimonial/member1.jpg") }}" alt="">
                     </div>
                     <div class="name-text">
                         <h3>William</h3>
@@ -569,7 +520,8 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/member02.jpg")}}" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member02.jpg") }}"
+                            alt="image">
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
@@ -580,7 +532,8 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/memeber03.jpg")}}" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/memeber03.jpg") }}"
+                            alt="image">
                     </div>
                     <div class="name-text">
                         <h3>jhon</h3>
@@ -591,7 +544,8 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/member04.jpg")}}" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member04.jpg") }}"
+                            alt="image">
                     </div>
                     <div class="name-text">
                         <h3>david</h3>
@@ -602,7 +556,8 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/member05.jpg")}}" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member05.jpg") }}"
+                            alt="image">
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
@@ -613,7 +568,8 @@
                 </li>
                 <li class="testimonial-item item clearfix">
                     <div class="imgLiquidFill imgLiquid">
-                        <img src="{{ asset("assets/images/testimonial/member06.jpg")}}" alt="image">
+                        <img src="{{ asset("assets/images/testimonial/member06.jpg") }}"
+                            alt="image">
                     </div>
                     <div class="name-text">
                         <h3>luiz</h3>
@@ -625,7 +581,7 @@
             </ul>
         </div>
         <figure class="testimonial-text clearfix">
-            <img src="{{ asset("assets/images/testi-img.png")}}" alt="">
+            <img src="{{ asset("assets/images/testi-img.png") }}" alt="">
             <figcaption>
                 <h3>Our happy coffee lover and their awesome comments</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt porro aliquid
@@ -648,9 +604,9 @@
         </div>
         <div class="event-container" id="event-owl">
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -681,9 +637,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 2</h3>
@@ -714,9 +670,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 3</h3>
@@ -747,9 +703,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here 5</h3>
@@ -780,9 +736,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -813,9 +769,9 @@
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
+                <img class="star-mark" src="{{ asset("assets/images/star-fav.png") }}" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
+                    <img src="{{ asset("assets/images/event-img.jpg") }}" alt="">
                 </div>
                 <div class="event-desc">
                     <h3>Event name goes here</h3>
@@ -851,13 +807,10 @@
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
     <div class="container clearfix">
         <div class="banner4-img-holder">
-            <img
-                src="{{ asset("assets/images/homepage/ipad.png")}}"
-                height="473"
-                width="581"
-                class="ipad"
-                alt="">
-            <img src="{{ asset("assets/images/homepage/cap.png")}}" height="206" width="240" class="cap" alt="">
+            <img src="{{ asset("assets/images/homepage/ipad.png") }}" height="473" width="581"
+                class="ipad" alt="">
+            <img src="{{ asset("assets/images/homepage/cap.png") }}" height="206" width="240"
+                class="cap" alt="">
         </div>
         <div class="banner4-details">
             <h3>Our shop</h3>
@@ -886,7 +839,7 @@
         <div class="add">
             <div class="add-inner-wrapper">
                 <h2>
-                    <img src="{{ asset("assets/images/contact-img.png")}}" alt="">
+                    <img src="{{ asset("assets/images/contact-img.png") }}" alt="">
                     <span>Coffee and you</span>
                 </h2>
                 <h3>
