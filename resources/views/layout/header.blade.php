@@ -5,24 +5,36 @@
                      <a href="{{route('site.index')}}" class=header-logo>Coffee and You <img src="{{ asset("assets/images/small-logo.png")}}" alt=""> </a> 
                      <div class="collapse navbar-collapse" id=coffeeNavbarPrimary>
                      <ul class="nav navbar-nav navbar-right">
-                                    <li class="active">
+                                    <li >
                                         <a href="{{route('site.index')}}">Home</a>
                                     </li>
-                                    <li><a href="{{route('site.about')}}">About Us</a></li>
-                                    <li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.about']))
+{{ "class=active" }}
+@endif><a href="{{route('site.about')}}">About Us</a></li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.menu']))
+{{ "class=active" }}
+@endif>
                                         <a href="{{route('site.menu')}}">Menu</a>
                                     </li>
-                                    <li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.franchise']))
+{{ "class=active" }}
+@endif> 
                                         <a href="{{route('site.franchise')}}">Franchise</a>
                                     </li>
-                                    <li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.blog']))
+{{ "class=active" }}
+@endif>
                                         <a href="{{route('site.blog')}}">Blog</a>
                                     </li>
                                    
-                                    <li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.contact']))
+{{ "class=active" }}
+@endif>
                                         <a href="{{route('site.contact')}}">Contact Us</a>
                                     </li>
-                                    <li>
+                                    <li @if(in_array(Route::currentRouteName(), ['site.cart']))
+{{ "class=active" }}
+@endif>
                                         <a href="{{route('site.cart')}}">Cart
                                             <i class="fa fa-shopping-cart">
                                                 @if(session()->get('cart')) <span class="carttems">{{count(session()->get('cart'))}}</span>  @endif</i>
