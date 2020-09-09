@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     public function product() {
-        return $this->hasMany('App\Models\Product', 'category_id')->where("is_active", 1);
+        return $this->hasMany(Product::class, 'category_id');
     }
 }

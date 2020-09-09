@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-      
+
         <title>{{ config('site.name', 'Chaiops') }}</title>
-      
+
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,41 +17,41 @@
         <link rel="stylesheet" href="{{ asset("assets/styles/main.css")}}">
         <!-- <script src="/assets/scripts/vendor/modernizr.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <style>
-     .pagination>.active>span {
-        background-color: #dc8068 !important;
-    border-color: #dc8068 !important;
-     }
+        <style>
+            .pagination>.active>span {
+                background-color: #dc8068 !important;
+                border-color: #dc8068 !important;
+            }
 
-     .pagination>li>a {
-        color: #337ab7;
-     }
-     </style>
+            .pagination>li>a {
+                color: #337ab7;
+            }
+        </style>
 
-        </head>
-        <body class="menu-page inner-page">
-            <!--[if lt IE 10]> <p class="browsehappy">You are using an
-            <strong>outdated</strong> browser. Please <a
-            href="http://browsehappy.com/">upgrade your browser</a> to improve your
-            experience.</p> <![endif]-->
-            <header>
-         <div class=container>
-              <!-- Header -->
-  @include('layout.header')
+    </head>
+    <body class="menu-page inner-page">
+        <!--[if lt IE 10]> <p class="browsehappy">You are using an
+        <strong>outdated</strong> browser. Please <a
+        href="http://browsehappy.com/">upgrade your browser</a> to improve your
+        experience.</p> <![endif]-->
+        <header>
+            <div class=container>
+                <!-- Header -->
+                @include('layout.header')
 
-  
-  <!-- Content Wrapper. Contains page content -->
 
-  @yield('content')
-              <!-- Footer -->
-    @include('layout.footer')
-    
-  <!--=======================================
-        All Jquery Script link
-  ===========================================-->
-  @yield('script')
+                <!-- Content Wrapper. Contains page content -->
 
-<script>
+                @yield('content')
+                <!-- Footer -->
+                @include('layout.footer')
+
+                <!--=======================================
+                      All Jquery Script link
+                ===========================================-->
+                @yield('script')
+
+                <script>
 
 //setup CSRF token for ajax forms
 $.ajaxSetup({
@@ -59,14 +59,14 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-</script>
-<script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
+                </script>
+                <script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
                 <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
                 <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
 
-        
-  
 
-            </body>
-</html>
+
+
+                </body>
+                </html>

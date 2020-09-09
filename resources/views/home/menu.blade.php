@@ -18,44 +18,45 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit.</p>
         </div>
-        <?php $i=1; ?>
+        <?php $i = 1; ?>
         @if($categories)
-            @foreach($categories as $category)
-                <div class="pricing-table type-{{ $i }}">
-                    <div class="pricing-detail image-not-overlap">
-                        <figure>
-                            <div class=image> <img src="{{ $category->image_name }}" alt=""> </div>
-                            <figcaption>
-                                <h3>{{ $category->name }}</h3>
-                                <p>{{ $category->description }}</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="pricing-carte clearfix scrollbar">
+        @foreach($categories as $category)
+        <div class="pricing-table type-{{ $i }}">
+            <div class="pricing-detail image-not-overlap">
+                <figure>
+                    <div class=image> <img src="{{ $category->image_name }}" alt=""> </div>
+                    <figcaption>
+                        <h3>{{ $category->description }}</h3>
+                        <p></p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="pricing-carte clearfix scrollbar">
 
-                        @foreach($category->product as $product)
-                            <div class="cuisine-wrapper store-product">
-                                <div class=cuisine>
-                                    <div class=clearfix>
-                                        <div class=card-left>
-                                            <div class="cuisine-name">{{ $product->name }}</div>
-                                            <div class="cuisine-detail">{{ $product->description }}</div>
-                                        </div>
-                                        <div class="card-right">
-                                            <div class="cuisine-price">${{ $product->price }}</div>
-                                            <div class="cuisine-heart">{{ $product->type }}</div>
-                                        </div>
-                                    </div>
-                                    <div class="menu-btn-holder clearfix"><a href="/add-to-cart/{{ $product->id }}"
-                                            class="add-cart addTroCart">Order Now</a> </div>
-                                </div>
-
+                @foreach($category->product as $product)
+                <div class="cuisine-wrapper store-product">
+                    <div class=cuisine>
+                        <div class=clearfix>
+                            <div class=card-left>
+                                <div class="cuisine-name">{{ $product->name }}</div>
+                                <div class="cuisine-detail">{{ $product->description }}</div>
                             </div>
-                        @endforeach
+                            <div class="card-right">
+                                <div class="cuisine-price">${{ $product->price }}</div>
+                                <div class="cuisine-heart">{{ $product->type }}</div>
+                            </div>
+                        </div>
+                        <div class="menu-btn-holder clearfix">
+                            <a href="/add-to-cart/{{ $product->id }}" class="add-cart addTroCart">Add Cart</a> 
+                        </div>
                     </div>
+
                 </div>
-                <?php $i++; ?>
-            @endforeach
+                @endforeach
+            </div>
+        </div>
+        <?php $i++; ?>
+        @endforeach
         @endif
         @if(session()->get('cart'))
         <div class="clearfix order-box">

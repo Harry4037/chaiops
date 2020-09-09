@@ -16,12 +16,16 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->default(0);
-            $table->string('name')->default(null);
+            $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('img')->nullable();
             $table->float('price')->default(0);
             $table->enum('type', ["100ml", "200ml", "300ml"]);
             $table->tinyInteger('is_active')->default(0);
+            $table->tinyInteger('is_morning')->default(0);
+            $table->tinyInteger('is_afternoon')->default(0);
+            $table->tinyInteger('is_cookie')->default(0);
+            $table->tinyInteger('is_flavour')->default(0);
             $table->timestamps();
         });
     }

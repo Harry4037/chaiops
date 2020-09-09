@@ -4,14 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
-use Validator;
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
-use App\Models\Product;
-use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller {
 
@@ -35,8 +30,12 @@ class HomeController extends Controller {
             }
         }
 
-        $categories = Category::where('id', 1)->with(['product'])->first();
+        $products = Product::where(["is_active" => 1, "is_morning" => 1])->get();
+        $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
+                        $query->where("is_active", 1);
+                    }])->get();
         return view('home.index', [
+            'products' => $products,
             'categories' => $categories,
         ]);
     }
@@ -46,9 +45,11 @@ class HomeController extends Controller {
     }
 
     public function menuPage() {
-        $categories = Category::where('is_active', 1)->with(['product'])->get();
+        $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
+                        $query->where("is_active", 1);
+                    }])->get();
         return view('home.menu', [
-            'categories' => $categories,
+            "categories" => $categories
         ]);
     }
 
@@ -63,9 +64,11 @@ class HomeController extends Controller {
     public function cartPage() {
         return view('home.cart');
     }
+
     public function franchise() {
         return view('home.franchise');
     }
+
     public function dashboard() {
         return view('home.dashboard');
     }
