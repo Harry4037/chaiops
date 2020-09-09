@@ -62,9 +62,7 @@
                                         <a href="{{route('site.blog')}}">Blog</a>
                                     </li>
 
-                                    <li>
-                                        <a href="{{route('site.store')}}">store</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="{{route('site.contact')}}">Contact Us</a>
                                     </li>
