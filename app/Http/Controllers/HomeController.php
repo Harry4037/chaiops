@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
+use App\Models\Franchise;
+
 
 class HomeController extends Controller {
 
@@ -72,5 +74,19 @@ class HomeController extends Controller {
     public function dashboard() {
         return view('home.dashboard');
     }
+
+    public function franchiseSubmit(Request $request) {
+
+        $franchise = new Franchise();
+        $franchise->name = $request->name;
+        $franchise->email = $request->email;
+        $franchise->mob = $request->mob;
+        $franchise->location = $request->location;
+        $franchise->plan = $request->plan;
+        $franchise->state = $request->state;
+        $franchise->message = $request->message;
+        $franchise->save();
+        return view('home.franchise'); 
+    }    
 
 }

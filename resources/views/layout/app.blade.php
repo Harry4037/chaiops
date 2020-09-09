@@ -62,9 +62,7 @@
                                         <a href="{{route('site.blog')}}">Blog</a>
                                     </li>
 
-                                    <li>
-                                        <a href="{{route('site.store')}}">store</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="{{route('site.contact')}}">Contact Us</a>
                                     </li>
@@ -80,7 +78,7 @@
                                     </li>
                                     @else
                                     <li class="button-order-now">
-                                        <a href="{{route('site.signin')}}">Login / Sign Up</a>
+                                        <a href="{{route('site.login')}}">Login / Sign Up</a>
                                     </li>
                                     @endif
                                 </ul>
