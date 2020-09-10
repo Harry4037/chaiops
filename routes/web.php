@@ -58,4 +58,25 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
         Route::get('/list', 'UserController@userList')->name('admin.user.list');
         Route::post('/update-status', 'UserController@userStatus')->name('admin.user.status');
     });
+
+  // Category Routes
+  Route::prefix('category')->group(function() {
+    Route::get('/', 'CategoryController@index')->name('admin.category.index');
+    Route::get('/list', 'CategoryController@categoryList')->name('admin.category.list');
+    Route::match(['get', 'post'], '/add', 'CategoryController@categoryAdd')->name('admin.category.add');
+    Route::match(['get', 'post'], '/edit/{category}', 'CategoryController@categoryEdit')->name('admin.category.edit');
+    Route::post('/delete', 'CategoryController@categoryDelete')->name('admin.category.delete');
+    Route::match(['get', 'post'], '/status', 'CategoryController@categoryStatus')->name('admin.category.status');
+
+});
+
+   // Product Routes
+   Route::prefix('product')->group(function() {
+    Route::get('/', 'ProductController@index')->name('admin.product.index');
+    Route::get('/list', 'ProductController@productList')->name('admin.product.list');
+    Route::match(['get', 'post'], '/add', 'ProductController@productAdd')->name('admin.product.add');
+    Route::match(['get', 'post'], '/edit/{product}', 'ProductController@productEdit')->name('admin.product.edit');
+    Route::post('/delete', 'ProductController@productDelete')->name('admin.product.delete');
+    Route::match(['get', 'post'], '/status', 'ProductController@productStatus')->name('admin.product.status');
+});
 });

@@ -19,6 +19,18 @@
                 User Managment
             </a>
         </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.category.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                Category Managment
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.product.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                Product Managment
+            </a>
+        </li>
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>
