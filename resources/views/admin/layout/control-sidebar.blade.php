@@ -31,6 +31,12 @@
                 Product Managment
             </a>
         </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.blog.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                Blog Managment
+            </a>
+        </li>
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>

@@ -79,4 +79,15 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
     Route::post('/delete', 'ProductController@productDelete')->name('admin.product.delete');
     Route::match(['get', 'post'], '/status', 'ProductController@productStatus')->name('admin.product.status');
 });
+
+  // BLog Routes
+  Route::prefix('blog')->group(function() {
+    Route::get('/', 'BlogController@index')->name('admin.blog.index');
+    Route::get('/list', 'BlogController@blogList')->name('admin.blog.list');
+    Route::match(['get', 'post'], '/add', 'BlogController@blogAdd')->name('admin.blog.add');
+    Route::match(['get', 'post'], '/edit/{blog}', 'BlogController@blogEdit')->name('admin.blog.edit');
+    Route::post('/delete', 'BlogController@blogDelete')->name('admin.blog.delete');
+
+});
+
 });
