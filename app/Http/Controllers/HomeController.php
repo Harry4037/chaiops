@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
-
+use App\Models\Contact;
 
 class HomeController extends Controller {
 
@@ -86,7 +86,17 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
-        return view('home.franchise'); 
+        return view('home.index'); 
     }    
+    
+    public function contactSubmit(Request $request) {
 
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
+        return view('home.index'); 
+    } 
 }

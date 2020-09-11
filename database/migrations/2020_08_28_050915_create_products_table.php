@@ -26,7 +26,10 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('is_afternoon')->default(0);
             $table->tinyInteger('is_cookie')->default(0);
             $table->tinyInteger('is_flavour')->default(0);
+            $table->string('created_by')->default(0);
+            $table->string('updated_by')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

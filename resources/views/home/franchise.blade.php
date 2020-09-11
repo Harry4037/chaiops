@@ -58,7 +58,7 @@
             <div class="imgLiquidFill imgLiquid">
                 <img src="{{ asset("assets/images/book-table-img.jpg") }}" alt="">
             </div>
-            <form id="reservationorm" class="clearfix" data-parsley-validate="data-parsley-validate" action="\franchise" method="post">
+            <form id="reservationorm" class="clearfix" data-parsley-validate="data-parsley-validate" action="{{route('site.franchise.form')}}" method="post">
             {{ csrf_field() }}
                 <h3>Franchise Form
                 </h3>
