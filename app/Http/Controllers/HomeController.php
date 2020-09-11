@@ -32,7 +32,7 @@ class HomeController extends Controller {
             }
         }
 
-        $products = Product::where(["is_active" => 1, "is_morning" => 1])->get();
+        $products = Product::where(["is_active" => 1])->get();
         $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
                         $query->where("is_active", 1);
                     }])->get();

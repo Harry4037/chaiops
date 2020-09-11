@@ -70,7 +70,7 @@
                             <!--                            <div class="cuisine-heart">{{$product->type}}</div>-->
                         </div>
                         <div class="menu-btn-holder clearfix">
-                            <a style="border-color: white !important" href="#">Add Cart</a>
+                            <a style="border-color: white !important" href="javaScript:void(0);" class="addItemCart" data-id="{{$product->id}}">Add Cart</a>
                         </div>
                     </div>
                 </div>
@@ -119,8 +119,8 @@
                             <figcaption>
                                 <h3>
                                     <span>Special</span>
-                                    flavors</h3>
-                                <a class="button-primary btn" href="#">View More</a>
+                                    flavors</h                                                                                                                                                                                                        3>
+                                    <a class="button-primary btn" href="#">View More</a>
                             </figcaption>
                         </figure>
                     </div>
@@ -372,13 +372,13 @@
                         <div class="product-rate">{{$product->price}}</div>
                         <h3>{{$product->name}}</h3>
                         <p>{{$product->description}}</p>
-                        <a href="#" style="    display: inline-block;
+                        <a href="javaScript:void(0);" style="display: inline-block;
                            margin: 10px 0px 0px 118px;
                            padding: 10px 5px;
                            width: 75pt;
                            text-align: center;
                            border: 1px solid #ffffff;
-                           color: #e6a391;">Add Cart</a>
+                           color: #e6a391;" class="addItemCart" data-id="{{$product->id}}">Add Cart</a>
                     </div>
                 </div>
             </div>

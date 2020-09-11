@@ -37,6 +37,7 @@ Route::match(['get', 'post'], '/forgot-password', 'LoginController@forgotPasswor
 Route::match(['get', 'post'], '/reset-password/{code?}', 'LoginController@resetPassword')->name('site.reset');
 
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
+Route::post('/add-cart', 'CartController@addCart');
 
 Route::patch('update-cart', 'CartController@update');
 
@@ -52,7 +53,7 @@ Route::namespace('Admin')->prefix('admin')->group(function() {
 
 Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
-    
+
     Route::prefix('user')->group(function() {
         Route::get('/index', 'UserController@index')->name('admin.user.index');
         Route::get('/list', 'UserController@userList')->name('admin.user.list');

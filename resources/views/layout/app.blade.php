@@ -27,37 +27,47 @@
                 color: #337ab7;
             }
         </style>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script>
+var site_url = "{{ url('/admin') }}";
+var _baseUrl = "{{ URL::to('/') }}";
+        </script>
     </head>
     <body @if(in_array(Route::currentRouteName(), ['site.index']))
-                         {{ "class=home-page" }}
-                         @else
-                         {{ "class=menu-page inner-page" }}
-                         @endif>
-        <!--[if lt IE 10]> <p class="browsehappy">You are using an
-        <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your
-        experience.</p> <![endif]-->
-        <header>
+           {{ "class=home-page" }}
+           @else
+           {{ "class=menu-page inner-page" }}
+           @endif>
+<!--[if lt IE 10]> <p class="browsehappy">You are using an
+<strong>outdated</strong> browser. Please <a
+href="http://browsehappy.com/">upgrade your browser</a> to improve your
+experience.</p> <![endif]-->
+           <header>
             <div @if(in_array(Route::currentRouteName(), ['site.index']))
-                         {{ "class=header-body" }}
-                         @else
-                         {{ "class=container" }}
-                         @endif>
-                <!-- Header -->
-                @include('layout.header')
+                  {{ "class=header-body" }}
+                  @else
+                  {{ "class=container" }}
+                  @endif>
+                  <!-- Header -->
+                  @include('layout.header')
 
 
-                <!-- Content Wrapper. Contains page content -->
+                  <!-- Content Wrapper. Contains page content -->
 
-                @yield('content')
-                <!-- Footer -->
-                @include('layout.footer')
+                  @yield('content')
+                  <!-- Footer -->
+                  @include('layout.footer')
 
-                <!--=======================================
-                      All Jquery Script link
-                ===========================================-->
-                @yield('script')
+                  <!--=======================================
+                        All Jquery Script link
+                  ===========================================-->
+                  @yield('script')
+
+
+            <script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
+                <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+                <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
 
                 <script>
 
@@ -67,13 +77,25 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
+
+$(document).ready(function () {
+    $(document).on('click', '.addItemCart', function () {
+        var product_id = $(this).data('id');
+        $.ajax({
+            url: _baseUrl + '/add-cart',
+            type: 'post',
+            data: {product_id: product_id},
+            beforeSend: function () {
+//                $(".overlay").show();
+            },
+            success: function (res) {
+                $("#cart_count").text(res.cart_count);
+                console.log(res);
+            }
+        });
+    });
+});
                 </script>
-                <script src="{{ asset("assets/scripts/vendor_1.js")}}"></script>
-                <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-                <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
-
-
 
 
                 </body>
