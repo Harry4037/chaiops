@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
-{
+class Cart extends Model {
+
     public function product() {
-        return $this->belongsTo('App\Models\Product', 'product_id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
+
 }

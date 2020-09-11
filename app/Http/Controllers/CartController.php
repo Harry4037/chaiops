@@ -204,4 +204,49 @@ class CartController extends Controller {
         return response()->json(["cart_count" => $cartCount]);
     }
 
+    public function increaseCartQuantity(Request $request) {
+        $product = Product::find($request->product_id);
+        if (!$product) {
+            dd("product not found");
+        }
+        $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+        if ($alreadyExist) {
+            $alreadyExist->quantity = ($alreadyExist->quantity + 1);
+            $alreadyExist->save();
+        } else {
+            
+        }
+
+        return response()->json("increse");
+    }
+
+    public function decreaseCartQuantity(Request $request) {
+        $product = Product::find($request->product_id);
+        if (!$product) {
+            dd("product not found");
+        }
+        $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+        if ($alreadyExist) {
+            $alreadyExist->quantity = ($alreadyExist->quantity - 1);
+            $alreadyExist->save();
+        } else {
+            
+        }
+        return response()->json("descrese");
+    }
+
+    public function deleteCartProduct(Request $request) {
+        $product = Product::find($request->product_id);
+        if (!$product) {
+            dd("product not found");
+        }
+        $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+        if ($alreadyExist) {
+            $alreadyExist->delete();
+        } else {
+            
+        }
+        return response()->json("deleted");
+    }
+
 }

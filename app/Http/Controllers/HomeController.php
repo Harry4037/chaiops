@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
 use App\Models\Contact;
+use session;
 
 class HomeController extends Controller {
 
@@ -64,7 +65,11 @@ class HomeController extends Controller {
     }
 
     public function cartPage() {
-        return view('home.cart');
+        $cartItems = Cart::with('product')->where(["session_id" => session()->getId()])->get();
+        
+        return view('home.cart',[
+            "cartItems" => $cartItems
+        ]);
     }
 
     public function franchise() {
@@ -86,9 +91,9 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
-        return view('home.index'); 
-    }    
-    
+        return view('home.index');
+    }
+
     public function contactSubmit(Request $request) {
 
         $contact = new Contact();
@@ -97,6 +102,7 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
-        return view('home.index'); 
-    } 
+        return view('home.index');
+    }
+
 }

@@ -19,7 +19,7 @@ Route::get('/about', 'HomeController@aboutPage')->name('site.about');
 Route::get('/store', 'HomeController@storePage')->name('site.store');
 Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');
-Route::get('/cart', 'HomeController@cartPage')->name('site.cart');
+
 Route::post('/checkout', 'CartController@checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
@@ -38,7 +38,12 @@ Route::match(['get', 'post'], '/forgot-password', 'LoginController@forgotPasswor
 Route::match(['get', 'post'], '/reset-password/{code?}', 'LoginController@resetPassword')->name('site.reset');
 
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
+
+Route::get('/cart', 'HomeController@cartPage')->name('site.cart');
 Route::post('/add-cart', 'CartController@addCart');
+Route::post('/increase-cart-quantity', 'CartController@increaseCartQuantity');
+Route::post('/decrease-cart-quantity', 'CartController@decreaseCartQuantity');
+Route::post('/delete-cart-product', 'CartController@deleteCartProduct');
 
 Route::patch('update-cart', 'CartController@update');
 
