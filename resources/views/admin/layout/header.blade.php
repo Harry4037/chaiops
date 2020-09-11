@@ -15,10 +15,16 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right pt-0">
 
-                <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="#">
+                <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div>
+                <a class="dropdown-item" href="#">
                     <svg class="c-icon mr-2">
                     <use xlink:href="{{ asset("icons/sprites/free.svg#cil-user") }}"></use>
                     </svg> Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{route('admin.change-password')}}">
+                    <svg class="c-icon mr-2">
+                    <use xlink:href="{{ asset("icons/sprites/free.svg#cil-user") }}"></use>
+                    </svg>Change Password</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">
                     <svg class="c-icon mr-2">

@@ -56,7 +56,8 @@
 
         <div class="leave-comment">
             <h4 class="headingcontact">contact us</h4>
-            <form id="contactform" data-parsley-validate="data-parsley-validate">
+            <form id="conactform" data-parsley-validate="daa-parsley-validate" method="post" action="{{route('site.contact.form')}}">
+            {{ csrf_field() }}
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Name" name="name" required="required">
                 </div>
@@ -64,7 +65,7 @@
                     <input type="email" class="form-control" placeholder="Email Id" name="email" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject" name="usersubject"
+                    <input type="text" class="form-control" placeholder="Subject" name="subject"
                         required="required">
                 </div>
                 <textarea placeholder="Message" class="textarea" name="message" required="required"></textarea>
