@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="menu-btn-holder clearfix">
-                            <a href="/add-to-cart/{{ $product->id }}" class="add-cart addTroCart">Add Cart</a> 
+                            <a href="javaScript:void(0);" class="addItemCart add-cart" data-id="{{$product->id}}">Add Cart</a> 
                         </div>
                     </div>
 

@@ -48,7 +48,13 @@
                          @endif>
                          <a href="{{route('site.cart')}}">Cart
                             <i class="fa fa-shopping-cart">
-                                <span class="carttems" id="cart_count">0</span>
+                                <span class="carttems" id="cart_count">
+                                    @if($cartCount)
+                                    {{$cartCount}}
+                                    @else
+                                    0
+                                    @endif
+                                </span>
                             </i>
                         </a>
                     </li>
