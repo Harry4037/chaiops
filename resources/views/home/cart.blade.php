@@ -72,14 +72,14 @@
                         </div>
                     </div>
                     <div class="item-price">
-                        <span>{{$cartItem->product->price}}</span>
+                        <span>{{$cartItem->product->price * $cartItem->quantity}}</span>
                     </div>
 
                     <a href="#" class="remove-from-cart removeProduct" data-id="{{$cartItem->product->id}}">
                         <i class="fa fa-times"></i>
                     </a>
                 </li>
-                <?php $total = $total + $cartItem->product->price; ?>
+                <?php $total = $total + ($cartItem->product->price * $cartItem->quantity); ?>
                 @endforeach
                 @endif
             </ul>
@@ -131,7 +131,7 @@
                     </p>
                 </div>
                 <div class=order-btn> 
-                    <a href='/signin' class=button-secondary>Order Now</a> 
+                    <a href='{{route("site.login")}}' class=button-secondary>Order Now</a> 
                 </div>
             </div>
             @endif

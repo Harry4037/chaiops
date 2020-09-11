@@ -12,7 +12,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Register;
 use App\Mail\Forgot;
+use App\Models\Cart;
 use Illuminate\Support\Str;
+use session;
 
 class LoginController extends Controller {
 
@@ -84,11 +86,10 @@ class LoginController extends Controller {
 
         $user = User::create(request(['name', 'email', 'phone_number', 'password', 'user_role_id']));
 
+        Cart::where("session_id", session()->getId())->update(["user_id" => $user->id]);
         // try {
-
         //     Mail::to($user->email)->send(new Register($user->email));
         // } catch (\Exception $e) {
-            
         // }
 
         auth()->login($user);
