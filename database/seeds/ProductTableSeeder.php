@@ -19,10 +19,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 156,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 1,
-                'is_afternoon' => 0,
-                'is_cookie' => 0,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 1,
@@ -32,10 +28,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 110,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 1,
-                'is_afternoon' => 0,
-                'is_cookie' => 0,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 2,
@@ -45,10 +37,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 194,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 1,
-                'is_afternoon' => 0,
-                'is_cookie' => 0,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 2,
@@ -58,10 +46,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 188,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 0,
-                'is_afternoon' => 1,
-                'is_cookie' => 0,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 3,
@@ -71,10 +55,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 173,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 0,
-                'is_afternoon' => 0,
-                'is_cookie' => 1,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 3,
@@ -84,10 +64,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 167,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 0,
-                'is_afternoon' => 0,
-                'is_cookie' => 1,
-                'is_flavour' => 0,
             ],
                 [
                 'category_id' => 4,
@@ -97,10 +73,6 @@ class ProductTableSeeder extends Seeder {
                 'price' => 209,
                 'type' => '100ml',
                 'is_active' => 1,
-                'is_morning' => 0,
-                'is_afternoon' => 0,
-                'is_cookie' => 0,
-                'is_flavour' => 1,
             ],
         ]);
     }

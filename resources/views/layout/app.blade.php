@@ -68,6 +68,7 @@ experience.</p> <![endif]-->
                 <script src="{{ asset("assets/scripts/plugins.js")}}"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
                 <script src="{{ asset("assets/scripts/main_1.js")}}"></script>
+                <script src="{{ asset("assets/js/notify.min.js")}}"></script>
 
                 <script>
 
@@ -79,6 +80,7 @@ $.ajaxSetup({
 });
 
 $(document).ready(function () {
+
     $(document).on('click', '.addItemCart', function () {
         var product_id = $(this).data('id');
         $.ajax({
@@ -90,7 +92,10 @@ $(document).ready(function () {
             },
             success: function (res) {
                 $("#cart_count").text(res.cart_count);
-                console.log(res);
+                $.notify(
+                        "Item added to cart",
+                        {className: "success"}
+                );
             }
         });
     });
