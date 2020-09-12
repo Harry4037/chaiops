@@ -20,7 +20,7 @@ Route::get('/store', 'HomeController@storePage')->name('site.store');
 Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');
 
-Route::post('/checkout', 'CartController@checkout');
+Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');

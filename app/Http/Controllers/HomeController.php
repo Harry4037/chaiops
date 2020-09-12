@@ -65,9 +65,13 @@ class HomeController extends Controller {
     }
 
     public function cartPage() {
-        $cartItems = Cart::with('product')->where(["session_id" => session()->getId()])->get();
-        
-        return view('home.cart',[
+        if (auth()->check()) {
+            $cartItems = Cart::with('product')->where(["user_id" => auth()->user()->id])->get();
+        } else {
+            $cartItems = Cart::with('product')->where(["session_id" => session()->getId()])->get();
+        }
+
+        return view('home.cart', [
             "cartItems" => $cartItems
         ]);
     }

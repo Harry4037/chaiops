@@ -97,10 +97,10 @@
                     </div>
                 </div>
             </div>
-            @if(auth()->check() and $total != 0)
+            @if(auth()->check())
             <div class=mail-cart>
                 <h3><span>your</span> details</h3>
-                <form data-parsley-validate class="formcontact row" method="post" action="/checkout" id=orderfrm>
+                <form data-parsley-validate class="formcontact row" method="post" action="{{route('site.checkout')}}" id=orderfrm>
                     {{ csrf_field() }}
                     <div class=form-group> <input type=text class=form-control name=name placeholder=Name
                                                   @if(auth()->check()) value="{{ auth()->user()->name }}" @endif required

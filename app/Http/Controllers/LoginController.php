@@ -58,6 +58,7 @@ class LoginController extends Controller {
         }
 
         if (Auth::attempt($credentials)) {
+            Cart::where("session_id", session()->getId())->update(["user_id" => auth()->user()->id]);
             // Authentication passed...        
             return redirect()->route("site.index");
         }
