@@ -66,13 +66,13 @@
                             <h6>{{ $cartItem->product->name }}</h6>
                             <div class="productQuantity">
                                 <input type="button" value="-" class="minus" data-id="{{$cartItem->product->id}}">
-                                <input type="number" name="quantity" value="{{$cartItem->quantity}}" style="width: 30%;" disabled>
+                                <input type="number" name="quantity" value="{{$cartItem->quantity}}" style="width: 40%;" disabled>
                                 <input type="button" value="+" class="plus" data-id="{{$cartItem->product->id}}">
                             </div>
                         </div>
                     </div>
                     <div class="item-price">
-                        <span>{{$cartItem->product->price * $cartItem->quantity}}</span>
+                        <span>₹{{$cartItem->product->price * $cartItem->quantity}}</span>
                     </div>
 
                     <a href="#" class="remove-from-cart removeProduct" data-id="{{$cartItem->product->id}}">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class=item-price> 
-                        <span id=carttoutal>{{$total}}</span> 
+                        <span id=carttoutal>₹{{$total}}</span> 
                     </div>
                 </div>
             </div>
@@ -145,32 +145,28 @@
     $(document).ready(function () {
 
         $(document).on("click", ".plus", function () {
-            var product_id = $(this).data("id");
+            var _this = $(this);
+            var product_id = _this.data("id");
             $.ajax({
                 url: _baseUrl + '/increase-cart-quantity',
                 type: 'post',
                 data: {product_id: product_id},
-                beforeSend: function () {
-                    //                $(".overlay").show();
-                },
                 success: function (res) {
-                    location.reload();
-                    console.log(res);
+                    _this.prev().val(res.product_count);
+                    $("#carttoutal").html(res.total);
                 }
             });
         });
         $(document).on("click", ".minus", function () {
-            var product_id = $(this).data("id");
+            var _this = $(this);
+            var product_id = _this.data("id");
             $.ajax({
                 url: _baseUrl + '/decrease-cart-quantity',
                 type: 'post',
                 data: {product_id: product_id},
-                beforeSend: function () {
-                    //                $(".overlay").show();
-                },
                 success: function (res) {
-                    location.reload();
-                    console.log(res);
+                    _this.next().val(res.product_count);
+                    $("#carttoutal").html(res.total);
                 }
             });
         });
@@ -186,8 +182,7 @@
                         //                $(".overlay").show();
                     },
                     success: function (res) {
-                        location.reload();
-                        console.log(res);
+                        
                     }
                 });
             }
