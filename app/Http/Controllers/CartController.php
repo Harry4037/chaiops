@@ -156,7 +156,7 @@ class CartController extends Controller {
                 $order->name = $request->name;
                 $order->mobile_number = $user->phone;
                 $order->status = 1;
-                $order->payment_text = "PENDING";
+                $order->payment_text = "CONFIRMED";
                 $order->transaction_id = NULL;
                 if ($order->save()) {
                     foreach ($check_product as $cartItem) {

@@ -114,4 +114,15 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
 
 });
 
+    // Order Routes
+    Route::prefix('order')->group(function() {
+      Route::get('/', 'OrderController@index')->name('admin.order.index');
+      Route::get('/list', 'OrderController@orderList')->name('admin.order.list');
+      Route::get('/list/{invoice_id}/{mobile}/{p_type}/{p_status}/{o_status}', 'OrderController@orderList')->name('admin.order.list-params');
+      Route::get('/view/{order}', 'OrderController@orderView')->name('admin.order.view');
+      Route::post('/update-status', 'OrderController@acceptStatus')->name('admin.order.update-status');
+      Route::post('/complete', 'OrderController@markComplete')->name('admin.order.mark-complete');
+      Route::post('/cancel', 'OrderController@cancelOrder')->name('admin.order.cancel');
+  });
+
 });
