@@ -45,7 +45,7 @@
                             <button class="tablinks" onclick="openCity('Account_Details')">Account Details</button>
                         </li>
                         <li>
-                            <button class="tablinks" onclick="openCity('Logout')">Logout</button>
+                   <a href="{{route('logout')}}">Logout</a>
                         </li>
                     </ul>
 
