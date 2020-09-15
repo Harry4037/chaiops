@@ -66,7 +66,7 @@
                             <div class="cuisine-detail">{{$product->description}}</div>
                         </div>
                         <div class="card-right">
-                            <div class="cuisine-price">${{$product->price}}</div>
+                            <div class="cuisine-price">₹{{$product->price}}</div>
                             <!--                            <div class="cuisine-heart">{{$product->type}}</div>-->
                         </div>
                         <div class="menu-btn-holder clearfix">
@@ -369,7 +369,7 @@
                         <img src="{{ asset("assets/images/blog-list/blog-img2.jpg")}}" alt="product item">
                     </div>
                     <div class="product-detail">
-                        <div class="product-rate">{{$product->price}}</div>
+                        <div class="product-rate">₹{{$product->price}}</div>
                         <h3>{{$product->name}}</h3>
                         <p>{{$product->description}}</p>
                         <a href="javaScript:void(0);" style="display: inline-block;

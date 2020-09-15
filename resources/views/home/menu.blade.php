@@ -42,7 +42,7 @@
                                 <div class="cuisine-detail">{{ $product->description }}</div>
                             </div>
                             <div class="card-right">
-                                <div class="cuisine-price">${{ $product->price }}</div>
+                                <div class="cuisine-price">₹{{ $product->price }}</div>
                                 <div class="cuisine-heart">{{ $product->type }}</div>
                             </div>
                         </div>
