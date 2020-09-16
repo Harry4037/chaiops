@@ -127,4 +127,15 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
       Route::post('/cancel', 'OrderController@cancelOrder')->name('admin.order.cancel');
   });
 
+    // Store List Routes
+    Route::prefix('store')->group(function() {
+      Route::get('/', 'StoreController@index')->name('admin.store.index');
+      Route::get('/list', 'StoreController@storeList')->name('admin.store.list');
+      Route::match(['get', 'post'], '/add', 'StoreController@storeAdd')->name('admin.store.add');
+      Route::match(['get', 'post'], '/edit/{store}', 'StoreController@storeEdit')->name('admin.store.edit');
+      Route::post('/delete', 'StoreController@storeDelete')->name('admin.store.delete');
+      Route::match(['get', 'post'], '/status', 'StoreController@storeStatus')->name('admin.store.status');
+  
+  });
+
 });

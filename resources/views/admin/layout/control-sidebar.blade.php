@@ -44,6 +44,12 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.store.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                Store Managment
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.franchise.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
                 Franchise Managment
