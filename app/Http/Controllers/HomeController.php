@@ -9,6 +9,9 @@ use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
 use App\Models\Contact;
+use App\Models\Store;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Book;
 use session;
 
 class HomeController extends Controller {
@@ -80,6 +83,13 @@ class HomeController extends Controller {
         return view('home.franchise');
     }
 
+    public function storeList() {
+        $stores = Store::where('is_active',1)->get();
+        return view('home.store-locator', [
+            "stores" => $stores
+        ]);
+    }
+
     public function dashboard() {
         return view('home.dashboard');
     }
@@ -106,6 +116,22 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
+        return view('home.index');
+    }
+
+    public function bookTable(Request $request) {
+        $data['table'] = $request->person;
+        $data['occassion'] = $request->occassion;
+        $data['name'] = $request->name;
+        $data['email'] = $request->inputEmail;
+        $data['message'] = $request->contactMessage;
+
+        try {
+
+            Mail::to($user->email)->send(new Book($data));
+        } catch (\Exception $e) {
+            
+        }
         return view('home.index');
     }
 

@@ -32,11 +32,43 @@
 </div>
 </div>
 </header>
-<section class="special-menu">
+<section class="service-section">
     <div class="container">
         <div>
             <div class="section-number">
                 <span>01</span></div>
+            <div class="section-heading">
+                <h1>
+                    <span>About Us</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <img src="{{ asset("assets/images/service-img.jpg")}}" class="service-side-img" alt="">
+            <div class="service-details">
+                <h3>Our Story</h3>
+                <p>Chaiops is entering the food and beverage industry with an aim to keep the authentic taste of ‘Chai’ or ‘Tea’
+                 alive. We have focused on maintaining the original taste of tea while infusing different flavors to keep people
+                  glued to our ancestral beverage. We at Chaiops are coming with an idea to let every tea lover throughout the nation 
+                  taste our tea type. With this beverage serving concept, we want to take people to the retro world of ‘Guram Chai Ki Pyali’ 
+                  serving the best-brewed tea with a line of lip-smacking beverages to enhance your tea time experience with us. No matter you want
+                   to have a Kadak Chai after your hectic con-calls or relish a cup of elaichi Chai on a romantic date with the love of your life,
+                    we at Chaiops have made arrangements to make your tea-time truly valuable. Having so many international brands in the market 
+                    has made the present generation untie the strings with an ancient and heritage-rich drink like Chai. And our motive of bringing 
+                    Chaiops is to refuel the eminence of connecting to the roots of our culture and values over again. Through Chaiops, we are coming 
+                    with tea flavors, which are a perfect blend of authentic taste with a tinge of modern flavors. Be it sipping a half-cutting chai 
+                    with crispy samosa or diving deep into the goodness of honey-flavored tea; we have a series of tea flavors to entitle you as yet 
+                    another ‘tea-lover’ of your group. To add more to the experience of having your favorite tea, we have crafted the Chaiops outlets
+                     with unique infrastructure. We’ll soon announce the list of cities where we have arrived with our unique taste of tea.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section class="special-menu">
+    <div class="container">
+        <div>
+            <div class="section-number">
+                <span>02</span></div>
             <div class="section-heading">
                 <h1>
                     <span>Our Special</span></h1>
@@ -80,51 +112,26 @@
         </div>
         <div class="order-types-available row">
             <div class="row">
+            @if($categories)
+            @for ($i = 0; $i < 3; $i++)
                 <div class="order-type-wrapper">
-                    <div class="order-type type-one">
+                    <div class="order-type @if($i == 0)type-one @elseif($i == 1)type-two @else type-three @endif">
                         <figure class="clearfix">
                             <div class="img-holder">
-                                <img src="/assets/images/order-type1.png" alt="">
+                                <img src="{{ $categories[$i]->image_name }}" alt="">
                             </div>
                             <figcaption>
                                 <h3>
-                                    <span>Strong</span>
-                                    afternoon</h3>
-                                <a class="button-primary btn" href="#">View More</a>
+                                    <span>{{ ucfirst(strtolower($categories[$i]->description)) }}</span>
+                                    </h3>
+                                <a class="button-primary btn" href="{{route('site.menu')}}">View More</a>
                             </figcaption>
                         </figure>
                     </div>
                 </div>
-                <div class="order-type-wrapper">
-                    <div class="order-type type-two">
-                        <figure>
-                            <div class="img-holder">
-                                <img src="/assets/images/order-type2.png" alt="">
-                            </div>
-                            <figcaption>
-                                <h3>
-                                    <span>Cookie</span>
-                                    & more</h3>
-                                <a class="button-primary btn" href="#">View More</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="order-type-wrapper">
-                    <div class="order-type type-three">
-                        <figure>
-                            <div class="img-holder">
-                                <img src="/assets/images/order-type3.png" alt="">
-                            </div>
-                            <figcaption>
-                                <h3>
-                                    <span>Special</span>
-                                    flavors</h                                                                                                                                                                                                        3>
-                                    <a class="button-primary btn" href="#">View More</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
+                @endfor
+                @endif
+       
             </div>
         </div>
         <div class="book-order row">
@@ -159,71 +166,13 @@
         </div>
     </div>
 </section>
-<section class="service-section">
-    <div class="container">
-        <div>
-            <div class="section-number">
-                <span>03</span></div>
-            <div class="section-heading">
-                <h1>
-                    <span>Our Special</span></h1>
-                <h2>Services</h2>
-            </div>
-        </div>
-        <div class="row">
-            <img src="{{ asset("assets/images/service-img.jpg")}}" class="service-side-img" alt="">
-            <div class="service-details">
-                <h3>Coffee and You</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt voluptatum
-                    iusto aspernatur. Odio dignissimos facere ducimus id quo amet similique
-                    suscipit, asperiores eveniet quis vero beatae nobis veritatis ab ipsum!</p>
-                <div class="row">
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 01</span></a>
-                    </div>
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 02</span></a>
-                    </div>
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 03</span></a>
-                    </div>
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 04</span></a>
-                    </div>
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 05</span></a>
-                    </div>
-                    <div class="service-wrapper">
-                        <a href="#" class="service-item">
-                            <span>Service 06</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="midpage-banner2 banner-section">
-    <div class="container">
-        <h3>A morning without
-            <span>Coffee
-            </span>
-            is like sleep</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nam,
-            voluptatibus amet eius. Aperiam voluptate hic fugiat repudiandae, aliquid culpa
-            error doloribus necessitatibus quod, iste quas est sint corporis ipsa!</p>
-        <a href="#" class="button-type-three">Know More</a>
-    </div>
-</section>
+
+
 <section class="table-book">
     <div class="container">
         <div>
             <div class="section-number">
-                <span>05</span></div>
+                <span>03</span></div>
             <div class="section-heading">
                 <h1>
                     <span>Book your</span></h1>
@@ -235,9 +184,10 @@
                 <img src="{{ asset("assets/images/book-table-img.jpg")}}" alt="">
             </div>
             <form
-                id="reservation-form"
+                id="reservaion-form"
                 class="clearfix"
-                data-parsley-validate="data-parsley-validate">
+                data-parsley-validate="data-parsley-validate" action="{{route('site.book.form')}}" method="post">
+                {{ csrf_field() }}
                 <h3>Online
                     <span>Reservation Form</span></h3>
                 <div class="row">
@@ -312,34 +262,12 @@
         </div>
     </div>
 </section>
-<section class="banner-section midpage-banner3">
-    <div class="container">
-        <div class="row">
-            <figure class="offer-detail">
-                <img src="{{ asset("assets/images/percent-off.png")}}" alt="offer image">
-                <figcaption>
-                    <p>On all flavors</p>
-                    <h3>Friday Special</h3>
-                    <p>Offer valid only on Fridays from 1st July to 30th August 2015</p>
-                </figcaption>
-            </figure>
-            <div class="coupon-code">
-                <div class="code-wrapper">
-                    <a class="coupon button-primary type2" href="#">
-                        <img src="{{ asset("assets/images/qr-code.jpg")}}" alt="qr code">
-                        <span>FS21321sdfsdfer1</span>
-                    </a>
-                </div>
-                <!-- <img src="/assets/images/coupon.jpg" alt="coupon image"> -->
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="online-store">
     <div class="container">
         <div>
             <div class="section-number">
-                <span>06</span></div>
+                <span>04</span></div>
             <div class="section-heading">
                 <h1>
                     <span>Our Online</span></h1>
@@ -393,7 +321,7 @@
     <div class="container">
         <div>
             <div class="section-number">
-                <span>07</span></div>
+                <span>05</span></div>
             <div class="section-heading with-gray">
                 <h1>
                     <span>Our Happy</span></h1>
@@ -481,219 +409,7 @@
         </figure>
     </div>
 </section>
-<section class="events-slide">
-    <div class="container">
-        <div>
-            <div class="section-number">
-                <span>08</span></div>
-            <div class="section-heading">
-                <h1>
-                    <span>View our</span></h1>
-                <h2>Events</h2>
-            </div>
-        </div>
-        <div class="event-container" id="event-owl">
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/31">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/11/30">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/11/1">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here 5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/30">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/29">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="{{ asset("assets/images/star-fav.png")}}" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="{{ asset("assets/images/event-img.jpg")}}" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui
-                        quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto
-                        in aut reiciendis, provident, deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam
-                        exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita
-                        fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/28">
-                        <div class="time-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="time-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
     <div class="container clearfix">
         <div class="banner4-img-holder">
@@ -720,7 +436,7 @@
     <div class="container">
         <div>
             <div class="section-number">
-                <span>09</span></div>
+                <span>06</span></div>
             <div class="section-heading">
                 <h1>
                     <span>Contact</span></h1>

@@ -4,7 +4,7 @@
 <div class="banner clearfix">
     <div class=banner-img> <img src="{{ asset("assets/images/cup.png") }}" alt=image> </div>
     <div class=banner-text>
-        <h2>Our special & exclusive <span>product</span></h2>
+        <h2>Our special & exclusive <span>Cart</span></h2>
     </div>
 </div>
 </div>

@@ -19,12 +19,14 @@ Route::get('/about', 'HomeController@aboutPage')->name('site.about');
 Route::get('/store', 'HomeController@storePage')->name('site.store');
 Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');
+Route::get('/store', 'HomeController@storeList')->name('site.store');
 
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
 Route::post('/franchise', 'HomeController@franchiseSubmit')->name('site.franchise.form');
+Route::post('/book', 'HomeController@bookTable')->name('site.book.form');
 
 
 Route::get('/signin', 'LoginController@signin')->name('site.login');
