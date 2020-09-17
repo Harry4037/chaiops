@@ -15,7 +15,7 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('type', ["media", "video"]);
+            $table->enum('type', ["blog", "video"]);
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('img')->nullable();

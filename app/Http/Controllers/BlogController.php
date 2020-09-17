@@ -10,7 +10,9 @@ use App\Models\Blog;
 class BlogController extends Controller {
 
     public function blog() {
-        $data = Blog::paginate(5);
+        $data['blog'] = Blog::where('type','blog')->get();
+        $data['video'] = Blog::where('type','video')->get();
+   
         return view('home.blog', compact('data'));
     }
 

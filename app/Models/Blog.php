@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    public function getImageNameAttribute($value) {
+    public function getImgAttribute($value) {
         return $value ? asset('storage/blog/' . $value) : "";
     }
 }

@@ -1,6 +1,26 @@
 <div class="box-body">
     <div class="form-group">
-        <label class="col-md-3 col-form-label">Select Image @if(!isset($blog))<span class="error">*</span>@endif</label>
+        <label class="col-md-3 col-form-label">Category <span class="error">*</span></label>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+        @if(isset($blog))
+            <select class="form-control" required id="blog_type" name="blog_type">
+                <option value="">Choose option</option>
+                <option value="blog" @if($blog->type == "blog"){{'selected'}}@endif>Blog</option>
+                <option value="video" @if($blog->type == "video"){{'selected'}}@endif>video</option>
+           
+            </select>
+            @else
+            <select class="form-control" required id="blog_type" name="blog_type">
+                <option value="">Choose option</option>
+                <option value="blog">Blog</option>
+                <option value="video">Video</option>
+  
+            </select>
+            @endif
+        </div>
+    </div>    
+    <div class="form-group">
+        <label class="col-md-3 col-form-label">Select Image</label>
         <div class="col-md-6 col-sm-6 col-xs-6">
             <input type="file" class="form-control" name="icon" id="icon">
         </div>
@@ -20,7 +40,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-3 col-form-label">Description <span class="error">*</span></label>
+        <label class="col-md-3 col-form-label">Description Or Youtube Link(Video)<span class="error">*</span></label>
         <div class="col-md-6 col-sm-8 col-xs-8">
             <textarea class="form-control" name="blog_description" id="blog_description">@if(isset($blog)){{$blog->description}}@endif</textarea>
         </div>

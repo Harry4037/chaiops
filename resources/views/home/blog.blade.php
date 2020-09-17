@@ -1,6 +1,20 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+        ol, ul {
+   margin-top: 30px;  
+}
+.blog-img {
+    height: 250px !important;
+}
+@media screen and (min-width: 992px){
+.grid-item {
+    width: 33%;
+  
+}}
+     </style>
+
 <div class="banner clearfix">
     <div class="banner-img">
         <img src="{{ asset("assets/images/blogBannerImgs/banner-img1.png") }}" alt="">
@@ -22,14 +36,18 @@
         <span class="icon-dribble"></span></a>
 </div>
 </header>
-<section class="blog-list-sectn">
+<section class="blog-list-sectn ">
     <div class="container">
-
-        @if(!empty($data) && $data->count())
-            @foreach($data as $key => $value)
-
+    <ul class="categories row">
+               <li><button class="selected tablinks" onclick="openCity('blog')">Blog</button></li>
+               <li><button class="tablinks" onclick="openCity('video')">Media</button></li>
+            </ul>
+        @if(!empty($data))
+        <div class="container1" id="blog" style="display:block">
+            @foreach($data['blog'] as $key => $value)
+   
                 <div class="blog-item clearfix">
-                    <div class="imgLiquid imgLiquidFill blog-img">
+                    <div class="imgLiquid imgLiquidFill blog-img type1">
                         <img src="{{ $value->img }}" alt="">
                     </div>
                     <div class="blog-excerpt">
@@ -48,18 +66,25 @@
                     </div>
                 </div>
             @endforeach
+</div>
+<div class="container1" id="video" style="display:none">
+            @foreach($data['video'] as $key => $value)
+                <div class="store-product-wrapper grid-item" >
+            <div class=store-product>
+               <iframe width="320" height="245"  src="{{ $value->description }}"></iframe>               
+            </div>
+         </div>
+         @endforeach
+         </div>
         @endif
     </div>
 </section>
-
-<center>
-    {!! $data->links() !!}</center>
 
 <section class="contact-sectn">
     <div class="container">
         <div>
             <div class="section-number">
-                <span>09</span></div>
+                <span>02</span></div>
             <div class="section-heading">
                 <h1>
                     <span>Contact</span></h1>
@@ -83,5 +108,14 @@
         <div id="map-canvas"></div>
     </div>
 </section>
-
+<script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("container1");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(cityName).style.display = "block";  
+      }
+   </script>
 @endsection

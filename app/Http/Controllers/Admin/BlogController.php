@@ -90,6 +90,7 @@ class BlogController extends Controller {
                     $icon_file_name = basename($iconImage);
                     $blog->img = $icon_file_name;
                 }
+                $blog->type = $request->blog_type;
                 $blog->title = $request->blog_name;
                 $blog->description = $request->blog_description;
 
@@ -113,7 +114,7 @@ class BlogController extends Controller {
 
             if ($request->isMethod("post")) {
                 $validator = Validator::make($request->all(), [
-                            'icon' => ['required', 'mimes:jpeg,jpg,png'],
+                            'icon' => ['mimes:jpeg,jpg,png'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.blog.add')->withErrors($validator)->withInput();
@@ -125,7 +126,7 @@ class BlogController extends Controller {
                     $icon_file_name = basename($iconImage);
                     $blog->img = $icon_file_name;
                 }
-
+                $blog->type = $request->blog_type;
                 $blog->title = $request->blog_name;
                 $blog->description = $request->blog_description;
 
