@@ -80,35 +80,27 @@
                      </tr>
                   </thead>
                   <tbody>
+                  @foreach($orders as $i => $order)
+
                      <tr>
-                        <td><a href=#>#3242</a></td>
-                        <td>September 16,2020</td>
-                        <td>Processing</td>
-                        <td>₹4,999.00 for 1 item</td>
-                        <td><button type="button" onclick="openCity('vieworder')" class="btn btn-danger">View</button></td>
+                        <td><a href=#>#{{ $order->id}}</a></td>
+                        <td>{{ $order->created_at}}</td>
+                        <td>@if($order->status == 1 ) Pending @elseif($order->status == 2 ) Confirmed @elseif($order->status == 3 ) Delivered @elseif($order->status == 4 ) Cancelled @else failed @endif</td>
+                        <td>₹{{$order->total_amount}} for {{count($order->orderItem)}} item</td>
+                        <td><button type="button" onclick="openCity('vieworder{{$i}}')" class="btn btn-danger">View</button></td>
                      </tr>
-                     <tr>
-                        <td><a href=#>#3242</a></td>
-                        <td>September 16,2020</td>
-                        <td>Processing</td>
-                        <td>₹4,999.00 for 1 item</td>
-                        <td><button type="button" onclick="openCity('vieworder')"class="btn btn-danger">View</button></td>
-                     </tr>
-                     <tr>
-                        <td><a href=#>#3242</a></td>
-                        <td>September 16,2020</td>
-                        <td>Processing</td>
-                        <td>₹4,999.00 for 1 item</td>
-                        <td><button type="button" onclick="openCity('vieworder')"class="btn btn-danger">View</button></td>
-                     </tr>
+                     @endforeach
+               
+                    
                   </tbody>
                </table>
             </div>
          </div>
-         <div class="container1" id="vieworder" style="display:none">
+         @foreach($orders as $i => $order)
+         <div class="container1" id="vieworder{{$i}}" style="display:none">
             <div class="row">
                <div class="col-lg-12">
-                  <p>Order #3883 was placed on September 16, 2020 and is currently Processing.</p>
+                  <p>Order #{{ $order->id}} was placed on {{ $order->created_at}} and is currently @if($order->status == 1 ) Pending @elseif($order->status == 2 ) Confirmed @elseif($order->status == 3 ) Delivered @elseif($order->status == 4 ) Cancelled @else failed @endif.</p>
                   <h4><strong>Order Details</strong></h4>
                   <table class="table table-striped table-bordered" style>
                      <thead>
@@ -118,40 +110,42 @@
                         </tr>
                      </thead>
                      <tbody>
+                     @foreach( $order->orderItem as $item)
                         <tr>
-                           <td colspan="4">Weekly Strength Training × 1</td>
-                           <td>Rs 4999</td>
+                           <td colspan="4">{{ $item->product_name}} × {{ $item->quantity}}</td>
+                           <td>Rs {{ $item->total_price}}</td>
                         </tr>
+                        @endforeach
                         <tr>
                            <td colspan="4"><strong>Subtotal</strong></td>
-                           <td>Rs 4999</td>
+                           <td>Rs {{ $order->total_amount}}</td>
                         </tr>
                         <tr>
                            <td colspan="4" ><strong>Payment Method</strong></td>
-                           <td>Cash on Delivery</td>
+                           <td>{{ $order->order_type}}</td>
                         </tr>
                         <tr>
                            <td colspan="4" ><strong>Total</strong></td>
-                           <td>Rs 4999</td>
+                           <td>Rs {{ $order->total_amount}}</td>
                         </tr>
                      </tbody>
                   </table>
                    <h4><strong>Billing Details</strong></h4>
                <div class="col-lg-12">
                   <p>
-                     Saurabh Singh<br>
-                     Kanpur Street<br>
-                     Kanpur 209801<br>
-                     Uttar Pradesh<br>
-                     +917084382428<br>
-                     saurabhmitmanipal@gmail.com<br>
+                  {{ $order->name }}<br>
+                  {{ $order->mobile_number}}<br>
+                  {{ $order->address}}<br>
+                     {{ $order->city}}<br>
+                     {{ $order->state}}<br>
+                     {{ $order->pincode }}<br>
+                     {{ auth()->user()->email }}<br>
                   </p>
                </div>
                </div>
-              
             </div>
          </div>
-    
+         @endforeach
          <div class="container1" id="Address" style="display:none">
             <div class="row">
                <div class="col-lg-6">

@@ -95,7 +95,7 @@ class HomeController extends Controller {
 
     public function dashboard(Request $request) {
         if (auth()->check()) {
-        $orders = Order::where('user_id', auth()->user()->id)->where('status', '!=', 0)->latest()->with(['orderItem'])->get();
+        $orders = Order::where('user_id', auth()->user()->id)->latest()->with(['orderItem'])->get();
         return view('home.dashboard', [
             "orders" => $orders
         ]);
