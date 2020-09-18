@@ -157,11 +157,18 @@ class CartController extends Controller {
                 $order->state = $request->state;
                 $order->pincode = $request->pincode;
                 $order->name = $request->name;
-                $order->mobile_number = $user->phone;
+                $order->mobile_number = $user->phone_number;
                 $order->status = 1;
                 $order->payment_text = "CONFIRMED";
                 $order->transaction_id = NULL;
                 if ($order->save()) {
+                    if($user->address == NULL){
+                        $user->address = $request->address;
+                        $user->city = $request->city;
+                        $user->state = $request->state;
+                        $user->pincode = $request->pincode;
+                        $user->save();
+                    }
                     foreach ($check_product as $cartItem) {
                         $orderItem = new OrderItem();
                         $orderItem->order_id = $order->id;

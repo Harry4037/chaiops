@@ -65,7 +65,7 @@
                   <p>Hello {{ auth()->user()->name }} (not {{ auth()->user()->name }}? <a href=#>Log out</a>)</p>
                   <p>From your account dashboard you can view your <a onclick="openCity('Orders')">recent orders</a>, manage your <a onclick="openCity('Address')"> billing address</a>, and  <a onclick="openCity('Account_Details')">edit your  account details.</a></p>
                </div>
-            </div
+            </div>
          </div>
          <div class="container1" id="Orders" style="display:none">
             <div class="table-responsive">
