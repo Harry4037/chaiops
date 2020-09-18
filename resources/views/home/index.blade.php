@@ -162,7 +162,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aliquid
                 aliquam asperiores, saepe alias dignissimos consectetur ea cum sint tenetur
                 magnam. Illo quasi neque cupiditate beatae optio eos iusto, architecto!</p>
-            <a href="#" class="button-type-three">Know More</a>
+            <a href="{{route('site.about')}}" class="button-type-three">Know More</a>
         </div>
     </div>
 </section>

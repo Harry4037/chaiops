@@ -8,10 +8,13 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
+use App\Models\Order;
+use App\Models\User;
 use App\Models\Contact;
 use App\Models\Store;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Book;
+use Validator;
 use session;
 
 class HomeController extends Controller {
@@ -90,8 +93,15 @@ class HomeController extends Controller {
         ]);
     }
 
-    public function dashboard() {
-        return view('home.dashboard');
+    public function dashboard(Request $request) {
+        if (auth()->check()) {
+        $orders = Order::where('user_id', auth()->user()->id)->where('status', '!=', 0)->latest()->with(['orderItem'])->get();
+        return view('home.dashboard', [
+            "orders" => $orders
+        ]);
+        }else{
+            return view('home.index');
+        }
     }
 
     public function franchiseSubmit(Request $request) {
@@ -134,5 +144,36 @@ class HomeController extends Controller {
         }
         return view('home.index');
     }
+    public function addressSubmit(Request $request) {
+
+        if ($request->isMethod("post")) {
+
+            $validator = Validator::make($request->all(), [
+                'address' => ['required'],
+                'city' => ['required'],
+                'state' => ['required'],
+                'pincode' => ['required'],
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+       
+            if (auth()->check()) {
+                $user = User::Where('id', auth()->user()->id)->first();
+                $user->address = $request->address;
+                $user->city = $request->city;
+                $user->state = $request->state;
+                $user->pincode = $request->pincode;
+                if ($user->save()) {
+                    return view('home.dashboard');
+                }
+            } else {
+                return redirect()->route('site.index')->withErrors("Something went be wrong.")->withInput();
+            }
+        }
+
+        return view('home.index');
+    }
+    
 
 }

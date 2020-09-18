@@ -19,6 +19,7 @@ Route::get('/about', 'HomeController@aboutPage')->name('site.about');
 Route::get('/store', 'HomeController@storePage')->name('site.store');
 Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');
+Route::post('/address', 'HomeController@addressSubmit')->name('site.address.form');
 Route::get('/store', 'HomeController@storeList')->name('site.store');
 
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');

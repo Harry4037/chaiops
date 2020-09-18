@@ -153,6 +153,9 @@ class CartController extends Controller {
                 $order->total_amount = max(round($request->total), 0);
                 $order->order_type = "ONLINE";
                 $order->address = $request->address;
+                $order->city = $request->city;
+                $order->state = $request->state;
+                $order->pincode = $request->pincode;
                 $order->name = $request->name;
                 $order->mobile_number = $user->phone;
                 $order->status = 1;

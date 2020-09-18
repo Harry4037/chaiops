@@ -170,4 +170,5 @@ class LoginController extends Controller {
         return view('home.forgot');
     }
 
+   
 }

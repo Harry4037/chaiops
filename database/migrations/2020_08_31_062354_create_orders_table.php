@@ -21,6 +21,9 @@ class CreateOrdersTable extends Migration
             $table->float('total_amount')->default(0);
             $table->enum('order_type', ["COD", "ONLINE"]);
             $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('pincode')->nullable();
             $table->string('name')->nullable();
             $table->string('mobile_number')->nullable();
             $table->tinyInteger('status')->default(1)->comment('0=>Failed,1=>Pending,2=>Confirmed,3=>Delivered,4=>cancelled');
