@@ -252,7 +252,8 @@
                <form
                   id="reservion-form"
                   class="clearfix"
-                  data-parsley-validate="data-parsley-validate">
+                  data-parsley-validate="data-parsley-validate" method="post" action="{{route('site.profile')}}">
+                  {{ csrf_field() }}
                   <div class="row">
                      <div class="form-group ">
                         <label for="name">Display Name</label>
@@ -261,7 +262,7 @@
                            class="form-control"
                            name="name"
                            id="name"
-                           value="Saurabh Singh"
+                           value="{{auth()->user()->name}}"
                            placeholder="Name"
                            required="required">
                      </div>
@@ -272,7 +273,7 @@
                            class="form-control"
                            name="inputEmail"
                            id="inputEmail"
-                           value="abc@gmail.com"
+                           value="{{auth()->user()->email}}"
                            placeholder="Email"
                            required="required">
                      </div>
@@ -281,7 +282,7 @@
                   <div class="row">
                   </div>
                   <button type="submit" class="button-type-three">Save Changes</button>
-                  <div class="ajaxmessage for-reservation hidden"></div>
+                 
                </form>
             </div>
          </div>

@@ -165,14 +165,42 @@ class HomeController extends Controller {
                 $user->state = $request->state;
                 $user->pincode = $request->pincode;
                 if ($user->save()) {
-                    return view('home.dashboard');
+                    return redirect()->route('site.dashboard');
                 }
             } else {
                 return redirect()->route('site.index')->withErrors("Something went be wrong.")->withInput();
             }
         }
 
-        return redirect()->route('site.index');
+        return redirect()->route('site.dashboard');
+    }
+
+    public function profileChange(Request $request) {
+
+        if ($request->isMethod("post")) {
+
+            $validator = Validator::make($request->all(), [
+                'inputEmail' => ['required'],
+                'name' => ['required'],
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+       
+            if (auth()->check()) {
+                $user = User::Where('id', auth()->user()->id)->first();
+                $user->name = $request->name;
+                $user->email = $request->inputEmail;
+               
+                if ($user->save()) {
+                    return redirect()->route('site.dashboard');
+                }
+            } else {
+                return redirect()->route('site.index')->withErrors("Something went be wrong.")->withInput();
+            }
+        }
+
+        return redirect()->route('site.dashboard');
     }
     
 

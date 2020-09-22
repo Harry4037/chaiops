@@ -28,6 +28,7 @@ Route::get('/blog/{id}', 'BlogController@blogDetails');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
 Route::post('/franchise', 'HomeController@franchiseSubmit')->name('site.franchise.form');
 Route::post('/book', 'HomeController@bookTable')->name('site.book.form');
+Route::post('/user-profile', 'HomeController@profileChange')->name('site.profile');
 
 
 Route::get('/signin', 'LoginController@signin')->name('site.login');
