@@ -100,7 +100,7 @@ class HomeController extends Controller {
             "orders" => $orders
         ]);
         }else{
-            return view('home.index');
+            return redirect()->route('site.index');
         }
     }
 
@@ -115,7 +115,7 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
-        return view('home.index');
+        return redirect()->route('site.index');
     }
 
     public function contactSubmit(Request $request) {
@@ -126,7 +126,7 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
-        return view('home.index');
+        return redirect()->route('site.index');
     }
 
     public function bookTable(Request $request) {
@@ -142,7 +142,7 @@ class HomeController extends Controller {
         } catch (\Exception $e) {
             
         }
-        return view('home.index');
+        return redirect()->route('site.index');
     }
     public function addressSubmit(Request $request) {
 
@@ -172,7 +172,7 @@ class HomeController extends Controller {
             }
         }
 
-        return view('home.index');
+        return redirect()->route('site.index');
     }
     
 
