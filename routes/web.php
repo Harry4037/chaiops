@@ -119,6 +119,14 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
 
 });
 
+  // Corporate Routes
+  Route::prefix('corporate')->group(function() {
+    Route::get('/', 'CorporateController@index')->name('admin.corporate.index');
+    Route::get('/list', 'CorporateController@corporateList')->name('admin.corporate.list');
+    Route::get('/view/{corporate}', 'CorporateController@corporateView')->name('admin.corporate.view');
+
+});
+
     // Order Routes
     Route::prefix('order')->group(function() {
       Route::get('/', 'OrderController@index')->name('admin.order.index');
