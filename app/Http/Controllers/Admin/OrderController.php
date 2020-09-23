@@ -59,7 +59,7 @@ class OrderController extends Controller {
             });
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();
-            $orders = $query->get();
+            $orders = $query->latest()->get();
 
             $ordersArray = [];
             foreach ($orders as $k => $order) {

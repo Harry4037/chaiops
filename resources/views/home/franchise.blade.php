@@ -65,22 +65,22 @@
 
                 <div class="row">
                     <div class="form-group ">
-                        <label for="name">Your Name</label>
+                        <label for="name">Your Name*</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Name"
                             required="required">
                     </div>
                     <div class="form-group ">
-                        <label for="inputEmail">Your Email ID</label>
+                        <label for="inputEmail">Your Email ID*</label>
                         <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email"
                             required="required">
                     </div>
                     <div class="form-group ">
-                        <label for="name">Your Phone No</label>
+                        <label for="name">Your Phone No*</label>
                         <input type="phone" class="form-control" name="mob" id="phone" placeholder="Phone"
                             required="required">
                     </div>
                     <div class="form-group ">
-                        <label for="name">Your Location</label>
+                        <label for="name">Your Location*</label>
                         <input type="text" class="form-control" name="location" id="location" placeholder="location"
                             required="required">
                     </div>
@@ -89,7 +89,7 @@
 
                 <div class="row">
                     <div class="form-group ">
-                        <label for="reservationFor">Investment Plan</label>
+                        <label for="reservationFor">Investment Plan*</label>
 
                         <div class="selectbox">
                             <div class="selectbox_toggle">
@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="form-group ">
-                        <label for="name">Your State</label>
+                        <label for="name">Your State*</label>
                         <input type="text" class="form-control" name="state" id="state" placeholder="State"
                             required="required">
                     </div>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label for="contactMessage">Leave a message</label>
+                        <label for="contactMessage">Leave a message*</label>
                         <div>
                             <textarea name="message" class="form-control" id="contactMessage"
                                 placeholder="Write your text" required="required"></textarea>

@@ -58,8 +58,8 @@ small.pull-right {
             <strong>From,</strong>
                 <address>
                     Chaiops Restaurant<br>
-                    xyz,<br>
-                   noida,<br>
+                    noida,<br>
+       
                     up,201301<br>
                  
                     @if(auth()->user()->mobile_number)Phone: {{auth()->user()->mobile_number}}<br>@endif
@@ -71,9 +71,13 @@ small.pull-right {
             <strong>To,</strong>
                 <address>
                     @if($order->name){{$order->name}}<br>@endif
-                    {!! $order->address !!}<br>
+                    {!! $order->address !!},
+                    {{$order->state}},
+                    {{$order->city}},
+                    {{$order->pincode}}<br>
                     Phone: {{$order->mobile_number}}<br>
                     @if($user->email)Email: {{$user->email}}@endif
+                  
                 </address>
             </div>
             <!-- /.col -->
