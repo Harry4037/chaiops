@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
+use App\Models\Corporate;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\Contact;
@@ -119,6 +120,17 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
+        return redirect()->route('site.index');
+    }
+
+    public function corporateSubmit(Request $request) {
+
+        $corporate = new Corporate();
+        $corporate->name = $request->name;
+        $corporate->email = $request->email;
+        $corporate->mob = $request->mob;
+        $corporate->message = $request->message;
+        $corporate->save();
         return redirect()->route('site.index');
     }
 

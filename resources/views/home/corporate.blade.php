@@ -103,7 +103,8 @@ section {
                         <form
                             id="revation-form"
                             class="clearfix"
-                            data-parsley-validate="data-parsley-validate">
+                            data-parsley-validate="data-parsley-validate" action="{{route('site.corporate.form')}}" method="post">
+                            {{ csrf_field() }}
                             <h3>Corporate Form
                         </h3>
 
@@ -123,7 +124,7 @@ section {
                                     <input
                                         type="email"
                                         class="form-control"
-                                        name="inputEmail"
+                                        name="email"
                                         id="inputEmail"
                                         placeholder="Email"
                                         required="required">
@@ -133,7 +134,7 @@ section {
                                     <input
                                         type="phone"
                                         class="form-control"
-                                        name="phone"
+                                        name="mob"
                                         id="phone"
                                         placeholder="Phone"
                                         required="required">
@@ -147,7 +148,7 @@ section {
                                 <label for="contactMessage">Leave a message</label>
                                 <div>
                                     <textarea
-                                        name="contactMessage"
+                                        name="message"
                                         class="form-control"
                                         id="contactMessage"
                                         placeholder="Write your text"
