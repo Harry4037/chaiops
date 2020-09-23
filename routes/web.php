@@ -26,6 +26,7 @@ Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
+Route::get('/corporate', 'HomeController@corporate')->name('site.corporate');
 Route::post('/franchise', 'HomeController@franchiseSubmit')->name('site.franchise.form');
 Route::post('/book', 'HomeController@bookTable')->name('site.book.form');
 Route::post('/user-profile', 'HomeController@profileChange')->name('site.profile');

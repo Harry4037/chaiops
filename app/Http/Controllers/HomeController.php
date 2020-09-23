@@ -86,6 +86,10 @@ class HomeController extends Controller {
         return view('home.franchise');
     }
 
+    public function corporate() {
+        return view('home.corporate');
+    }    
+
     public function storeList() {
         $stores = Store::where('is_active',1)->get();
         return view('home.store-locator', [

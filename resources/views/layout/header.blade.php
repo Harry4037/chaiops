@@ -32,6 +32,11 @@
                          @endif> 
                          <a href="{{route('site.franchise')}}">Franchise</a>
                     </li>
+                    <li @if(in_array(Route::currentRouteName(), ['site.corporate']))
+                         {{ "class=active" }}
+                         @endif> 
+                         <a href="{{route('site.corporate')}}">Corporate</a>
+                    </li>
                     <li @if(in_array(Route::currentRouteName(), ['site.blog']))
                          {{ "class=active" }}
                          @endif>
