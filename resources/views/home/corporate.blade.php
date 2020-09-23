@@ -1,7 +1,33 @@
 @extends('layout.app')
 
 @section('content')
-<section class="special-menu">
+<style>
+section {
+    padding-bottom: 1pt;
+}
+</style>
+<div class="banner clearfix">
+    <div class="banner-img">
+        <img src="{{ asset("assets/images/blogBannerImgs/banner-img1.png") }}" alt="">
+    </div>
+    <div class="banner-text">
+        <h2>Our special & exclusive
+            <span>Corporate</span></h2>
+    </div>
+</div>
+</div>
+<div class="social-icons">
+    <a href="#">
+        <span class="icon-facebook"></span></a>
+    <a href="#">
+        <span class="icon-twitter"></span></a>
+    <a href="#">
+        <span class="icon-googleplus"></span></a>
+    <a href="#">
+        <span class="icon-dribble"></span></a>
+</div>
+</header>
+<section class="blog-list-sectn">
    <div class="container">
        <div class="order-types-available row">
                         <div class="row">
@@ -51,7 +77,7 @@
                         </div>
                     </div>
             </div>
-            </div>
+           
                  </section>
 
 
@@ -75,7 +101,7 @@
                         </div>
                         </div>
                         <form
-                            id="reservation-form"
+                            id="revation-form"
                             class="clearfix"
                             data-parsley-validate="data-parsley-validate">
                             <h3>Corporate Form
@@ -134,7 +160,7 @@
                         </form>
                     </div>
                 </div>
-                </div>
+              
             </section>
 
 @endsection
