@@ -89,7 +89,9 @@
                     <div class=item-content>
                         <div>
                             <h4>your total order value is</h4>
-                            <p> After added all tax</p>
+                      
+                            <p> After added tax (₹{{($total * 18)/100}})</p>
+                            <?php $total = $total + ($total * 18)/100; ?>
                         </div>
                     </div>
                     <div class=item-price> 
@@ -163,6 +165,7 @@
                 success: function (res) {
                     _this.prev().val(res.product_count);
                     $("#carttoutal").html(res.total);
+                    location.reload();
                 }
             });
         });
@@ -176,6 +179,7 @@
                 success: function (res) {
                     _this.next().val(res.product_count);
                     $("#carttoutal").html(res.total);
+                    location.reload();
                 }
             });
         });
@@ -191,7 +195,7 @@
                         //                $(".overlay").show();
                     },
                     success: function (res) {
-                        
+                        location.reload();                        
                     }
                 });
             }
