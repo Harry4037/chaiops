@@ -16,55 +16,55 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.user.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                User Managment
+                User Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.category.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Category Managment
+                Category Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.product.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Product Managment
+                Product Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.blog.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Blog Managment
+                Blog Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.contact.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Contact Form Managment
+                Contact Form Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.store.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Store Managment
+                Store Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.franchise.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Franchise Managment
+                Franchise Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.corporate.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Corporate Managment
+                Corporate Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.order.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                Order Managment
+                Order Management
             </a>
         </li>
     </ul>

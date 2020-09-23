@@ -134,15 +134,7 @@
        
             </div>
         </div>
-        <div class="book-order row">
-            <div class="book-details">
-                <h3>Book your coffee now</h3>
-                <h5>Call NOW @ our toll free number</h5>
-            </div>
-            <div class="order-number">
-                <h2>+0987654321</h2>
-            </div>
-        </div>
+    
     </div>
 </section>
 <section class="midpage-banner1 banner-section">
@@ -263,60 +255,6 @@
     </div>
 </section>
 
-<section class="online-store">
-    <div class="container">
-        <div>
-            <div class="section-number">
-                <span>04</span></div>
-            <div class="section-heading">
-                <h1>
-                    <span>Our Online</span></h1>
-                <h2>Store</h2>
-            </div>
-        </div>
-        <ul class="categories row">
-            <li>
-                <button data-filter="*" class="selected">All</button>
-            </li>
-            @if($categories)
-            @foreach($categories as $i => $category)
-            <li>
-                <button data-filter=".type{{$i}}" >{{ $category->description }}</button>
-            </li>
-            @endforeach
-            @endif
-        </ul>
-        <div class="store-product-list row">
-            @if($categories)
-            @foreach($categories as $j => $category)
-            @if($category->product)
-            @foreach($category->product as $product)
-            <div class="store-product-wrapper grid-item type{{$j}}">
-                <div class="store-product">
-                    <div class="imgLiquidFill imgLiquid item-image">
-                        <img src="{{ asset("assets/images/blog-list/blog-img2.jpg")}}" alt="product item">
-                    </div>
-                    <div class="product-detail">
-                        <div class="product-rate">₹{{$product->price}}</div>
-                        <h3>{{$product->name}}</h3>
-                        <p>{{$product->description}}</p>
-                        <a href="javaScript:void(0);" style="display: inline-block;
-                           margin: 10px 0px 0px 118px;
-                           padding: 10px 5px;
-                           width: 75pt;
-                           text-align: center;
-                           border: 1px solid #ffffff;
-                           color: #e6a391;" class="addItemCart" data-id="{{$product->id}}">Add Cart</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @endif
-            @endforeach
-            @endif
-        </div>
-    </div>
-</section>
 <section class="testimonial-sectn">
     <div class="container">
         <div>

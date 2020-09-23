@@ -160,6 +160,7 @@ class ProductController extends Controller {
                 $product->category_id = $request->category_id;
                 $product->price = $request->product_price;
                 $product->img = $request->product_img;
+                $product->is_active = 1;
                 $product->type = $request->product_type;
                 $product->created_by = auth()->user()->id;
                 $product->updated_by = auth()->user()->id;

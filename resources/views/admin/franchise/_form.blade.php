@@ -39,7 +39,7 @@
     <div class="form-group">
         <label class="col-md-3 col-form-label">Message</label>
         <div class="col-md-6 col-sm-8 col-xs-8">
-        <textarea class="form-control" >@if(isset($franchise)){{$franchise->message}}@endif</textarea>       
+        <p>@if(isset($franchise)){{$franchise->message}}@endif</p>       
         </div>
     </div>
  

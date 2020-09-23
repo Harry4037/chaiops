@@ -35,7 +35,14 @@ class FranchiseController extends Controller {
 
             $query = Franchise::query();
             if ($searchKeyword) {
-                $query->where('name', 'LIKE', "%$searchKeyword%");
+                $query->where(function($q) use($searchKeyword) {
+                    $q->where("name", "LIKE", "%$searchKeyword%")
+                            ->orWhere("email", "LIKE", "%$searchKeyword%")
+                            ->orWhere("mob", "LIKE", "%$searchKeyword%")
+                            ->orWhere("location", "LIKE", "%$searchKeyword%")
+                            ->orWhere("state", "LIKE", "%$searchKeyword%")
+                            ->orWhere("plan", "LIKE", "%$searchKeyword%");
+                });
             }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();

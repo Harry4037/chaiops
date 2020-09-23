@@ -24,17 +24,17 @@
 </div>
 </div>
 <div class=social-icons>
-    <a href=#>
+    <a href="https://www.facebook.com/officialchaiops/">
         <span class=icon-facebook></span>
     </a>
-    <a href=#>
+    <a href="https://twitter.com/officialchaiops/">
         <span class=icon-twitter></span>
     </a>
-    <a href=#>
+    <a href="https://www.linkedin.com/company/chaiops/">
         <span class=icon-googleplus></span>
     </a>
-    <a href=#>
-        <span class=icon-dribble></span>
+    <a href="https://www.instagram.com/officialchaiops/">
+        <span class=icon-insta></span>
     </a>
 </div>
 </header>

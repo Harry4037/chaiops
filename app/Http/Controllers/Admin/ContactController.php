@@ -35,7 +35,11 @@ class ContactController extends Controller {
 
             $query =Contact::query();
             if ($searchKeyword) {
-                $query->where('name', 'LIKE', "%$searchKeyword%");
+                $query->where(function($q) use($searchKeyword) {
+                    $q->where("subject", "LIKE", "%$searchKeyword%")
+                           
+                            ->orWhere("email", "LIKE", "%$searchKeyword%");
+                });
             }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();

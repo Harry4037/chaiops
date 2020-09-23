@@ -35,7 +35,7 @@ class BlogController extends Controller {
 
             $query = Blog::query();
             if ($searchKeyword) {
-                $query->where('description', 'LIKE', "%$searchKeyword%");
+                $query->where('title', 'LIKE', "%$searchKeyword%");
             }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();

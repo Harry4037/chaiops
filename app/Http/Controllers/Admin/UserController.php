@@ -32,13 +32,14 @@ class UserController extends Controller {
             $searchKeyword = $request->get('search')['value'];
 
             $query = User::query();
-//            if ($searchKeyword) {
-//                $query->where(function($q) use($searchKeyword) {
-//                    $q->where("name", "LIKE", "%$searchKeyword%")
-//                            ->orWhere("email", "LIKE", "%$searchKeyword%")
-//                            ->orWhere("mobile_number", "LIKE", "%$searchKeyword%");
-//                });
-//            }
+            $query->where('user_role_id',3);
+           if ($searchKeyword) {
+               $query->where(function($q) use($searchKeyword) {
+                   $q->where("name", "LIKE", "%$searchKeyword%")
+                           ->orWhere("email", "LIKE", "%$searchKeyword%")
+                           ->orWhere("phone_number", "LIKE", "%$searchKeyword%");
+               });
+           }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();
             $users = $query->take($limit)->offset($offset)->latest()->get();
