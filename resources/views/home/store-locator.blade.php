@@ -2,12 +2,7 @@
 
 @section('content')
 <style>
-    .store-product-wrapper .product-rate {
-    height: 54px !important;
-    width: 90% !important;
-    border-radius: 10px !important;
-
-    }
+  
     .add-buy a {
     width: 100% !important;
 }
@@ -33,57 +28,88 @@
         <span class="icon-dribble"></span></a>
 </div>
 </header>
-<section class=productPage>
-   <div class=container>
-      <div class="store-product-list row">
-          @if($stores)
+<div class="container">
+         <div class="store-product-list row">
+		  @if($stores)
           @foreach( $stores as $store)
-         <div class="store-product-wrapper grid-item ">
-            <div class=store-product>
-               <div class="imgLiquidFill imgLiquid item-image"> <img src="{{ $store->image }}" alt="product item"> </div>
-               <div class=product-detail>
-                  <div class=product-rate>{{ $store->name }}</div>
-                  <h3>{{ $store->address }}</h3>
-                  <p>{{ $store->timing }}</p>
-                  <p><i class="fa fa-envelope" aria-hidden="true"></i>{{ $store->email }}</p>
-                  <p><i class="fa fa-phone" aria-hidden="true"></i>{{ $store->phone }}</p>
+            <div class="col-md-4">
+               <div class=store-product>
+                  <div>
+                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                           <li data-target="#myCarousel" data-slide-to="1"></li>
+                           <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                           <div class="item active">
+                              <img src="{{ $store->image }}" alt="Los Angeles" style="width:100%;">
+                           </div>
+                           <div class="item">
+                              <img src="{{ $store->image }}" alt="Chicago" style="width:100%;">
+                           </div>
+                        </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
+                     </div>
+                  </div>
+				  <div class="store-heading"><h3 style="text-align: center;">{{ $store->name }}</h3></div>
+                  <div class=product-detail>
+                    
+                     <div class="container">
+                        <div class="col-md-1">
+                           <p>ADDRESS</p>
+                        </div>
+                        <div class="col-md-3">
+                           <p style="margin-right:50px">{{ $store->address }}
+                           </p>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="container">
+                        <div class="col-md-1">
+                           <p>TIMINGS</p>
+                        </div>
+                        <div class="col-md-3">
+                           <p style="margin-right:50px">{{ $store->timing }}
+                           </p>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="container">
+                        <div class="col-md-1">
+                           <p>EMAIL US</p>
+                        </div>
+                        <div class="col-md-3">
+                           <p style="margin-right:50px">{{ $store->email }}</p>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="container">
+                        <div class="col-md-1">
+                           <p>CALL US</p>
+                        </div>
+                        <div class="col-md-3">
+                           <p style="margin-right:50px">{{ $store->phone }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix add-buy"> <a href="{{ $store->direction }}" class=buy-btn>GET DIRECTIONS</a> </div>
                </div>
-               <div class="clearfix add-buy"><a href="{{ $store->direction }}" class=buy-btn>Get Direction</a> </div>
             </div>
-         </div>
          @endforeach
          @endif
+         </div>
       </div>
-   </div>
-</section>
 
-<section class="contact-sectn">
-    <div class="container">
-        <div>
-            <div class="section-number">
-                <span>09</span></div>
-            <div class="section-heading">
-                <h1>
-                    <span>Contact</span></h1>
-                <h2>With us</h2>
-            </div>
-        </div>
-    </div>
-    <div class="contact-us">
-        <div class="add">
-            <div class="add-inner-wrapper">
-                <h2>
-                    <img src="{{ asset("assets/images/contact-img.png") }}" alt="">
-                    <span>Coffee and you</span>
-                </h2>
-                <h3>
-                    <span>44</span>
-                    Park Street</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-        <div id="map-canvas"></div>
-    </div>
-</section>
 
 @endsection
