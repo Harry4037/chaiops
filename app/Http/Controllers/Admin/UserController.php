@@ -47,13 +47,16 @@ class UserController extends Controller {
             $usersArray = [];
             foreach ($users as $k => $user) {
                 $usersArray[$k]['name'] = $user->name;
+                $usersArray[$k]['mobile'] = $user->phone_number;
+                $usersArray[$k]['email'] = $user->email;
+                $usersArray[$k]['address'] = $user->address.','. $user->city.','. $user->state.','. $user->pincode;
                 $usersArray[$k]['action'] = "";
                 $checked_status = $user->is_block_admin ? "checked" : '';
                 $usersArray[$k]['status'] = "<label class='c-switch c-switch-label c-switch-pill c-switch-success'>
                         <input class='c-switch-input update_status' type='checkbox' id=" . $user->id . " data-status=" . $user->is_block_admin . " " . $checked_status . ">
                         <span class='c-switch-slider' data-checked='✓' data-unchecked='✕'></span>
                       </label>";
-                $usersArray[$k]['action'] = '<a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></a>&nbsp;';
+              
             }
 
             $data['data'] = $usersArray;

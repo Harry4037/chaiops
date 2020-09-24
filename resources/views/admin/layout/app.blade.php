@@ -8,7 +8,7 @@
         <link href="{{ asset("css/free.min.css") }}" rel="stylesheet">
         <!-- Main styles for this application-->
         <link href="{{ asset("css/style.css") }}" rel="stylesheet">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <link href="{{ asset("css/coreui-chartjs.css") }}" rel="stylesheet">
         @isset($css)
         @foreach($css as $cs)
@@ -55,7 +55,7 @@
             <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" ></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" ></script>
-            <script src="{{ asset("js/bootbox.min.js") }}"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
             @isset($js)
             @foreach($js as $js)
             <script src="{{ asset($js) }}"></script>
@@ -92,20 +92,19 @@
                 }
 
                 function deletePopup(title, message, record_id, url) {
-                bootbox.confirm({
-                    size: "small",
+                $.confirm({
+                   
                     title: title,
-                    message: "<i class=\"fa fa-exclamation-triangle\" style=\"color:red\"></i> " + message,
+                    content: "<i class=\"fa fa-exclamation-triangle\" style=\"color:red\"></i> " + message,
                     buttons: {
-                        confirm: {
-                            label: 'Confirm',
-                            className: 'btn-danger',
-                        },
-                        cancel: {
-                            label: 'No',
-                        }
-                    },
-                    callback: function (result) {
+                        cancel: function () {
+            $.alert('Canceled!');
+        },
+        confirm: {
+        
+            btnClass: 'btn-blue',
+        
+            action: function (result) {
                         if (result) {
                             $.ajax({
                                 url: url,
@@ -118,17 +117,26 @@
                                 success: function (res) {
                                     if (res.status)
                                     {
-                                        t.draw();
+                                        // t.draw();
                                         // $(".overlay").hide();
                                         showSuccessMessage(res.message);
+                                        setTimeout(function () {
+                            location.reload();
+                        }, 1000); 
                                     } else {
                                         // $(".overlay").hide();
                                         showErrorMessage(res.message);
+                                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);                                        
                                     }
                                 }
                             });
                         }
                     }
+        }
+                    },
+                 
                 });
 
             }

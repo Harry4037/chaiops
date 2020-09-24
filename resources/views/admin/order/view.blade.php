@@ -40,7 +40,7 @@ small.pull-right {
                     @elseif($order->status == 4)
                     <label class="btn btn-success disabled">Delivered </label>
                     @elseif($order->status == 5)
-                    <label class="btn btn-danger disabled">{{ $order->cancel_by }} </label>
+                    <label class="btn btn-danger disabled">CANCELLED BY ADMIN</label>
                     @if($order->cancel_by == "CANCELLED BY STAFF")
                     <span style="font-size: 18px; font-weight: 600; color: darkorange;">{{$boy->name}} </span><span style="font-size: 18px; font-weight: 600; color: #3c8dbc;">(Due To:{{$order->cancel_description}})</span>
                     @endif
@@ -58,10 +58,10 @@ small.pull-right {
             <strong>From,</strong>
                 <address>
                     Chaiops Restaurant<br>
-                    noida,<br>
+                    D- 486, 1st Floor, Sec – 7 Dwarka,<br>
        
-                    up,201301<br>
-                 
+                    New Delhi – 110075<br>
+                    
                     @if(auth()->user()->mobile_number)Phone: {{auth()->user()->mobile_number}}<br>@endif
                     @if(auth()->user()->email)Email: {{auth()->user()->email}}@endif
                 </address>

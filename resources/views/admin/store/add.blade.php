@@ -25,18 +25,45 @@
 
         $("#addstoreForm").validate({
             rules: {
-                icon: {
+                icon1: {
                     required: true,
+                    accept: "image/*",
+                },
+                icon2: {
+                
+                    accept: "image/*",
+                },
+                icon3: {
+                  
                     accept: "image/*",
                 },
                 store_name: {
                     required: true
                 },
+                phone: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10,
+               
+                },
             },
             messages: {
-                icon: {
+                icon1: {
                     accept: "Not valid image type"
-                }
+                },
+                icon2: {
+                    accept: "Not valid image type"
+                },
+                icon3: {
+                    accept: "Not valid image type"
+                },
+                mobile_number: {
+                    remote: 'This mobile number already in our record.',
+                    digits: 'Please enter only digits.',
+                    minlength: 'Please enter 10 digit mobile number.',
+                    maxlength: 'Please enter 10 digit mobile number.',
+                },
             }
         });
         $(document).on('keydown', "#store_name", function (e) {

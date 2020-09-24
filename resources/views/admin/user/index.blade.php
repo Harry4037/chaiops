@@ -14,8 +14,11 @@
                             <tr>
                                 <th>Sr. No.</th>
                                 <th>Name</th>
+                                <th>Mobile</th>
+                                <th>Email</th>
+                                <th>Address</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                               
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -47,8 +50,11 @@
                 }
             },
             {"data": "name", sortable: false},
+            {"data": "mobile", sortable: false},
+            {"data": "email", sortable: false},
+            {"data": "address", sortable: false},
             {"data": "status", sortable: false},
-            {"data": "action", sortable: false},
+            
         ]
     });
 

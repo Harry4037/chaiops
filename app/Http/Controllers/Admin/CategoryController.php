@@ -51,7 +51,7 @@ class CategoryController extends Controller {
               </label>";
                 $categoriesArray[$k]['name'] = $category->description;
                 $categoriesArray[$k]['action'] = '<a href="' . route('admin.category.edit', $category) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-                        . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $category->id . '" ><i class="fa fa-trash"></i> Delete </a>';
+                        . '<a href="" class="btn btn-danger btn-xs delete" data-dismiss="alert" id="' . $category->id . '" ><i class="fa fa-trash"></i> Delete </a>';
             }
             $data['data'] = $categoriesArray;
             return $data;
@@ -61,6 +61,7 @@ class CategoryController extends Controller {
     }
 
     public function categoryDelete(Request $request) {
+      
         try {
             $category = Category::find($request->id);
             if ($category) {

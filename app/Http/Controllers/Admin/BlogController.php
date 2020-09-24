@@ -83,7 +83,7 @@ class BlogController extends Controller {
                 }
 
                 if ($request->hasFile('icon')) {
-                    $blogImg = blog::selectRaw('image_name img')->find($blog->id);
+                    $blogImg = blog::selectRaw('img img')->find($blog->id);
                     Storage::disk('public')->delete('blog/' . $blogImg->img);
                     $icon = $request->file("icon");
                     $iconImage = Storage::disk('public')->put('blog', $icon);

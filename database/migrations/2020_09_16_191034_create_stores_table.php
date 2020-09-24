@@ -21,7 +21,9 @@ class CreateStoresTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('direction')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
             $table->tinyInteger('is_active')->default(0);
             $table->timestamps();
         });

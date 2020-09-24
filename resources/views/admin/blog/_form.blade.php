@@ -3,7 +3,7 @@
         <label class="col-md-3 col-form-label">Category <span class="error">*</span></label>
         <div class="col-md-4 col-sm-6 col-xs-6">
         @if(isset($blog))
-            <select class="form-control" required id="blog_type" name="blog_type">
+            <select class="form-control" disabled id="blog_type" name="blog_type">
                 <option value="">Choose option</option>
                 <option value="blog" @if($blog->type == "blog"){{'selected'}}@endif>Blog</option>
                 <option value="video" @if($blog->type == "video"){{'selected'}}@endif>video</option>

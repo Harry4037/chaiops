@@ -102,7 +102,7 @@
                                 <span class="selectbox__item" data-value="23-35 lakh">23-35 lakh</span>
                                 <span class="selectbox__item" data-value="45&above lakh">45&above lakh</span>
                             </div>
-                            <input type="text" id="reservationFor" name="plan" class="selectbox__input">
+                            <input type="text" required="required" id="reservationFor" name="plan" class="selectbox__input">
                         </div>
                     </div>
 

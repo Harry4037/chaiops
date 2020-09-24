@@ -44,7 +44,7 @@ class StoreController extends Controller {
 
             $storesArray = [];
             foreach ($stores as $k => $store) {
-                $storesArray[$k]['image_name'] = '<img class="img-bordered" height="60" width="100" src=' . $store->image . '>';
+                $storesArray[$k]['image_name'] = '<img class="img-bordered" height="60" width="100" src=' . $store->image1 . '>';
                 $checked_status = $store->is_active ? "checked" : '';
                 $storesArray[$k]['status'] = "<label class='c-switch c-switch-label c-switch-pill c-switch-success'><input class='c-switch-input update_status' type='checkbox' id=" . $store->id . " data-status=" . $store->is_active . " " . $checked_status . ">
                 <span class='c-switch-slider' data-checked='✓' data-unchecked='✕'></span>
@@ -84,19 +84,37 @@ class StoreController extends Controller {
                                 'required',
                               
                             ],
-                            'icon' => ['mimes:jpeg,jpg,png'],
+                            'icon1' => ['required', 'mimes:jpeg,jpg,png'],
+                            'icon2' => ['mimes:jpeg,jpg,png'],
+                            'icon3' => ['mimes:jpeg,jpg,png'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.store.edit', $store->id)->withErrors($validator)->withInput();
                 }
 
-                if ($request->hasFile('icon')) {
-                    $storeImg = Store::selectRaw('image_name img')->find($store->id);
-                    Storage::disk('public')->delete('store/' . $storeImg->img);
-                    $icon = $request->file("icon");
-                    $iconImage = Storage::disk('public')->put('store', $icon);
-                    $icon_file_name = basename($iconImage);
-                    $store->image = $icon_file_name;
+                if ($request->hasFile('icon1')) {
+                    $storeImg1 = Store::selectRaw('image1 img1')->find($store->id);
+                    Storage::disk('public')->delete('store/' . $storeImg1->img1);
+                    $icon1 = $request->file("icon1");
+                    $iconImage1 = Storage::disk('public')->put('store', $icon1);
+                    $icon_file_name1 = basename($iconImage1);
+                    $store->image1 = $icon_file_name1;
+                }
+                if ($request->hasFile('icon2')) {
+                    $storeImg2 = Store::selectRaw('image2 img2')->find($store->id);
+                    Storage::disk('public')->delete('store/' . $storeImg2->img2);
+                    $icon2 = $request->file("icon2");
+                    $iconImage2 = Storage::disk('public')->put('store', $icon2);
+                    $icon_file_name2 = basename($iconImage2);
+                    $store->image2 = $icon_file_name2;
+                }
+                if ($request->hasFile('ico3')) {
+                    $storeImg3 = Store::selectRaw('image3 img3')->find($store->id);
+                    Storage::disk('public')->delete('store/' . $storeImg3->img3);
+                    $icon3 = $request->file("icon3");
+                    $iconImage3 = Storage::disk('public')->put('store', $icon3);
+                    $icon_file_name3 = basename($iconImage3);
+                    $store->image3 = $icon_file_name3;
                 }
                 $store->name = $request->store_name;
                 $store->address = $request->address;
@@ -130,18 +148,34 @@ class StoreController extends Controller {
                                 'required',
                                 
                             ],
-                            'icon' => ['required', 'mimes:jpeg,jpg,png'],
+                            'icon1' => ['required', 'mimes:jpeg,jpg,png'],
+                            'icon2' => ['mimes:jpeg,jpg,png'],
+                            'icon3' => ['mimes:jpeg,jpg,png'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.store.add')->withErrors($validator)->withInput();
                 }
                 $store = new Store();
-                if ($request->hasFile('icon')) {
-                    $icon = $request->file("icon");
-                    $iconImage = Storage::disk('public')->put('store', $icon);
-                    $icon_file_name = basename($iconImage);
-                    $store->image = $icon_file_name;
+                if ($request->hasFile('icon1')) {
+                    $icon1 = $request->file("icon1");
+                    $iconImage1 = Storage::disk('public')->put('store', $icon1);
+                    $icon_file_name1 = basename($iconImage1);
+                    $store->image1 = $icon_file_name1;
                 }
+                if ($request->hasFile('icon2')) {
+                    $icon2 = $request->file("icon2");
+                    $iconImage2 = Storage::disk('public')->put('store', $icon2);
+                    $icon_file_name2 = basename($iconImage2);
+                    $store->image2 = $icon_file_name2;
+                }
+
+                if ($request->hasFile('icon3')) {
+                    $icon3 = $request->file("icon3");
+                    $iconImage3 = Storage::disk('public')->put('store', $icon3);
+                    $icon_file_name3 = basename($iconImage3);
+                    $store->image3 = $icon_file_name3;
+                }
+
 
                 $store->name = $request->store_name;
                 $store->address = $request->address;

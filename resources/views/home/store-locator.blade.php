@@ -38,6 +38,7 @@
                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
+
                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                            <li data-target="#myCarousel" data-slide-to="1"></li>
                            <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -45,11 +46,18 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                            <div class="item active">
-                              <img src="{{ $store->image }}" alt="Los Angeles" style="width:100%;">
+                              <img src="{{ $store->image1 }}" alt="Los Angeles" style="width:100%; height:225px;">
                            </div>
+                           @if($store->image2)
                            <div class="item">
-                              <img src="{{ $store->image }}" alt="Chicago" style="width:100%;">
+                              <img src="{{ $store->image2 }}" alt="Chicago" style="width:100%; height:225px;">
                            </div>
+                           @endif
+                           @if( $store->image3)
+                           <div class="item">
+                              <img src="{{ $store->image3 }}" alt="Chicago" style="width:100%; height:225px;">
+                           </div>
+                           @endif
                         </div>
                         <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev">

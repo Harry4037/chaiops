@@ -1,15 +1,43 @@
 <div class="box-body">
     <div class="form-group">
-        <label class="col-md-3 col-form-label">Select Store Image @if(!isset($store))<span class="error">*</span>@endif</label>
+        <label class="col-md-3 col-form-label">Select Store Image_1 @if(!isset($store))<span class="error">*</span>@endif</label>
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <input type="file" class="form-control" name="icon" id="icon">
+            <input type="file" class="form-control" name="icon1" id="icon">
         </div>
     </div>
-    @if(isset($store))
+    @if(isset($store->image1))
     <div class="form-group">
         <label class="col-md-3 col-form-label">Store Image Preview</label>
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <img class="img-bordered" src="{{$store->image}}" style="width: 50%">
+            <img class="img-bordered" src="{{$store->image1}}" style="width: 50%">
+        </div>
+    </div>
+    @endif
+    <div class="form-group">
+        <label class="col-md-3 col-form-label">Select Store Image_2 @if(!isset($store))<span class="error">*</span>@endif</label>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <input type="file" class="form-control" name="icon2" id="icon">
+        </div>
+    </div>
+    @if(isset($store->image2))
+    <div class="form-group">
+        <label class="col-md-3 col-form-label">Store Image Preview</label>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <img class="img-bordered" src="{{$store->image2}}" style="width: 50%">
+        </div>
+    </div>
+    @endif
+    <div class="form-group">
+        <label class="col-md-3 col-form-label">Select Store Image_3 @if(!isset($store))<span class="error">*</span>@endif</label>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <input type="file" class="form-control" name="icon3" id="icon">
+        </div>
+    </div>
+    @if(isset($store->image3))
+    <div class="form-group">
+        <label class="col-md-3 col-form-label">Store Image Preview</label>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <img class="img-bordered" src="{{$store->image3}}" style="width: 50%">
         </div>
     </div>
     @endif

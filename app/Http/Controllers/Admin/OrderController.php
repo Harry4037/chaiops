@@ -29,34 +29,43 @@ class OrderController extends Controller {
 
     public function orderList(Request $request) {
         try {
-            $search_invoice = $request->invoice_id;
+            // $search_invoice = $request->invoice_id;
 //            $mobile = $request->mobile;
-            $p_type = $request->p_type;
-            $p_status = $request->p_status;
-            $o_status = $request->o_status;
+            // $p_type = $request->p_type;
+            // $p_status = $request->p_status;
+            // $o_status = $request->o_status;
 
             $offset = $request->get('start') ? $request->get('start') : 0;
             $limit = $request->get('length');
-
+            $searchKeyword = $request->get('search')['value'];
             $query = Order::query();
-            if ($search_invoice) {
-                $query->where("id", 'LIKE', "%$search_invoice%");
-            }
-            if ($p_type) {
-                $query->where("order_type", $p_type);
-            }
-            if ($p_status) {
-                $query->where("payment_text", $p_status);
-            }
-            if ($o_status) {
-                $query->where("status", $o_status);
-            }
+            // if ($search_invoice) {
+            //     $query->where("id", 'LIKE', "%$search_invoice%");
+            // }
+            // if ($p_type) {
+            //     $query->where("order_type", $p_type);
+            // }
+            // if ($p_status) {
+            //     $query->where("payment_text", $p_status);
+            // }
+            // if ($o_status) {
+            //     $query->where("status", $o_status);
+            // }
 
             $query->where('status', '!=', 0);
             $query->where(function($query) {
                 $query->where('order_type', '!=', 'ONLINE')
                         ->orWhere('payment_text', '!=', 'PENDING');
             });
+            if ($searchKeyword) {
+                $query->where(function($q) use($searchKeyword) {
+                    $q->where("name", "LIKE", "%$searchKeyword%")
+                            ->orWhere("email", "LIKE", "%$searchKeyword%")
+                            ->orWhere("address", "LIKE", "%$searchKeyword%")
+                            ->orWhere("mobile_number", "LIKE", "%$searchKeyword%")
+                            ->orWhere("state", "LIKE", "%$searchKeyword%");
+                });
+            }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();
             $orders = $query->latest()->get();
@@ -74,7 +83,7 @@ class OrderController extends Controller {
                 } elseif ($order->status == 4) {
                     $orderTxt = "<label class='btn btn-success btn-xs disabled'>DELIVERED</label>";
                 } elseif ($order->status == 5) {
-                    $orderTxt = "<label class='btn btn-danger btn-xs disabled'>" . $order->cancel_by . "</label>";
+                    $orderTxt = "<label class='btn btn-danger btn-xs disabled'>CANCELLED BY ADMIN</label>";
                 } else {
                     $orderTxt = "<label class='btn btn-danger btn-xs disabled'>FAILED</label>";
                 }
@@ -166,6 +175,7 @@ class OrderController extends Controller {
     }
 
     public function cancelOrder(Request $request) {
+     
         try {
             $order = Order::find($request->order_id);
             if ($order) {
@@ -173,8 +183,8 @@ class OrderController extends Controller {
                     return response()->json(["status" => FALSE, 'message' => 'order already cancelled by user.']);
                 } else {
                     $order->status = 5;
-                    $order->cancel_by = 'CANCELLED BY ADMIN';
-                    $order->cancel_description = 'Order has been cancelled by admin';
+                    // $order->cancel_by = 'CANCELLED BY ADMIN';
+                    // $order->cancel_description = 'Order has been cancelled by admin';
                     $order->save();
 
                     return response()->json(["status" => TRUE, 'message' => 'order Cancelled']);
