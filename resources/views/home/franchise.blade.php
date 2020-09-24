@@ -9,8 +9,12 @@
     </div>
 </div>
 </div>
-<div class=social-icons> <a href=#><span class=icon-facebook></span></a> <a href=#><span class=icon-twitter></span></a>
-    <a href=#><span class=icon-googleplus></span></a> <a href=#><span class=icon-dribble></span></a> </div>
+<div class="social-icons">
+                  <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/officialchaiops/" class="fa fa-instagram"></a>
+                  <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
+                </div>
 </header>
 
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
@@ -76,7 +80,7 @@
                     </div>
                     <div class="form-group ">
                         <label for="name">Your Phone No*</label>
-                        <input type="phone" class="form-control" name="mob" id="phone" placeholder="Phone"
+                        <input type="tel" class="form-control" name="mob" id="phone" placeholder="Phone" pattern="[0-9]{10}"
                             required="required">
                     </div>
                     <div class="form-group ">
@@ -117,15 +121,30 @@
                     <div class="form-group">
                         <label for="contactMessage">Leave a message*</label>
                         <div>
-                            <textarea name="message" class="form-control" id="contactMessage"
+                            <textarea name="message" class="form-control textarea" id="area"  maxlength="200"
                                 placeholder="Write your text" required="required"></textarea>
                         </div>
                     </div>
                 </div>
                 <button type="submit" class="button-type-three">Submit Now</button>
-                <div class="ajaxmessage for-reservation hidden"></div>
+
+                 <div id="textarea_feedback" style="color: red;"></div>
             </form>
         </div>
     </div>
 </section>
+<script>
+ $(document).ready(function() {
+    var text_max = 200;
+    $('#textarea_feedback').html(text_max + ' Characters Remaining');
+
+    $('#area').keyup(function() {
+        var text_length = $('#area').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' Characters Remaining');
+    });
+});
+
+ </script>
 @endsection

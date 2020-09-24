@@ -24,15 +24,11 @@
 </div>
 </div>
 <div class="social-icons">
-    <a href="#">
-        <span class="icon-facebook"></span></a>
-    <a href="#">
-        <span class="icon-twitter"></span></a>
-    <a href="#">
-        <span class="icon-googleplus"></span></a>
-    <a href="#">
-        <span class="icon-dribble"></span></a>
-</div>
+                  <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/officialchaiops/" class="fa fa-instagram"></a>
+                  <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
+                </div>
 </header>
 <div class="contactpage">
     <div class="container">
@@ -102,7 +98,14 @@
                     <input type="text" class="form-control" placeholder="Subject" name="subject"
                         required="required">
                 </div>
-                <textarea placeholder="Message" class="textarea" name="message" required="required"></textarea>
+                <textarea
+                            id="area"
+                              maxlength="200"
+                                placeholder="Message"
+                                class="textarea"
+                                name="message"
+                                required="required"></textarea>
+                <div id="textarea_feedback" style="color: red;"></div>
                 <button type="submit">Submit</button>
                 <div class="hidden ajaxmessage for-contactform"></div>
             </form>

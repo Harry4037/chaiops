@@ -23,20 +23,12 @@
     </div>
 </div>
 </div>
-<div class=social-icons>
-    <a href="https://www.facebook.com/officialchaiops/">
-        <span class=icon-facebook></span>
-    </a>
-    <a href="https://twitter.com/officialchaiops/">
-        <span class=icon-twitter></span>
-    </a>
-    <a href="https://www.linkedin.com/company/chaiops/">
-        <span class=icon-googleplus></span>
-    </a>
-    <a href="https://www.instagram.com/officialchaiops/">
-        <span class=icon-insta></span>
-    </a>
-</div>
+<div class="social-icons">
+                  <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/officialchaiops/" class="fa fa-instagram"></a>
+                  <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
+                </div>
 </header>
 <!-- Start video-sec Area -->
 <section class="video-sec-area pb-100 pt-40" id="about">

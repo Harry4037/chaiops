@@ -1,18 +1,21 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+.selectbox_itemlist {
+
+    position: static;
+   
+}
+</style>
 <div class="banner">
     <div class="container">
-        <div class="social-icons">
-            <a href="#">
-                <span class="icon-facebook"></span></a>
-            <a href="#">
-                <span class="icon-twitter"></span></a>
-            <a href="#">
-                <span class="icon-googleplus"></span></a>
-            <a href="#">
-                <span class="icon-dribble"></span></a>
-        </div>
+    <div class="social-icons">
+                  <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/officialchaiops/" class="fa fa-instagram"></a>
+                  <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
+                </div>
         <div class="banner-image">
             <p>SINCE 1939</p>
             <div class="banner-img-holder">
@@ -194,7 +197,8 @@
                             <div class="selectbox_itemlist">
                                 <span class="selectbox__item" data-value="2 person">2 person</span>
                                 <span class="selectbox__item" data-value="4 person">4 person</span>
-                                <span class="selectbox__item" data-value="6 person">6 person</span>
+                                <span class="selectbox__item" data-value="6 person">8 person</span>
+                                <span class="selectbox__item" data-value="6 person">10 person</span>
                             </div>
                             <input type="text" id="reservationFor" name="person" class="selectbox__input">
                         </div>

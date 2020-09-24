@@ -60,7 +60,6 @@ class OrderController extends Controller {
             if ($searchKeyword) {
                 $query->where(function($q) use($searchKeyword) {
                     $q->where("name", "LIKE", "%$searchKeyword%")
-                            ->orWhere("email", "LIKE", "%$searchKeyword%")
                             ->orWhere("address", "LIKE", "%$searchKeyword%")
                             ->orWhere("mobile_number", "LIKE", "%$searchKeyword%")
                             ->orWhere("state", "LIKE", "%$searchKeyword%");

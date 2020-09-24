@@ -36,7 +36,7 @@ class StoreController extends Controller {
 
             $query = Store::query();
             if ($searchKeyword) {
-                $query->where('description', 'LIKE', "%$searchKeyword%");
+                $query->where('name', 'LIKE', "%$searchKeyword%");
             }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();

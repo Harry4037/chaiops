@@ -26,15 +26,11 @@
 </div>
 </div>
 <div class="social-icons">
-    <a href="#">
-        <span class="icon-facebook"></span></a>
-    <a href="#">
-        <span class="icon-twitter"></span></a>
-    <a href="#">
-        <span class="icon-googleplus"></span></a>
-    <a href="#">
-        <span class="icon-dribble"></span></a>
-</div>
+                  <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/officialchaiops/" class="fa fa-instagram"></a>
+                  <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
+                </div>
 </header>
 <section class="blog-list-sectn ">
     <div class="container">

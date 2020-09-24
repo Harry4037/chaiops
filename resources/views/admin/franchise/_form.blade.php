@@ -27,13 +27,13 @@
     <div class="form-group">
         <label class="col-md-3 col-form-label">Investment Plan</label>
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <input type="text" class="form-control" readonly value="@if(isset($franchise)){{$franchise->state}}@endif">
+            <input type="text" class="form-control" readonly value="@if(isset($franchise)){{$franchise->plan}}@endif">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-3 col-form-label">State</label>
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <input type="text" class="form-control" readonly value="@if(isset($franchise)){{$franchise->plan}}@endif">
+            <input type="text" class="form-control" readonly value="@if(isset($franchise)){{$franchise->state}}@endif">
         </div>
     </div>
     <div class="form-group">

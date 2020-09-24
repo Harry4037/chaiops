@@ -26,7 +26,39 @@
             .pagination>li>a {
                 color: #337ab7;
             }
+            .fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none; 
+  
+}
+.fa:hover {
+    opacity: 0.7;
+    color:white; 
+
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+   background: #ea4c89;
+  color: white;
+}
         </style>
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <script>
 var site_url = "{{ url('/admin') }}";
