@@ -79,13 +79,13 @@
                     <div class=item-content>
                         <div>
                             <h4>your total order value is</h4>
-                      
-                            <p> After added tax (₹{{($total * 18)/100}})</p>
-                            <?php $total = $total + ($total * 18)/100; ?>
+                            <?php $tax = ($total * 18)/100; ?>
+                            <p> After added tax (₹{{$tax}})</p>
+                          
                         </div>
                     </div>
                     <div class=item-price> 
-                        <span id=carttoutal>₹{{$total}}</span> 
+                        <span id=carttoutal>₹{{$total+$tax}}</span> 
                     </div>
                 </div>
             </div>
@@ -116,6 +116,7 @@
                                                   @if(auth()->check()) value="{{ auth()->user()->pincode }}" @endif required
                                                   data-parsley-required-message="Please insert pincode"> </div>
                     <input type="hidden" name="total" value="{{ $total }}">
+                    <input type="hidden" name="tax" value="{{ $tax }}">
                     <button type=submit id=send>order now</button>
 
                     <div class="ajaxmessage for-orderform hidden container"></div>

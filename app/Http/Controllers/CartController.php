@@ -145,7 +145,7 @@ class CartController extends Controller {
             $check_product = Cart::where('user_id', $user->id)->with(['product'])->get();
             //    dd($check_product->toArray());
             if ($check_product) {
-                $taxPrice = ($request->total *18) /100;
+                $taxPrice = $request->tax;
                 $order = new Order();
                 $order->user_id = $user->id;
                 $order->item_total_amount = $request->total;
