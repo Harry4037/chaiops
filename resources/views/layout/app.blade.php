@@ -26,7 +26,14 @@
             .pagination>li>a {
                 color: #337ab7;
             }
-   
+            .social-icons>.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none; 
+  
+}
 .fa:hover {
     opacity: 0.7;
     color:white; 
