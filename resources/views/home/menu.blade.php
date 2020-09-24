@@ -1,6 +1,13 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+.menu-page .pricing-carte {
+    background-color: #fff;
+    border: 1px dashed #3f3530;
+    width: 100%!important;
+}
+</style>
 <div class="banner clearfix">
     <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=""> </div>
     <div class=banner-text>
