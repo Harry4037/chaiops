@@ -50,6 +50,25 @@
         }
     });
 
+    $(document).on("click", "#add_more_product", function () {
+
+        var product_html = "<div class='form-group col-sm-6'>"
+      
+      + "<div class='col-sm-6'>"
+      + "<label class='control-label col-md-2 col-sm-2 col-xs-12'>Quantity Type</label>"
+      + "<input type='text' class='form-control' required name='other_products[]'>"
+      + "<label class='control-label col-md-2 col-sm-2 col-xs-12'>Quantity Price</label>"
+      + "Rs.<input type='number' class='form-control' required name='other_prices[]'>"
+      + "</div>"
+      + "<i style='cursor:pointer' class='fa fa-times delete_this_div'></i>"
+      + "</div>";
+$("#other_product_div").append(product_html);
+});
+
+$(document).on("click", ".delete_this_div", function () {
+        $(this).parent("div").remove();
+    });
+
     });
 </script>
 @endsection

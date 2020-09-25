@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductType;
 use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Franchise;
@@ -13,6 +14,7 @@ use App\Models\Order;
 use App\Models\User;
 use App\Models\Contact;
 use App\Models\Store;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Book;
 use Validator;
@@ -26,7 +28,7 @@ class HomeController extends Controller {
             $user = auth()->user();
             foreach (session('cart') as $id => $product) {
 
-                $check_product = Cart::where('product_id', $id)->where('user_id', $user->id)->first();
+                $check_product = Cart::where('product_id', $id)->where('product_type_id', $user->id)->where('user_id', $user->id)->first();
                 if ($check_product) {
                     $check_product->quantity = $product['quantity'];
                     $check_product->save();
@@ -34,15 +36,16 @@ class HomeController extends Controller {
                     $cart = new Cart();
                     $cart->user_id = $user->id;
                     $cart->product_id = $id;
+                    $cart->product_type_id = $id;
                     $cart->quantity = $product['quantity'];
                     $cart->save();
                 }
             }
         }
 
-        $products = Product::where(["is_active" => 1])->get();
+        $products = Product::where(["is_active" => 1])->with(['productType'])->get();
         $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
-                        $query->where("is_active", 1);
+                        $query->with(['productType'])->where("is_active", 1);
                     }])->get();
         return view('home.index', [
             'products' => $products,
@@ -56,7 +59,7 @@ class HomeController extends Controller {
 
     public function menuPage() {
         $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
-                        $query->where("is_active", 1);
+                        $query->with(['productType'])->where("is_active", 1);
                     }])->get();
         return view('home.menu', [
             "categories" => $categories
@@ -73,11 +76,10 @@ class HomeController extends Controller {
 
     public function cartPage() {
         if (auth()->check()) {
-            $cartItems = Cart::with('product')->where(["user_id" => auth()->user()->id])->get();
+            $cartItems = Cart::with('product','productType')->where(["user_id" => auth()->user()->id])->get();
         } else {
-            $cartItems = Cart::with('product')->where(["session_id" => session()->getId()])->get();
+            $cartItems = Cart::with('product','productType')->where(["session_id" => session()->getId()])->get();
         }
-
         return view('home.cart', [
             "cartItems" => $cartItems
         ]);
@@ -146,18 +148,13 @@ class HomeController extends Controller {
     }
 
     public function bookTable(Request $request) {
-        $data['table'] = $request->person;
-        $data['occassion'] = $request->occassion;
-        $data['name'] = $request->name;
-        $data['email'] = $request->inputEmail;
-        $data['message'] = $request->contactMessage;
-
-        try {
-
-            Mail::to($user->email)->send(new Book($data));
-        } catch (\Exception $e) {
-            
-        }
+        $reservation = new Reservation();
+        $reservation->name = $request->name;
+        $reservation->email = $request->inputEmail;
+        $reservation->person = $request->person;
+        $reservation->occassion = $request->occassion;
+        $reservation->message = $request->contactMessage;
+        $reservation->save();
         return redirect()->route('site.index');
     }
     public function addressSubmit(Request $request) {

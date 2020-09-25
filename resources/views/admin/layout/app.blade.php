@@ -8,6 +8,8 @@
         <link href="{{ asset("css/free.min.css") }}" rel="stylesheet">
         <!-- Main styles for this application-->
         <link href="{{ asset("css/style.css") }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <link href="{{ asset("css/coreui-chartjs.css") }}" rel="stylesheet">
         @isset($css)

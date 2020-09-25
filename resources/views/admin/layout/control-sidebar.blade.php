@@ -44,6 +44,12 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.reservation.index') }}">
+                <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                Reservation Form Management
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.store.index') }}">
                 <i class="cil-speedometer c-sidebar-nav-icon"></i>
                 Store Management

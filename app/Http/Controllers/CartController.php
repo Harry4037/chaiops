@@ -9,25 +9,27 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\ProductType;
 use App\Models\UserAddress;
 use App\Models\User;
 use Session;
 
 class CartController extends Controller {
 
-    public function addToCart(Request $request, $id) {
+    public function addToCart(Request $request, $id, $type) {
         $product = Product::find($id);
+        $productType = ProductType::find($type);
         $key = session()->getId();
 
-        if (!$product) {
-            abort(404);
+        if (!$product && !$productType) {
+            dd("product not found");
         }
         $cart = session()->get('cart');
 
         if (auth()->check()) {
             $user_id = auth()->user()->id;
             $session_id = NULL;
-            $check_product = Cart::where('product_id', $id)->where('user_id', $user_id)->orWhere('session_id', $session_id)->first();
+            $check_product = Cart::where('product_id', $id)->where('product_type_id', $type)->where('user_id', $user_id)->orWhere('session_id', $session_id)->first();
             if ($check_product) {
                 $check_product->session_id = NULL;
                 $check_product->user_id = $user_id;
@@ -38,13 +40,14 @@ class CartController extends Controller {
                 $check_product->session_id = NULL;
                 $check_product->user_id = $user_id;
                 $cart->product_id = $id;
+                $cart->product_type_id = $productType->id;
                 $cart->quantity = 1;
                 $cart->save();
             }
         } else {
             $user_id = NULL;
             $session_id = $key;
-            $check_product = Cart::where('product_id', $id)->where('session_id', $session_id)->first();
+            $check_product = Cart::where('product_id', $id)->where('product_type_id', $type)->where('session_id', $session_id)->first();
             if ($check_product) {
                 $check_product->quantity = $check_product->quantity + 1;
                 $cart->session_id = $session_id;
@@ -54,6 +57,7 @@ class CartController extends Controller {
                 $cart->user_id = NULL;
                 $cart->session_id = $session_id;
                 $cart->product_id = $id;
+                $cart->product_type_id = $type;
                 $cart->quantity = 1;
                 $cart->save();
             }
@@ -65,8 +69,9 @@ class CartController extends Controller {
             $cart = [
                 $id => [
                     "name" => $product->name,
+                    "type" => $type->type,
                     "quantity" => 1,
-                    "price" => $product->price,
+                    "price" => $type->price,
                     "photo" => $product->img,
                     "type" => $product->type
                 ]
@@ -90,8 +95,9 @@ class CartController extends Controller {
         // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "name" => $product->name,
+            "type" => $type->type,
             "quantity" => 1,
-            "price" => $product->price,
+            "price" => $type->price,
             "photo" => $product->img,
             "type" => $product->type
         ];
@@ -120,9 +126,8 @@ class CartController extends Controller {
             $cart = session()->get('cart');
             if (session()->get('cart') and auth()->check()) {
                 $user = auth()->user();
-                $check_product = Cart::where('product_id', $request->id)->where('user_id', $user->id)->first();
+                $check_product = Cart::where('product_id', $request->id)->where('product_type_id', $request->type)->where('user_id', $user->id)->first();
                 if ($check_product) {
-
                     $check_product->delete();
                 }
             }
@@ -195,12 +200,14 @@ class CartController extends Controller {
 
     public function addCart(Request $request) {
         $product = Product::find($request->product_id);
-        if (!$product) {
+        $productType = ProductType::find($request->product_type_id);
+
+        if (!$product and !$productType ) {
             dd("product not found");
         }
 
         if (auth()->check()) {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
             if ($alreadyExist) {
                 $alreadyExist->quantity = ($alreadyExist->quantity + 1);
                 $alreadyExist->save();
@@ -208,6 +215,7 @@ class CartController extends Controller {
                 $cart = new Cart();
                 $cart->product_id = $product->id;
                 $cart->quantity = 1;
+                $cart->product_type_id = $productType->id;
                 $cart->session_id = NULL;
                 $cart->user_id = auth()->user()->id;
                 $cart->save();
@@ -215,7 +223,7 @@ class CartController extends Controller {
             $cartCount = Cart::where(["user_id" => auth()->user()->id])->count();
         } else {
 
-            $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
             if ($alreadyExist) {
                 $alreadyExist->quantity = ($alreadyExist->quantity + 1);
                 $alreadyExist->save();
@@ -223,6 +231,7 @@ class CartController extends Controller {
                 $cart = new Cart();
                 $cart->product_id = $product->id;
                 $cart->quantity = 1;
+                $cart->product_type_id = $productType->id;
                 $cart->session_id = session()->getId();
                 $cart->user_id = 0;
                 $cart->save();
@@ -234,28 +243,30 @@ class CartController extends Controller {
 
     public function increaseCartQuantity(Request $request) {
         $product = Product::find($request->product_id);
-        if (!$product) {
+        $productType = ProductType::find($request->product_type_id);
+
+        if (!$product && !$productType ) {
             dd("product not found");
         }
         $productCount = 0;
         $total = 0;
         if (auth()->check()) {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
             if ($alreadyExist) {
                 $alreadyExist->quantity = ($alreadyExist->quantity + 1);
                 $alreadyExist->save();
             }
 
-            $productCount = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $productCount = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
             $total = $this->cartTotal();
         } else {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
             if ($alreadyExist) {
                 $alreadyExist->quantity = ($alreadyExist->quantity + 1);
                 $alreadyExist->save();
             }
 
-            $productCount = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $productCount = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
             $total = $this->cartTotal();
         }
         return response()->json([
@@ -266,29 +277,31 @@ class CartController extends Controller {
 
     public function decreaseCartQuantity(Request $request) {
         $product = Product::find($request->product_id);
-        if (!$product) {
+        $productType = ProductType::find($request->product_type_id);
+
+        if (!$product and !$productType ) {
             dd("product not found");
         }
         $productCount = 0;
         $total = 0;
         if (auth()->check()) {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
             if ($alreadyExist) {
                 if ($alreadyExist->quantity > 1) {
                     $alreadyExist->quantity = ($alreadyExist->quantity - 1);
                     $alreadyExist->save();
                 }
             }
-            $productCount = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $productCount = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
         } else {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
             if ($alreadyExist) {
                 if ($alreadyExist->quantity > 1) {
                     $alreadyExist->quantity = ($alreadyExist->quantity - 1);
                     $alreadyExist->save();
                 }
             }
-            $productCount = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $productCount = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
         }
         $total = $this->cartTotal();
         return response()->json([
@@ -299,17 +312,19 @@ class CartController extends Controller {
 
     public function deleteCartProduct(Request $request) {
         $product = Product::find($request->product_id);
-        if (!$product) {
+        $productType = ProductType::find($request->product_type_id);
+
+        if (!$product and !$productType ) {
             dd("product not found");
         }
 
         if (auth()->check()) {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "user_id" => auth()->user()->id])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "user_id" => auth()->user()->id])->first();
             if ($alreadyExist) {
                 $alreadyExist->delete();
             }
         } else {
-            $alreadyExist = Cart::where(["product_id" => $product->id, "session_id" => session()->getId()])->first();
+            $alreadyExist = Cart::where(["product_id" => $product->id, "product_type_id" => $productType->id, "session_id" => session()->getId()])->first();
             if ($alreadyExist) {
                 $alreadyExist->delete();
             }

@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('img')->nullable();
-            $table->float('price')->default(0);
-            $table->enum('type', ["100ml", "200ml", "300ml"]);
+            // $table->float('price')->default(0);
+            // $table->enum('type', ["100ml", "200ml", "300ml"]);
             $table->tinyInteger('is_active')->default(0);
             $table->string('created_by')->default(0);
             $table->string('updated_by')->default(0);

@@ -13,6 +13,7 @@ outline:0px;
 background-color:white;
 background:none;
 }
+
 </style>
 <div class="banner clearfix">
     <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=""> </div>
@@ -55,13 +56,12 @@ background:none;
                                 <div class="cuisine-detail">{{ $product->description }}</div>
                             </div>
                             <div class="card-right">
-                                <div class="cuisine-price">₹{{ $product->price }}</div>
-                              
-                                <select class="cuisine-heart" id="dropml">
-
-<option>{{ $product->type }}</option>
-<option>200 ml</option>
-<option>300 ml</option>
+                                <!-- <div class="cuisine-price">₹{{ $product->price }}</div>
+                               -->
+                               <select class="cuisine-heart{{$product->id}}" id="dropml" >
+                            @foreach($product->productType as $type)
+<option value="{{$type->id}}" >₹{{$type->price}} ( {{$type->type}} )</option>
+@endforeach
 </select>
                             </div>
                         </div>

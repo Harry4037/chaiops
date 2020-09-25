@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductType;
 use App\Models\Category;
 use Carbon\Carbon;
 use Validator;
@@ -122,9 +123,11 @@ class ProductController extends Controller {
 
          
             $categories = Category::all();
+            $types = ProductType::where('product_id',$product->id)->get();
             return view('admin.product.edit', [
                 'product' => $product,
                 'categories' => $categories,      
+                'types' => $types,
             ]);
         } catch (\Exception $ex) {
             return redirect()->route('admin.product.index')->with('error', $ex->getMessage());

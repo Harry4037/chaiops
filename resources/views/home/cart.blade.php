@@ -53,23 +53,23 @@
                             @endif
                         </div>
                         <div class="item-details">
-                            <h6>{{ $cartItem->product->name }}</h6>
+                            <h6>{{ $cartItem->product->name }} ({{$cartItem->productType->type}})</h6>
                             <div class="productQuantity">
-                                <input type="button" value="-" class="minus" data-id="{{$cartItem->product->id}}">
+                                <input type="button" value="-" class="minus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
                                 <input type="number" name="quantity" value="{{$cartItem->quantity}}" style="width: 40%;" disabled>
-                                <input type="button" value="+" class="plus" data-id="{{$cartItem->product->id}}">
+                                <input type="button" value="+" class="plus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
                             </div>
                         </div>
                     </div>
                     <div class="item-price">
-                        <span>₹{{$cartItem->product->price * $cartItem->quantity}}</span>
+                        <span>₹{{$cartItem->productType->price * $cartItem->quantity}}</span>
                     </div>
 
-                    <a href="#" class="remove-from-cart removeProduct" data-id="{{$cartItem->product->id}}">
+                    <a href="#" class="remove-from-cart removeProduct" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"/>
                         <i class="fa fa-times"></i>
                     </a>
                 </li>
-                <?php $total = $total + ($cartItem->product->price * $cartItem->quantity); ?>
+                <?php $total = $total + ($cartItem->productType->price * $cartItem->quantity); ?>
                 @endforeach
                 @endif
             </ul>
@@ -149,10 +149,11 @@
         $(document).on("click", ".plus", function () {
             var _this = $(this);
             var product_id = _this.data("id");
+            var product_type_id = _this.data("type");
             $.ajax({
                 url: _baseUrl + '/increase-cart-quantity',
                 type: 'post',
-                data: {product_id: product_id},
+                data: {'product_id': product_id, 'product_type_id': product_type_id},
                 success: function (res) {
                     _this.prev().val(res.product_count);
                     $("#carttoutal").html(res.total);
@@ -163,10 +164,11 @@
         $(document).on("click", ".minus", function () {
             var _this = $(this);
             var product_id = _this.data("id");
+            var product_type_id = _this.data("type");
             $.ajax({
                 url: _baseUrl + '/decrease-cart-quantity',
                 type: 'post',
-                data: {product_id: product_id},
+                data: {'product_id': product_id, 'product_type_id': product_type_id},
                 success: function (res) {
                     _this.next().val(res.product_count);
                     $("#carttoutal").html(res.total);
@@ -177,11 +179,12 @@
 
         $(document).on("click", ".removeProduct", function () {
             var product_id = $(this).data("id");
+            var product_type_id =$(this).data("type");
             if (confirm("Are you sure want to delete this item.")) {
                 $.ajax({
                     url: _baseUrl + '/delete-cart-product',
                     type: 'post',
-                    data: {product_id: product_id},
+                    data: {'product_id': product_id, 'product_type_id': product_type_id},
                     beforeSend: function () {
                         //                $(".overlay").show();
                     },

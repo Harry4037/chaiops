@@ -115,10 +115,11 @@ $(document).ready(function () {
 
     $(document).on('click', '.addItemCart', function () {
         var product_id = $(this).data('id');
+        var product_type_id =$( '.cuisine-heart'+ product_id ).val();
         $.ajax({
             url: _baseUrl + '/add-cart',
             type: 'post',
-            data: {product_id: product_id},
+            data: {'product_id': product_id, 'product_type_id': product_type_id},
             beforeSend: function () {
 //                $(".overlay").show();
             },
@@ -128,7 +129,10 @@ $(document).ready(function () {
                         "Item added to cart",
                         {className: "success"}
                 );
-            }
+            },
+            error: function(data){
+        alert("fail");
+    }
         });
     });
 });

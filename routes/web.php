@@ -128,6 +128,14 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
 
 });
 
+  // Reservation Routes
+  Route::prefix('reservation')->group(function() {
+    Route::get('/', 'ReservationController@index')->name('admin.reservation.index');
+    Route::get('/list', 'ReservationController@reservationList')->name('admin.reservation.list');
+    Route::get('/view/{reservation}', 'ReservationController@reservationView')->name('admin.reservation.view');
+
+});
+
     // Order Routes
     Route::prefix('order')->group(function() {
       Route::get('/', 'OrderController@index')->name('admin.order.index');

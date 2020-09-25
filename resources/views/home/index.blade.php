@@ -107,13 +107,14 @@ background:none;
                             <div class="cuisine-detail">{{$product->description}}</div>
                         </div>
                         <div class="card-right">
-                            <div class="cuisine-price">₹{{$product->price}}</div>
+                        <!-- @foreach($product->productType as $type)
+                            <div class="cuisine-price" style="Display:none" >₹{{$type->price}}</div>
+                            @endforeach -->
                             <!--                            <div class="cuisine-heart">{{$product->type}}</div>-->
-                            <select class="cuisine-heart" id="dropml">
-
-<option>{{$product->type}}</option>
-<option>200 ml</option>
-<option>300 ml</option>
+                            <select class="cuisine-heart{{$product->id}}" id="dropml" >
+                            @foreach($product->productType as $type)
+<option value="{{$type->id}}" >₹{{$type->price}} ( {{$type->type}} )</option>
+@endforeach
 </select>
                         </div>
                         <div class="menu-btn-holder clearfix">
@@ -203,7 +204,7 @@ background:none;
                         <div class="selectbox"></div>
                         <div class="selectbox">
                             <div class="selectbox_toggle">
-                                All items
+                                Select No. Of Persons
                                 <span class="selectbox__arrow"></span>
                             </div>
                             <div class="selectbox_itemlist">
@@ -219,7 +220,7 @@ background:none;
                         <label for="occassion">Occassion</label>
                         <div class="selectbox">
                             <div class="selectbox_toggle">
-                                All items
+                                Select Option
                                 <span class="selectbox__arrow"></span>
                             </div>
                             <div class="selectbox_itemlist">
@@ -264,7 +265,7 @@ background:none;
                             required="required"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="button-type-three">Order Now</button>
+                <button type="submit" class="button-type-three">Submit</button>
                 <div class="ajaxmessage for-reservation hidden"></div>
             </form>
         </div>

@@ -72,6 +72,30 @@
         </div>
     </div>
 
+    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Type *</label>
+                    </div>
+                    <div id="other_product_div">
+                    @if(isset($types))
+                        @foreach( $types as $am)
+                        <div class='form-group '>
+                        <label class='control-label col-md-12'>Quantity Type</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="other_products[]" value="{{ $am->type }}"> 
+                                <label class='control-label col-md-12'>Quantity Price</label>
+                                 <input type="number" class="form-control" name="other_prices[]" value="{{ $am->price }}">
+                            </div>
+                            <i style='cursor:pointer' class='fa fa-times delete_this_div'></i>
+                        </div>
+                        @endforeach
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
+                            <button type="button" class="btn btn-primary" id="add_more_product">Add Type</button>
+                        </div>
+                    </div>
+
     <div class="box-footer">
         <div class="form-group">
             <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-4">

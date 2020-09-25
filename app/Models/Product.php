@@ -13,4 +13,8 @@ class Product extends Model {
         return $this->belongsTo('App\Models\Category', 'category_id')->withTrashed();
     }
 
+    public function productType() {
+        return $this->hasMany('App\Models\ProductType', 'product_id');
+    }
+
 }
