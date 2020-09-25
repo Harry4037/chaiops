@@ -7,6 +7,12 @@
     border: 1px dashed #3f3530;
     width: 100%!important;
 }
+#dropml{
+border:0px;
+outline:0px;
+background-color:white;
+background:none;
+}
 </style>
 <div class="banner clearfix">
     <div class=banner-img> <img src="{{ asset("assets/images/cup.png")}}" alt=""> </div>
@@ -50,7 +56,13 @@
                             </div>
                             <div class="card-right">
                                 <div class="cuisine-price">₹{{ $product->price }}</div>
-                                <div class="cuisine-heart">{{ $product->type }}</div>
+                              
+                                <select class="cuisine-heart" id="dropml">
+
+<option>{{ $product->type }}</option>
+<option>200 ml</option>
+<option>300 ml</option>
+</select>
                             </div>
                         </div>
                         <div class="menu-btn-holder clearfix">

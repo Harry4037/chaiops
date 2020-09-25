@@ -7,6 +7,12 @@
     position: static;
    
 }
+#dropml{
+border:0px;
+outline:0px;
+background-color:white;
+background:none;
+}
 </style>
 <div class="banner">
     <div class="container">
@@ -103,6 +109,12 @@
                         <div class="card-right">
                             <div class="cuisine-price">₹{{$product->price}}</div>
                             <!--                            <div class="cuisine-heart">{{$product->type}}</div>-->
+                            <select class="cuisine-heart" id="dropml">
+
+<option>{{$product->type}}</option>
+<option>200 ml</option>
+<option>300 ml</option>
+</select>
                         </div>
                         <div class="menu-btn-holder clearfix">
                             <a style="border-color: white !important" href="javaScript:void(0);" class="addItemCart" data-id="{{$product->id}}">Add Cart</a>
