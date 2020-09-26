@@ -98,9 +98,9 @@ class ProductController extends Controller {
                             ],
                             'category_id' => ['required'],
 //                            'product_description' => ['required'],
-                            'product_price' => ['bail', 'required', 'numeric', 'min:0'],
+                            // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
                          
-                            'product_type' => ['required'],
+                            // 'product_type' => ['required'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.product.edit', $product->id)->withErrors($validator)->withInput();
@@ -109,12 +109,20 @@ class ProductController extends Controller {
                 $product->name = $request->product_name;
                 $product->description = $request->product_description;
                 $product->category_id = $request->category_id;
-                $product->price = $request->product_price;
+                // $product->price = $request->product_price;
                 $product->img = $request->product_img;
-                $product->type = $request->product_type;
+                // $product->type = $request->product_type;
                 $product->created_by = auth()->user()->id;
                 $product->updated_by = auth()->user()->id;
                 if ($product->save()) {
+                    ProductType::where('product_id',$product->id)->delete();
+                    foreach($request->other_products as $i=> $product_type){                    
+                        $productType = new ProductType();
+                        $productType->product_id = $product->id;
+                        $productType->type = $product_type;
+                        $productType->price = $request->other_prices[$i];
+                        $productType->save();
+                    }
                     return redirect()->route('admin.product.index')->with('status', 'product has been updated successfully.');
                 } else {
                     return redirect()->route('admin.product.index')->with('error', 'Something went be wrong.');
@@ -149,9 +157,9 @@ class ProductController extends Controller {
                             ],
                             'category_id' => ['required'],
 //                            'product_description' => ['required'],
-                            'product_price' => ['bail', 'required', 'numeric', 'min:0'],
+                            // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
                     
-                            'product_type' => ['required'],
+                            // 'product_type' => ['required'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.product.add')->withErrors($validator)->withInput();
@@ -161,13 +169,22 @@ class ProductController extends Controller {
                 $product->name = $request->product_name;
                 $product->description = $request->product_description;
                 $product->category_id = $request->category_id;
-                $product->price = $request->product_price;
+                // $product->price = $request->product_price;
                 $product->img = $request->product_img;
                 $product->is_active = 1;
-                $product->type = $request->product_type;
+                // $product->type = $request->product_type;
                 $product->created_by = auth()->user()->id;
                 $product->updated_by = auth()->user()->id;
                 if ($product->save()) {
+                    foreach($request->other_products as $i=> $product_type){
+                      
+                        $productType = new ProductType();
+                        $productType->product_id = $product->id;
+                        $productType->type = $product_type;
+                        $productType->price = $request->other_prices[$i];
+                        $productType->save();
+                    }
+
                     return redirect()->route('admin.product.index')->with('status', 'product has been added successfully.');
                 } else {
                     return redirect()->route('admin.product.index')->with('error', 'Something went be wrong.');

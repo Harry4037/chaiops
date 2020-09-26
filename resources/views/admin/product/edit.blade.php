@@ -7,7 +7,7 @@
         <div class="col-lg-10">
             <div class="card">
                 @include('errors.errors-and-messages')
-                <div class="card-header"><i class="fa fa-align-justify"></i> Add Product</div>
+                <div class="card-header"><i class="fa fa-align-justify"></i> Edit Product</div>
                 
                 <div class="card-body">
                 <form class="form-horizontal form-label-left" action="{{ route('admin.product.edit', $product) }}" method="post" id="addProductForm" enctype="multipart/form-data">

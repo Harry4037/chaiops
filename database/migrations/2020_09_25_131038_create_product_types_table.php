@@ -19,7 +19,6 @@ class CreateProductTypesTable extends Migration
             $table->string('type');
             $table->float('price')->default(0);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

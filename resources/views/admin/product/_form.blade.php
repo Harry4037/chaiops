@@ -44,14 +44,14 @@
             <textarea placeholder="Description" class="form-control" name="product_description" id="product_description">@if(isset($product)){{$product->description}}@endif</textarea>
         </div>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label class="col-md-3 col-form-label">Price <span class="error">*</span></label>
         <div class="col-md-4 col-sm-6 col-xs-6">
             <input placeholder="Price" type="number" class="form-control" name="product_price" id="product_price" required value="@if(isset($product)){{$product->price}}@endif">
         </div>
-    </div>
+    </div> -->
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label class="col-md-3 col-form-label">Type <span class="error">*</span></label>
         <div class="col-md-4 col-sm-6 col-xs-6">
             @if(isset($product))
@@ -70,10 +70,10 @@
             </select>
             @endif
         </div>
-    </div>
+    </div> -->
 
     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Type *</label>
+                        <label class="control-label col-sm-6 ">Type *</label>
                     </div>
                     <div id="other_product_div">
                     @if(isset($types))
@@ -88,6 +88,7 @@
                             <i style='cursor:pointer' class='fa fa-times delete_this_div'></i>
                         </div>
                         @endforeach
+                        @else
                         @endif
                     </div>
                     <div class="form-group">
