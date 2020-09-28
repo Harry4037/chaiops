@@ -47,8 +47,13 @@ class BlogController extends Controller {
                 $blogsArray[$k]['image_name'] = '<img class="img-bordered" height="60" width="100" src=' . $blog->img . '>';
                 $blogsArray[$k]['name'] = $blog->title;
                 $blogsArray[$k]['description'] = $blog->description;
-                $blogsArray[$k]['action'] = '<a href="' . route('admin.blog.edit', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;<a href="' . route('admin.blog.comment-list', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Comment </a>&nbsp;&nbsp;'
-                . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $blog->id . '" ><i class="fa fa-trash"></i> Delete </a>';
+                if($blog->type == "video"){
+                    $blogsArray[$k]['action'] = '<a href="' . route('admin.blog.edit', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;'
+                    . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $blog->id . '" ><i class="fa fa-trash"></i> Delete </a>';
+                }else{
+                    $blogsArray[$k]['action'] = '<a href="' . route('admin.blog.edit', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;<a href="' . route('admin.blog.comment-list', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Comment </a>&nbsp;&nbsp;'
+                    . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $blog->id . '" ><i class="fa fa-trash"></i> Delete </a>';
+                }
     }
             $data['data'] = $blogsArray;
             return $data;
