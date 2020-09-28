@@ -147,7 +147,7 @@ class CartController extends Controller {
         if (auth()->check()) {
 
             $user = auth()->user();
-            $check_product = Cart::where('user_id', $user->id)->with(['product'])->get();
+            $check_product = Cart::where('user_id', $user->id)->with(['product', 'productType'])->get();
             //    dd($check_product->toArray());
             if ($check_product) {
                 $taxPrice = $request->tax;
@@ -179,10 +179,10 @@ class CartController extends Controller {
                         $orderItem->order_id = $order->id;
                         $orderItem->product_id = $cartItem->product->id;
                         $orderItem->product_name = $cartItem->product->name;
-                        $orderItem->type = $cartItem->product->type;
-                        $orderItem->per_item_price = $cartItem->product->price;
+                        $orderItem->type = $cartItem->productType->type;
+                        $orderItem->per_item_price = $cartItem->productType->price;
                         $orderItem->quantity = $cartItem->quantity;
-                        $orderItem->total_price = round($cartItem->quantity * $cartItem->product->price);
+                        $orderItem->total_price = round($cartItem->quantity * $cartItem->productType->price);
                         $orderItem->save();
                     }
                     Cart::where('user_id', $user->id)->delete();
