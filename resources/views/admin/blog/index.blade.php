@@ -19,7 +19,7 @@
                                 <th>Title</th>
                                 <th>Image</th>
                                 <th>Description</th>
-                                <th>Action</th>
+                                <th style="width: 350px;" >Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

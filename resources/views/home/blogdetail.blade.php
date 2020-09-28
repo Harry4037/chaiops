@@ -41,10 +41,62 @@
 
                         <p>{{ $data->description }}</p>
                     </div>
-
+                    <div class=leave-comment>
+                  <h4>Leave a comment</h4>
+                  <form method="post" action="{{route('site.blog.comment')}}">
+            {{ csrf_field() }}
+                     <div class=form-group> <input type=text class=form-control placeholder="Name" name="name"> </div>
+                     <div class=form-group> <input type=email class=form-control placeholder="Email" name="email"> </div>
+                     <br>
+                     <textarea name="message" class="form-control textarea" id="area"  maxlength="200"
+                                placeholder="Write your comment" required="required"></textarea>
+                                <input type="hidden" name="blog_id" value="{{ $data->id }}">
+                     <button type=submit>post comment</button> 
+                     <div id="textarea_feedback" style="color: red;"></div>
+                  </form>
+               </div>
                 </div>
             </div>
-    </section>
+
+            @if(!empty($data->blogComment))
+            <div class="container">
+          <div class=leave-comment>
+                  <h4>Comments</h4>
+               </div>
+               <div class=col-md-12>
+                   <div class="panel-body">
+                                     
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="media-list">
+                 @foreach($data->blogComment as $mess)
+                        <li class="media">
+                            <a href="#" class="pull-left">
+                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                            </a>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">{{ Carbon\Carbon::parse($mess->created_at)->isoFormat('dddd D') }}</small>
+                                </span>
+                                <strong class="text-success">{{$mess->name}}</strong>
+                                <p>
+                                    {{$mess->message}}
+                                </p>
+                            </div>
+                        </li>
+                  
+                  @endforeach
+                    </ul>
+                </div>
+
+                  <div>
+
+
+            </div>
+            @endif
+      </section>
+
+   
 @endif
 <section class="contact-sectn">
     <div class="container">
@@ -74,5 +126,18 @@
         <div id="map-canvas"></div>
     </div>
 </section>
+<script>
+ $(document).ready(function() {
+    var text_max = 200;
+    $('#textarea_feedback').html(text_max + ' Characters Remaining');
 
+    $('#area').keyup(function() {
+        var text_length = $('#area').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' Characters Remaining');
+    });
+});
+
+ </script>
 @endsection

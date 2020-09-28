@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\BlogComment;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Validation\Rule;
@@ -46,9 +47,9 @@ class BlogController extends Controller {
                 $blogsArray[$k]['image_name'] = '<img class="img-bordered" height="60" width="100" src=' . $blog->img . '>';
                 $blogsArray[$k]['name'] = $blog->title;
                 $blogsArray[$k]['description'] = $blog->description;
-                $blogsArray[$k]['action'] = '<a href="' . route('admin.blog.edit', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-                        . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $blog->id . '" ><i class="fa fa-trash"></i> Delete </a>';
-            }
+                $blogsArray[$k]['action'] = '<a href="' . route('admin.blog.edit', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>&nbsp;&nbsp;<a href="' . route('admin.blog.comment-list', $blog) . '" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Comment </a>&nbsp;&nbsp;'
+                . '<a href="javaScript:void(0);" class="btn btn-danger btn-xs delete" id="' . $blog->id . '" ><i class="fa fa-trash"></i> Delete </a>';
+    }
             $data['data'] = $blogsArray;
             return $data;
         } catch (\Exception $e) {
@@ -143,4 +144,40 @@ class BlogController extends Controller {
         }
     }
 
+    public function comment(Request $request, Blog $blog)
+    {
+
+        $comm = BlogComment::where('blog_id', $blog->id)->get();
+        return view('admin.blog.comment-list', [
+            'comments' => $comm,
+            'blog' => $blog,
+        ]);
+    }
+
+    public function approveStatus(Request $request, $id)
+    {
+    
+        $comm = BlogComment::where('id', $id)->first();
+        $comm->is_approve = 1;
+        if($comm->save()){
+            $comment = BlogComment::where('blog_id', $comm->blog_id)->get();
+        return view('admin.blog.comment-list', [
+            'comments' => $comment,
+        ]);
+        }
+    }
+
+    public function rejectStatus(Request $request, $id)
+    {
+  
+        $comm = BlogComment::where('id', $id)->first();
+        $comm->is_approve = 2;
+        if($comm->save()){
+            $comment = BlogComment::where('blog_id', $comm->blog_id)->get();
+        return view('admin.blog.comment-list', [
+            'comments' => $comment,
+        ]);
+        }
+    }
+    
 }

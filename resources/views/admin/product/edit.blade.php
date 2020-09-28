@@ -1,7 +1,16 @@
 @extends('admin.layout.app')
 
 @section('content')
+<style>
+div#other_product_div .form-group ul {
+    list-style: none;
+}
 
+
+div#other_product_div .form-group ul li {
+    float: left;
+}
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10">
@@ -50,16 +59,18 @@
 
     $(document).on("click", "#add_more_product", function () {
 
-var product_html = "<div class='form-group col-sm-6 form-inline'>"
-      
-        + "<div class='col-sm-6'>"
-        + "<label class='control-label col-md-2 col-sm-2 col-xs-12'>Quantity Type</label>"
-        + "<input type='text' class='form-control' required name='other_products[]'>"
-        + "<label class='control-label col-md-2 col-sm-2 col-xs-12'>Quantity Price</label>"
-        + "Rs.<input type='number' class='form-control' required name='other_prices[]'>"
-        + "</div>"
-        + "<i style='cursor:pointer' class='fa fa-times delete_this_div'></i>"
-        + "</div>";
+        var product_html = "<div class='form-group'>"
+                    +"<label class='control-label col-sm-6 '></label>"
+                    +"<div id='other_product_div'><div class='form-group'><ul>"
+                   +"<li><label class='control-label col-md-12'>Quantity Type</label>"
+                    +"<div class='col-sm-12'>"
+                    +"<input type='text' class='form-control' required name='other_products[]'>"                           
+        +"</div></li></ul><ul>"
+        +"<li><label class='control-label col-md-12'>Quantity Price</label>"
+        +"<div class='col-sm-12'>"
+        +"<input type='text' class='form-control' required name='other_prices[]' >"
+       +"</div></li></ul><i style='cursor:pointer' class='fa fa-times delete_this_div'></i>"
+       +"</div></div></div>";
 $("#other_product_div").append(product_html);
 });
 

@@ -78,15 +78,18 @@
                     <div id="other_product_div">
                     @if(isset($types))
                         @foreach( $types as $am)
-                        <div class='form-group '>
-                        <label class='control-label col-md-12'>Quantity Type</label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" name="other_products[]" value="{{ $am->type }}"> 
-                                <label class='control-label col-md-12'>Quantity Price</label>
-                                 <input type="number" class="form-control" name="other_prices[]" value="{{ $am->price }}">
-                            </div>
-                            <i style='cursor:pointer' class='fa fa-times delete_this_div'></i>
-                        </div>
+                        <div class="form-group">
+                    <label class="control-label col-sm-6 "></label>
+                    <div id="other_product_div"><div class="form-group "><ul>
+                    <li><label class="control-label col-md-12">Quantity Type</label>
+                    <div class="col-sm-12">
+                    <input type="text" class="form-control" required name="other_products[]" value="{{ $am->type }}">                                             
+        </div></li></ul><ul>
+        <li><label class="control-label col-md-12">Quantity Price</label>
+        <div class="col-sm-12">
+        <input type="text" class="form-control" required name="other_prices[]" value="{{ $am->price }}"> 
+        </div></li></ul><i style="cursor:pointer" class="fa fa-times delete_this_div"></i>
+        </div></div></div>
                         @endforeach
                         @else
                         @endif

@@ -25,6 +25,7 @@ Route::get('/store', 'HomeController@storeList')->name('site.store');
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
 Route::get('/blog/{id}', 'BlogController@blogDetails');
+Route::post('/blog/', 'BlogController@blogComment')->name('site.blog.comment');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
 Route::get('/corporate', 'HomeController@corporate')->name('site.corporate');
 Route::post('/franchise', 'HomeController@franchiseSubmit')->name('site.franchise.form');
@@ -102,6 +103,9 @@ Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function
     Route::match(['get', 'post'], '/add', 'BlogController@blogAdd')->name('admin.blog.add');
     Route::match(['get', 'post'], '/edit/{blog}', 'BlogController@blogEdit')->name('admin.blog.edit');
     Route::post('/delete', 'BlogController@blogDelete')->name('admin.blog.delete');
+    Route::get('/{blog}/comment-list', 'BlogController@comment')->name('admin.blog.comment-list');
+    Route::get('/accept/{id}', 'BlogController@approveStatus')->name('admin.blog.comment.approve');
+    Route::get('/reject/{id}', 'BlogController@rejectStatus')->name('admin.blog.comment.reject');  
 
 });
 
