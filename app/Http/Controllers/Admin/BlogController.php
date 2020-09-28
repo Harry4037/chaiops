@@ -90,7 +90,7 @@ class BlogController extends Controller {
                     $icon_file_name = basename($iconImage);
                     $blog->img = $icon_file_name;
                 }
-                $blog->type = $request->blog_type;
+            
                 $blog->title = $request->blog_name;
                 $blog->description = $request->blog_description;
 
