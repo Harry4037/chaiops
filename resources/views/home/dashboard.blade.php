@@ -85,7 +85,7 @@
                      <tr>
                         <td><a href=#>#{{ $order->id}}</a></td>
                         <td>{{ $order->created_at}}</td>
-                        <td>@if($order->status == 1 ) Pending @elseif($order->status == 2 ) Confirmed @elseif($order->status == 3 ) Delivered @elseif($order->status == 4 ) Cancelled @else failed @endif</td>
+                        <td>{{ $order->payment_text}}</td>
                         <td>₹{{$order->total_amount}} for {{count($order->orderItem)}} item</td>
                         <td><button type="button" onclick="openCity('vieworder{{$i}}')" class="btn btn-danger">View</button></td>
                      </tr>

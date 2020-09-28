@@ -166,7 +166,7 @@ class CartController extends Controller {
                 $dbOrder->item_total_amount = $request->total;
                 $dbOrder->tax_amount = max(round($taxPrice), 0);
                 $dbOrder->total_amount = max(round($request->total +$taxPrice), 0);
-                $amount = (int) ($request->total +$taxPrice);
+                $amount = (int) ( $dbOrder->total_amount * 100);
                 $dbOrder->order_type = "ONLINE";
                 $dbOrder->address = $request->address;
                 $dbOrder->city = $request->city;
@@ -175,7 +175,7 @@ class CartController extends Controller {
                 $dbOrder->name = $request->name;
                 $dbOrder->status = 0;
                 $dbOrder->mobile_number = $user->phone_number;
-                $dbOrder->payment_text = "PENDING";
+                $dbOrder->payment_text = "FAILED";
                 $dbOrder->transaction_id = NULL;
                 if ($dbOrder->save()) {
                     if($user->address == NULL){

@@ -52,7 +52,7 @@
 
     $(document).on("click", "#add_more_product", function () {
 
-        var product_html = "<div class='form-group col-sm-6 form-inline"
+        var product_html = "<div class='form-group col-sm-6 form-inline>"
       
         + "<div class='col-sm-6'>"
         + "<label class='control-label col-md-3 col-sm-3 col-xs-12'>Quantity Type</label>"
