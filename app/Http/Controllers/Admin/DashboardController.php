@@ -13,7 +13,7 @@ class DashboardController extends Controller {
     public function index(Request $request) {
 
         $users = User::where(["user_role_id" => '3'])->count(); 
-        $orders = Order::where(["status" => '1'])->count(); 
+        $orders = Order::where(["status" => '1', "payment_text" => 'CONFIRMED'])->count(); 
         $contacts = Contact::count(); 
         return view('admin.dashboard.index', [
             "users" => $users,

@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Razorpay\Api\Api;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use Carbon\Carbon;
+use Validator;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
@@ -15,6 +20,11 @@ use App\Models\User;
 use Session;
 
 class CartController extends Controller {
+
+        //test key
+        private $razorpayId = "rzp_test_66o0k8Qc6D6HOf";
+        private $razorpayKey = "sGcsoZrIsvY37tUnwmjN9Ow5";
+        
 
     public function addToCart(Request $request, $id, $type) {
         $product = Product::find($id);
@@ -151,22 +161,23 @@ class CartController extends Controller {
             //    dd($check_product->toArray());
             if ($check_product) {
                 $taxPrice = $request->tax;
-                $order = new Order();
-                $order->user_id = $user->id;
-                $order->item_total_amount = $request->total;
-                $order->tax_amount = max(round($taxPrice), 0);
-                $order->total_amount = max(round($request->total +$taxPrice), 0);
-                $order->order_type = "ONLINE";
-                $order->address = $request->address;
-                $order->city = $request->city;
-                $order->state = $request->state;
-                $order->pincode = $request->pincode;
-                $order->name = $request->name;
-                $order->mobile_number = $user->phone_number;
-                $order->status = 1;
-                $order->payment_text = "CONFIRMED";
-                $order->transaction_id = NULL;
-                if ($order->save()) {
+                $dbOrder = new Order();
+                $dbOrder->user_id = $user->id;
+                $dbOrder->item_total_amount = $request->total;
+                $dbOrder->tax_amount = max(round($taxPrice), 0);
+                $dbOrder->total_amount = max(round($request->total +$taxPrice), 0);
+                $amount = (int) ($request->total +$taxPrice);
+                $dbOrder->order_type = "ONLINE";
+                $dbOrder->address = $request->address;
+                $dbOrder->city = $request->city;
+                $dbOrder->state = $request->state;
+                $dbOrder->pincode = $request->pincode;
+                $dbOrder->name = $request->name;
+                $dbOrder->status = 0;
+                $dbOrder->mobile_number = $user->phone_number;
+                $dbOrder->payment_text = "PENDING";
+                $dbOrder->transaction_id = NULL;
+                if ($dbOrder->save()) {
                     if($user->address == NULL){
                         $user->address = $request->address;
                         $user->city = $request->city;
@@ -176,7 +187,7 @@ class CartController extends Controller {
                     }
                     foreach ($check_product as $cartItem) {
                         $orderItem = new OrderItem();
-                        $orderItem->order_id = $order->id;
+                        $orderItem->order_id = $dbOrder->id;
                         $orderItem->product_id = $cartItem->product->id;
                         $orderItem->product_name = $cartItem->product->name;
                         $orderItem->type = $cartItem->productType->type;
@@ -185,16 +196,124 @@ class CartController extends Controller {
                         $orderItem->total_price = round($cartItem->quantity * $cartItem->productType->price);
                         $orderItem->save();
                     }
+
+                    // Generate random receipt id
+                    $receiptId = Str::random(20);
+
+                    // Create an object of razorpay
+                    $api = new Api($this->razorpayId, $this->razorpayKey);
+
+                    // In razorpay you have to convert rupees into paise we multiply by 100
+                    // Currency will be INR
+                    // Creating order
+                    $order = $api->order->create([
+                        'receipt' => $receiptId,
+                        'amount' => $amount,
+                        'currency' => 'INR'
+                    ]);
+                    $dbOrder->transaction_id = $order['id'];
+                    $dbOrder->save();
+                    // Return response on payment page
+                    $response = [
+                        'orderId' => $order['id'],
+                        'razorpayId' => $this->razorpayId,
+                        'amount' => $amount,
+                        'name' => auth()->user()->name,
+                        'currency' => 'INR',
+                        'email' => auth()->user()->email,
+                        'contactNumber' => auth()->user()->phone_number,
+                        'address' => auth()->user()->address,
+                        'description' => 'Testing description',
+                    ];
                     Cart::where('user_id', $user->id)->delete();
                     if (session()->get('cart')) {
                         session()->put('cart', NULL);
                     }
+                     // Let's checkout payment page is it working
+                     return view('home.payment-page', compact('response'));
+
+                   
                 }
 
                 return view('home.order');
             }
         } else {
             return redirect()->to('/');
+        }
+    }
+
+    public function Complete(Request $request) {
+        // Now verify the signature is correct . We create the private function for verify the signature
+        $signatureStatus = $this->SignatureVerify(
+                $request->razorpay_signature, $request->razorpay_payment_id, $request->razorpay_order_id
+        );
+
+        // If Signature status is true We will save the payment response in our database
+        // In this tutorial we send the response to Success page if payment successfully made
+        if ($signatureStatus == true) {
+            $order = Order::where(["transaction_id" => $request->razorpay_order_id])->first();
+            if ($order) {
+                // $package = Product::with(["packagecourse" => function($query) {
+                //                 $query->with(["course" => function($query) {
+                //                         $query->with("courseclass");
+                //                     }]);
+                //             }])->find($order->package_id);
+//                dd($package->toArray());
+// $data1 = Order::where('id',$order->id)->with(['user','package'])->first();
+//             $html = view('emails.invoice-pdf', [
+//                 'data' => $data1,
+//             ]);
+//          $data["email"]= $data1->user->email;
+//         $data["client_name"]= $data1->user->name;
+//         $data["subject"]="GymEurofit Invoice ";
+
+
+            
+//               $pdf = PDF::loadView('emails.invoice-pdf', [
+//                 'data' => $data1,
+//             ]);
+            
+//                try{
+                            
+//             Mail::send('emails.invoice', $data, function($message)use($data,$pdf) {
+//             $message->to($data["email"], $data["client_name"])
+//             ->subject($data["subject"])
+//             ->attachData($pdf->output(), "invoice.pdf");
+           
+//             });
+//                } catch (\Exception $e) {
+//         }
+                if ($order) {
+                
+                    $order->payment_text = "CONFIRMED";
+                    $order->status = 1;
+                    if ($order->save()) {
+                        
+                    }
+                }
+            }
+
+            return redirect()->route('site.dashboard')->with('success', 'Order successfully.');
+            // You can create this page
+//            return view('payment-success-page');
+        } else {
+            return redirect()->route('site.dashboard')->with('error', 'Payment failed.');
+            // You can create this page
+//            return view('payment-failed-page');
+        }
+    }
+
+// In this function we return boolean if signature is correct
+    private function SignatureVerify($_signature, $_paymentId, $_orderId) {
+        try {
+            // Create an object of razorpay class
+            $api = new Api($this->razorpayId, $this->razorpayKey);
+            $attributes = array('razorpay_signature' => $_signature, 'razorpay_payment_id' => $_paymentId, 'razorpay_order_id' => $_orderId);
+            $order = $api->utility->verifyPaymentSignature($attributes);
+            return true;
+        } catch (\Exception $e) {
+            // If Signature is not correct its give a excetption so we use try catch
+            return false;
         }
     }
 

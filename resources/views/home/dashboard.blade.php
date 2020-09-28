@@ -100,7 +100,7 @@
          <div class="container1" id="vieworder{{$i}}" style="display:none">
             <div class="row">
                <div class="col-lg-12">
-                  <p>Order #{{ $order->id}} was placed on {{ $order->created_at}} and is currently @if($order->status == 1 ) Pending @elseif($order->status == 2 ) Confirmed @elseif($order->status == 3 ) Delivered @elseif($order->status == 4 ) Cancelled @else failed @endif.</p>
+                  <p>Order #{{ $order->id}} was placed on {{ $order->created_at}} </p>
                   <h4><strong>Order Details</strong></h4>
                   <table class="table table-striped table-bordered" style>
                      <thead>

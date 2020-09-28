@@ -54,6 +54,7 @@ Route::post('/delete-cart-product', 'CartController@deleteCartProduct');
 Route::patch('update-cart', 'CartController@update');
 
 Route::delete('remove-from-cart', 'CartController@remove');
+Route::post('/payment-response', 'CartController@complete')->name('site.payment.response');
 
 Route::namespace('Admin')->prefix('admin')->group(function() {
     Route::match(['get', 'post'], '/', 'LoginController@showLoginForm')->name('admin.login-form');
