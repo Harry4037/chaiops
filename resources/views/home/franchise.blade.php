@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group ">
                         <label for="name">Your Phone No*</label>
-                        <input type="tel" class="form-control" name="mob" id="phone" placeholder="Phone" pattern="[0-9]{10}"
+                        <input type="number" class="form-control" name="mob" id="phone" placeholder="Phone" maxlength="10" pattern="[0-9]{10}"
                             required="required">
                     </div>
                     <div class="form-group ">

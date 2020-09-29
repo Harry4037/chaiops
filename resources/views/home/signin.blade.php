@@ -57,8 +57,8 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="Your Phone Number"
-                                        id="phone_number" name="phone_number">
+                                    <input type="tel" class="form-control" placeholder="Your Phone Number"
+                                        id="phone_number" name="phone_number" maxlength="10" pattern="[0-9]{10}">
                                 </div>
                             </div>
                             <div class="col-sm-12">

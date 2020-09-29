@@ -97,7 +97,7 @@
                     <div class=form-group> <input type=text class=form-control name=name placeholder=Name
                                                   @if(auth()->check()) value="{{ auth()->user()->name }}" @endif required
                                                   data-parsley-required-message="Please insert Name"> </div>
-                    <div class=form-group> <input type=number class=form-control name=phone placeholder="Phone"
+                    <div class=form-group> <input type=number class=form-control name=phone placeholder="Phone" maxlength="10" pattern="[0-9]{10}"
                                                   @if(auth()->check()) value="{{ auth()->user()->phone_number }}" @endif required
                                                   data-parsley-required-message="Please insert Phone No"> </div>
                     <div class=form-group> <input type=email class=form-control name=email placeholder=Email

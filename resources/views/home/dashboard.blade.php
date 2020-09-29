@@ -234,12 +234,13 @@
                      <div class="form-group ">
                         <label for="pincode">Pincode</label>
                         <input
-                           type="text"
+                           type="number"
                            class="form-control"
                            name="pincode"
                            id="pincode"
                            value="{{auth()->user()->pincode}}"
-                           placeholder="Pincode"
+                           maxlength="6"
+                           placeholder="Pincode" pattern="[0-9]{6}"
                            required="required">
                      </div>
                   </div>
