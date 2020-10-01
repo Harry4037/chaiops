@@ -1494,7 +1494,8 @@ h6 {
 	font-family: inherit;
 	font-weight: 500;
 	line-height: 1.1;
-	color: inherit
+	color: inherit;
+	font-family: Oswald,sans-serif;
 }
 
 .h1 .small,

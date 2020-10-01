@@ -246,7 +246,7 @@ blockquote {
 		transition: background .4s ease
 	}
 	.submenu li:hover {
-		background: #b4462a
+		background: #f8961e;
 	}
 }
 
@@ -533,7 +533,7 @@ blockquote {
 	position: relative;
 	font-size: 60px;
     font-family: Oswald,sans-serif;
-    color: #30271c;
+    color: #323232;
     font-weight: 700;
 }
 
@@ -560,7 +560,7 @@ blockquote {
 
 .pricing-detail h3,
 .section-heading-type2 h2 {
-	font-family: "Old Standard TT", serif
+	font-family: Oswald,sans-serif;
 }
 
 .section-heading.with-gray h1 span {
@@ -694,7 +694,7 @@ blockquote {
 }
 
 .pricing-carte {
-	background-color: #3f3530;
+	background-color: #323232;
 	color: #f8edeb;
 	overflow-y: scroll
 }
@@ -869,8 +869,8 @@ blockquote {
 	padding: 10px 5px;
 	width: 75pt;
 	text-align: center;
-	border: 1px solid #3f3530;
-	color: #3f3530
+	border: 1px solid #d9d4d1;
+    color: #ffffff;
 }
 
 .menu-btn-holder a.active {
@@ -1093,7 +1093,7 @@ blockquote {
 }
 
 .book-order .order-number h2 {
-	font-family: "Old Standard TT", serif;
+	/*font-family: "Old Standard TT", serif;*/
 	font-size: 25px
 }
 
@@ -1105,8 +1105,8 @@ blockquote {
 
 @media screen and (min-width:768px) {
 	.book-order {
-		padding: 30px 0
-	}
+    padding: 16px 0;
+}
 	.book-order .order-number {
 		position: relative
 	}
@@ -1291,7 +1291,7 @@ blockquote {
 	text-transform: initial;
 	font-family: "Great Vibes", cursive;
 	font-size: 5pc;
-	color: #dc8068
+	color: #f8961e
 }
 
 .banner4-details h3,
@@ -1952,7 +1952,7 @@ textarea:hover {
 }
 
 .categories button.selected {
-	background: #dc8068;
+	background: #f8961e;
 	color: #fff;
 	border-color: #dc8068;
 	letter-spacing: 4px
@@ -2000,8 +2000,8 @@ textarea:hover {
 }
 
 .product-detail h3,
-.store-product-wrapper .product-rate {
-	font-family: "Open Sans", sans-serif
+.product-detail h3, .store-product-wrapper .product-rate {
+    font-family: Oswald,sans-serif;
 }
 
 .store-product .add-cart.cart-added:after {
@@ -2019,7 +2019,7 @@ textarea:hover {
 
 .store-product .buy-btn:focus,
 .store-product .buy-btn:hover {
-	background-color: #c94f2f;
+	background-color: #f8961e;
 	color: #fff
 }
 
@@ -2046,7 +2046,7 @@ textarea:hover {
 	line-height: 60px;
 	width: 60px;
 	border-radius: 50%;
-	background-color: #dc8068;
+	background-color: #f8961e;
 	text-align: center;
 	z-index: 2;
 	color: #fff;
@@ -2104,10 +2104,10 @@ textarea:hover {
 }
 
 .product-detail h3 {
-	color: #fff;
-	margin-top: 0;
-	font-weight: 400;
-	font-size: 18px
+    color: #30271c;
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .product-detail p {
@@ -2146,7 +2146,7 @@ textarea:hover {
 		transition-timing-function: ease-in-out
 	}
 	.categories button:hover {
-		background: #dc8068;
+		background: #f8961e;
 		letter-spacing: 4px;
 		color: #fff;
 		border-color: #dc8068
@@ -2401,7 +2401,7 @@ footer h2 {
 	height: 5pc;
 	overflow: hidden;
 	text-align: center;
-	background-color: #dc8068;
+	background-color: #f8961e;
 	padding: 18px 0;
 	margin-right: 10px
 }
@@ -2595,7 +2595,7 @@ footer .order-btn {
 	margin: 40px 0;
 	padding: 15px 30px;
 	font-size: 18px;
-	background-color: #dc8068;
+	background-color: #f8961e;
 	color: #fff;
 	float: none;
 	width: auto;
@@ -2813,7 +2813,7 @@ fieldset[disabled] .button-primary:hover {
 	font-family: "Open Sans", sans-serif;
 	font-size: 18px;
 	font-weight: 400;
-	background-color: #dc8068;
+    background-color: #f8961e;
 	color: #fff;
 	float: none;
 	width: auto
@@ -6184,7 +6184,6 @@ header .header-body {
 }
 
 .order-box h2 {
-	font-family: "Old Standard TT", serif;
 	font-size: 45px;
 	margin: 10px 0
 }
@@ -6296,7 +6295,7 @@ header .header-body {
 }
 
 .menu-list-page .cuisine-price {
-	color: #664d42
+	color: #f8f8f8;
 }
 
 .menu-list-page .pricing-detail {
@@ -6427,7 +6426,6 @@ header .header-body {
 }
 
 .blog-excerpt h2 {
-	font-family: "Old Standard TT", serif;
 	font-size: 50px
 }
 
@@ -6706,9 +6704,8 @@ img.alignleft {
 }
 
 .gallery h2 {
-	font-family: "Old Standard TT", serif;
 	font-size: 50px;
-	color: #664d42;
+	color: #30271c;
 	text-transform: capitalize
 }
 
@@ -6799,7 +6796,7 @@ img.alignleft {
 	top: 50%;
 	margin-left: -47px;
 	margin-top: -47px;
-	background: #dc8068;
+	background: #f8961e;
 	border-radius: 50%;
 	opacity: 0;
 	-webkit-transition: opacity .5s ease;
@@ -7279,7 +7276,7 @@ img.alignleft {
 }
 
 .contactpage h2 {
-	font-family: "Old Standard TT", serif;
+	font-family: Oswald,sans-serif;
 	font-size: 50px;
 	color: #664d42
 }
@@ -7368,7 +7365,7 @@ img.alignleft {
 
 .addressbar .marker h4,
 .addressbar .support-mail h4 {
-	font-family: "Old Standard TT", serif;
+	font-family: Oswald,sans-serif;
 	font-size: 25px;
 	color: #664d42;
 	font-weight: 400;
@@ -7471,7 +7468,7 @@ section {
 		text-align: right
 	}
 	.banner-text h2 span {
-		font-size: 180px
+		font-size: 135px
 	}
 	.banner-img {
 		text-align: left
@@ -7491,19 +7488,7 @@ section {
 		transform: scale3d(1, 1, 1);
 		opacity: 1
 	}
-	.banner-img img,
-	.banner-img-holder .cup,
-	.banner-text h2 span,
-	.coffee-text,
-	.inner-page .pricing-table,
-	.order-type-wrapper,
-	.premium-text,
-	.reservation-form,
-	.section-heading h2,
-	.service-details .service-wrapper,
-	ul.categories li {
-		opacity: 0
-	}
+
 	.reservation-form.animated,
 	.service-details .service-wrapper.animated {
 		opacity: 1
@@ -7544,10 +7529,16 @@ section {
 }
 
 .product-detail p {
-	color: #202020;
-	font-weight: 600;
+    color: #202020;
+    font-weight: 400;
 }
+
 
 a.header-logo {
 	max-width: 188px;
+}
+
+.menu-page .pricing-carte {
+    border: 1px dashed #323232;
+    background-color: #323232;
 }
