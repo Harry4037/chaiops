@@ -53,7 +53,7 @@
 <section class="midpage-banner1 banner-section">
     <div class="container">
         <div class="img-holder">
-            <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png")}}" alt="">
+        <img class="milk-cup" src="{{ asset("assets/images/milk-pour-cup.png")}}" alt="">
             <img class="cup" src="{{ asset("assets/images/pour-cup.png")}}" alt="">
             <div class="milk">
                 <img src="{{ asset("assets/images/milk-pour2.png")}}" alt="">
