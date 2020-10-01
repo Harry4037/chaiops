@@ -4,9 +4,7 @@
                     <div class="container">
                         <h2>Let's visit our</h2>
                         <h3>Shop Today</h3>
-                        <div>
-                            <img src="{{ asset("assets/images/logo.png")}}" alt="">
-                        </div>
+                        
                         <a href="{{route('site.menu')}}" class="order-btn">Order your coffee now !</a>
                         <div class="footer-nav-wrapper">
                             <ul class="footer-nav clearfix">

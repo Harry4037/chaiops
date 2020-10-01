@@ -11,7 +11,7 @@
             </div>
             @endif
             <div class=navbar-header> <button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#coffeeNavbarPrimary aria-expanded=false> <span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> </div>
-            <a href="{{route('site.index')}}" class=header-logo>Coffee and You <img src="{{ asset("assets/images/small-logo.png")}}" alt=""> </a> 
+            <a href="{{route('site.index')}}" class=header-logo>Coffee and You <img src="{{ asset("assets/images/small-logo-header.png")}}" alt=""> </a> 
             <div class="collapse navbar-collapse" id=coffeeNavbarPrimary>
                 <ul class="nav navbar-nav navbar-right">
                     <li @if(in_array(Route::currentRouteName(), ['site.index']))
