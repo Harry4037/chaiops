@@ -3,7 +3,7 @@
 @section('content')
 <style>
 .menu-page .pricing-carte {
-    background-color: #fff;
+    background-color: #323232;
     border: 1px dashed #3f3530;
     width: 100%!important;
 }
