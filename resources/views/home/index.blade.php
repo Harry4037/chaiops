@@ -23,7 +23,7 @@ background:none;
                   <a href="https://www.linkedin.com/company/chaiops/" class="fa fa-linkedin"></a>
                 </div>
         <div class="banner-image">
-            <p>SINCE 1939</p>
+        
             <div class="banner-img-holder">
                 <!-- <img src="/assets/images/banner/banner01.png" alt="Banner Images"> -->
                 <img class="logo-cup" src="{{ asset("assets/images/banner/logo-cup.png")}}" alt="Banner Images">
