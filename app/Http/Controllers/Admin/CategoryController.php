@@ -65,6 +65,7 @@ class CategoryController extends Controller {
         try {
             $category = Category::find($request->id);
             if ($category) {
+                Product::where('category_id',$category->id)->delete();
                 $category->delete();
                 return ['status' => true, "message" => "Category deleted."];
             } else {

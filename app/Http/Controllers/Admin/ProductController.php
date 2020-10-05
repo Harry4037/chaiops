@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Category;
+use App\Models\Cart;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Validation\Rule;
@@ -74,6 +75,10 @@ class ProductController extends Controller {
         try {
             $product = Product::find($request->id);
             if ($product) {
+                $tems = Cart::Where('product_id',$product->id)->get();
+                foreach($tems as $ite){
+                    Cart::where('id',$ite->id)->delete();
+                }
                 $product->delete();
                 return ['status' => true, "message" => "product deleted."];
             } else {
