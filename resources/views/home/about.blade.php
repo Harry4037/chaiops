@@ -101,14 +101,12 @@
     <div class="container">
         <h3>A morning without
 
-            <span>Coffee
+            <span>Tea
             </span>
             is like sleep
         </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nam,
-            voluptatibus amet eius. Aperiam voluptate hic fugiat repudiandae, aliquid culpa
-            error doloribus necessitatibus quod, iste quas est sint corporis ipsa!</p>
-        <a href="#" class="button-type-three">Know More</a>
+      
+    
     </div>
 </section>
 @endsection

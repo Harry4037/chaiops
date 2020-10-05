@@ -34,8 +34,7 @@
                         <a href="#" class="back-to-top">
                             <i class="fa fa-angle-up"></i>
                         </a>
-                        <small>&copy; 2020 Riziliant. Trademarks and brands are the property of their
-                            respective owners.</small>
+                        <small> Chaiops &copy; 2020 All Rights Reserved <a href="{{route('site.terms')}}">Terms of Conditions</a> and <a href="{{route('site.privacy')}}">Privacy Policy</a></small>
                     </div>
                 </div>
             </footer>

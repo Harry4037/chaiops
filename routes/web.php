@@ -21,6 +21,8 @@ Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');
 Route::post('/address', 'HomeController@addressSubmit')->name('site.address.form');
 Route::get('/store', 'HomeController@storeList')->name('site.store');
+Route::get('/privacy-policy', 'HomeController@privacyList')->name('site.privacy');
+Route::get('/terms_conditions', 'HomeController@termsList')->name('site.terms');
 
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');

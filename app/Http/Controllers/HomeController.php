@@ -89,6 +89,15 @@ class HomeController extends Controller {
         return view('home.franchise');
     }
 
+    public function privacyList() {
+        return view('home.privacy');
+    }
+
+    public function termsList() {
+        return view('home.terms');
+    }
+
+
     public function corporate() {
         return view('home.corporate');
     }    

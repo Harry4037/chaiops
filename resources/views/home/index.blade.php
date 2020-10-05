@@ -165,11 +165,9 @@ background:none;
         </div>
         <!-- <img src="/assets/images/milk-pour-cup.png" alt=""> -->
         <div class="banner1-details">
-            <h3>We are "Coffee and You"</h3>
-            <h3>A premium coffee shop</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aliquid
-                aliquam asperiores, saepe alias dignissimos consectetur ea cum sint tenetur
-                magnam. Illo quasi neque cupiditate beatae optio eos iusto, architecto!</p>
+            <h3>We are "Tea and You"</h3>
+            <h3>A premium Tea shop</h3>
+            <p>The Chaiops has developed a well-structured and unique business model to give potential franchise candidates a business opportunity with small investment.</p>
             <a href="{{route('site.about')}}" class="button-type-three">Know More</a>
         </div>
     </div>
@@ -291,9 +289,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>William</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
                 <li class="testimonial-item item clearfix">
@@ -302,9 +298,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
                 <li class="testimonial-item item clearfix">
@@ -313,9 +307,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>jhon</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
                 <li class="testimonial-item item clearfix">
@@ -324,9 +316,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>david</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
                 <li class="testimonial-item item clearfix">
@@ -335,9 +325,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>maria</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
                 <li class="testimonial-item item clearfix">
@@ -346,9 +334,7 @@ background:none;
                     </div>
                     <div class="name-text">
                         <h3>luiz</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, commodi
-                            labore veritatis quasi fugiat, officiis eligendi architecto molestias non soluta
-                            qui voluptate ex quam velit laboriosam esse fuga sequi. Tenetur.</p>
+                        <p>Was there to pick up some snack and a short break. Experience was inviting. The service at the counter could have been a tad faster but on the whole it.</p>
                     </div>
                 </li>
             </ul>
@@ -379,11 +365,9 @@ background:none;
         <div class="banner4-details">
             <h3>Our shop</h3>
             <h3>at your fingertips</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aliquid
-                aliquam asperiores, saepe alias dignissimos consectetur ea cum sint tenetur
-                magnam. Illo quasi neque cupiditate beatae optio eos iusto, architecto!</p>
-            <a href="#" class="button-type-three download">
-                <span>Download now</span></a>
+            <p>Chaiops has been initiated to serve the best quality Beverages using the best ingredients. Chaiops aims to set up its outlets across the Globe &amp; reinvent the pleasure of quality herbs and masala chai. All the products that are served in Chaiops are unique in their taste. Huge efforts have gone into research of the unique taste of the Chai, Coffee &amp; Snacks that are served at our outlet. Our each product has a delightful mouthwatering taste which you can enjoy only at Chaiops outlet.</p>
+            <a href="{{route('site.menu')}}" class="button-type-three download">
+                <span>Shop now</span></a>
         </div>
     </div>
 </section>
@@ -404,15 +388,16 @@ background:none;
             <div class="add-inner-wrapper">
                 <h2>
                     <img src="{{ asset("assets/images/contact-img.png")}}" alt="">
-                    <span>Coffee and you</span>
+                    <span>Tea and you</span>
                 </h2>
                 <h3>
-                    <span>44</span>
-                    Park Street</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <span>D- 486</span>
+                    1st Floor, Sec – 7</h3>
+                <p>Dwarka, New Delhi – 110075</p>
             </div>
         </div>
-        <div id="map-canvas"></div>
+        <div id="map-cvas"> <iframe class="responsive-iframe"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14014.064218808973!2d77.0628016697754!3d28.58429149999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b29ff558a3d%3A0x342e71ccc8a77e3d!2sChaiops!5e0!3m2!1sen!2sin!4v1600871787763!5m2!1sen!2sin" width="50%" height="700" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                           </div>
     </div>
 </section>
 @endsection

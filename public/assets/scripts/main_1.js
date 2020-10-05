@@ -24,7 +24,7 @@
                 zoom: 8,
                 scrollwheel: !1,
                 disableDefaultUI: !0,
-                center: new google.maps.LatLng(-34.397, 150.644),
+                center: new google.maps.LatLng(28.586102, 77.071321),
                 styles: [
                     { stylers: [{ saturation: -100 }] },
                     { featureType: "road", elementType: "labels", stylers: [{ visibility: "off" }] },
@@ -33,7 +33,7 @@
             },
             b = new google.maps.Map(document.getElementById("map-canvas"), a),
             c = "/images/map-marker.png",
-            d = new google.maps.LatLng(-34.397, 150.644);
+            d = new google.maps.LatLng(28.586102, 77.071321);
         new google.maps.Marker({ position: d, map: b, icon: c });
     }
     function g() {
