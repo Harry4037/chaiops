@@ -65,7 +65,7 @@
                         <span>₹{{$cartItem->productType->price * $cartItem->quantity}}</span>
                     </div>
 
-                    <a href="#" class="remove-from-cart removeProduct" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"/>
+                    <a href="#" class="remove-from-cart removeproduct" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"/>
                         <i class="fa fa-times"></i>
                     </a>
                 </li>
@@ -177,7 +177,7 @@
             });
         });
 
-        $(document).on("click", ".removeProduct", function () {
+        $(document).on("click", ".removeproduct", function () {
             var product_id = $(this).data("id");
             var product_type_id =$(this).data("type");
             if (confirm("Are you sure want to delete this item.")) {

@@ -7083,7 +7083,7 @@ img.alignleft {
 	width: 100%
 }
 
-.cartpage .removeProduct {
+.cartpage .removeproduct {
 	background-color: #fff;
 	width: 25px;
 	height: 25px;
@@ -7139,7 +7139,7 @@ img.alignleft {
 }
 
 @media (min-width: 768px) {
-	.cartpage .removeProduct {
+	.cartpage .removeproduct {
 		background-color: transparent
 	}
 	.cartpage .item-price {
