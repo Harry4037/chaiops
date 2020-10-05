@@ -10,7 +10,7 @@ class Cart extends Model {
         return $this->belongsTo(Product::class, 'product_id')->withTrashed();
     }
     public function productType() {
-        return $this->belongsTo(ProductType::class, 'product_type_id')->withTrashed();
+        return $this->belongsTo(ProductType::class, 'product_type_id');
     }
     
 
