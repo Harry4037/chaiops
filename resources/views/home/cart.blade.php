@@ -185,9 +185,6 @@
                     url: _baseUrl + '/delete-cart-product',
                     type: 'post',
                     data: {'product_id': product_id, 'product_type_id': product_type_id},
-                    beforeSend: function () {
-                        //                $(".overlay").show();
-                    },
                     success: function (res) {
                         location.reload();                        
                     }

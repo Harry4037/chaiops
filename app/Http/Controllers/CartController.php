@@ -430,7 +430,7 @@ class CartController extends Controller {
     }
 
     public function deleteCartProduct(Request $request) {
-        $product = Product::where('id',$request->product_id)();  
+        $product = Product::find($request->product_id);  
         $productType = ProductType::find($request->product_type_id);
 
         if (!$product and !$productType ) {
