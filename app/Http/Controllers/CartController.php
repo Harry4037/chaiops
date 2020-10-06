@@ -12,6 +12,7 @@ use App\Models\Cart;
 use Carbon\Carbon;
 use Validator;
 use App\Models\Order;
+use Illuminate\Support\Facades\Mail;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\ProductType;
@@ -288,6 +289,25 @@ class CartController extends Controller {
                     $order->payment_text = "CONFIRMED";
                     $order->status = 1;
                     if ($order->save()) {
+                        try {
+                            $user = User::find($order->user_id);
+                            $orderItems = OrderItem::with('product')->where(["order_id" => $order->id])->get();
+                            $data['user'] = $user;
+                            $data['orderItem'] = $orderItems;
+                            $data['order'] = $order;
+                         
+                            // return view('emails.book', [
+                            //     'data' => $data,
+                            // ]);
+                      
+                            Mail::send('emails.book', $data, function($message) use($data) {
+                               $message->to($data['user']->email ,$data['user']->name)
+                               ->subject('Order Invoice');
+                            //    $message->from('info@chaiops.com','Chaiops Team');
+                            });
+                        } catch (\Exception $e) {
+                            
+                        }
                         
                     }
                 }
