@@ -175,7 +175,7 @@ class CartController extends Controller {
                 $dbOrder->pincode = $request->pincode;
                 $dbOrder->name = $request->name;
                 $dbOrder->status = 0;
-                $dbOrder->mobile_number = $user->phone_number;
+                $dbOrder->mobile_number = $request->phone;
                 $dbOrder->payment_text = "FAILED";
                 $dbOrder->transaction_id = NULL;
                 if ($dbOrder->save()) {
