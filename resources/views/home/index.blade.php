@@ -44,15 +44,14 @@ background:none;
 <section class="service-section">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>01</span></div>
+            
             <div class="section-heading">
                 <h1>
                     <span>About Us</span></h1>
             </div>
         </div>
         <div class="row">
-            <img src="{{ asset("assets/images/service-img.jpg")}}" class="service-side-img" alt="">
+            <img src="{{ asset("assets/images/Our-Story-png.png")}}" class="service-side-img" alt="">
             <div class="service-details">
                 <h3>Our Story</h3>
                 <p>Chaiops is entering the food and beverage industry with an aim to keep the authentic taste of ‘Chai’ or ‘Tea’
@@ -76,8 +75,7 @@ background:none;
 <section class="special-menu">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>02</span></div>
+        
             <div class="section-heading">
                 <h1>
                     <span>Our Special</span></h1>
@@ -177,8 +175,7 @@ background:none;
 <section class="table-book">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>03</span></div>
+           
             <div class="section-heading">
                 <h1>
                     <span>Book your</span></h1>
@@ -273,8 +270,7 @@ background:none;
 <section class="testimonial-sectn">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>05</span></div>
+         
             <div class="section-heading with-gray">
                 <h1>
                     <span>Our Happy</span></h1>
@@ -339,15 +335,7 @@ background:none;
                 </li>
             </ul>
         </div>
-        <figure class="testimonial-text clearfix">
-            <img src="{{ asset("assets/images/testi-img.png")}}" alt="">
-            <figcaption>
-                <h3>Our happy coffee lover and their awesome comments</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt porro aliquid
-                    laborum omnis labore sit, pariatur neque veritatis quaerat tempore mollitia,
-                    tempora placeat. Recusandae ullam assumenda ipsa, eum laboriosam eius.</p>
-            </figcaption>
-        </figure>
+        
     </div>
 </section>
 
@@ -374,8 +362,7 @@ background:none;
 <section class="contact-sectn">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>06</span></div>
+           
             <div class="section-heading">
                 <h1>
                     <span>Contact</span></h1>

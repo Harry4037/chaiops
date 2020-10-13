@@ -335,7 +335,7 @@ body {
 @font-face {
 	font-family: 'Glyphicons Halflings';
 	src: url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot);
-	src: url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regulard41d.eot?#iefix) format("embedded-opentype"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2) format("woff2"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff) format("woff"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf) format("truetype"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
+	src: url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regulard41dd41d.eot?#iefix) format("embedded-opentype"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2) format("woff2"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff) format("woff"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf) format("truetype"), url(../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
 }
 
 .glyphicon {
@@ -1408,7 +1408,7 @@ textarea {
 }
 
 a {
-	color: #337ab7;
+	color: #f0c051;
 	text-decoration: none
 }
 
@@ -5333,7 +5333,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
-    color: #30271c;
+    color: #ffffff;
     font-family: "Open Sans",sans-serif;
 }
 
@@ -5342,7 +5342,7 @@ tbody.collapse.in {
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
-	color: #f8961e;
+	color: #f0c051;
 	background-color: transparent
 }
 
@@ -7815,8 +7815,8 @@ button.close {
 
 @font-face {
 	font-family: FontAwesome;
-	src: url(../bower_components/fontawesome/fonts/fontawesome-webfont93e3.eot?v=4.4.0);
-	src: url(../bower_components/fontawesome/fonts/fontawesome-webfontd41d.eot?#iefix&v=4.4.0) format("embedded-opentype"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e3.woff2?v=4.4.0) format("woff2"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e3.woff?v=4.4.0) format("woff"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e3.ttf?v=4.4.0) format("truetype"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e3.svg?v=4.4.0#fontawesomeregular) format("svg");
+	src: url(../bower_components/fontawesome/fonts/fontawesome-webfont93e393e3.eot?v=4.4.0);
+	src: url(../bower_components/fontawesome/fonts/fontawesome-webfontd41dd41d.eot?#iefix&v=4.4.0) format("embedded-opentype"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e393e3.woff2?v=4.4.0) format("woff2"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e393e3.woff?v=4.4.0) format("woff"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e393e3.ttf?v=4.4.0) format("truetype"), url(../bower_components/fontawesome/fonts/fontawesome-webfont93e393e3.svg?v=4.4.0#fontawesomeregular) format("svg");
 	font-weight: 400;
 	font-style: normal
 }
