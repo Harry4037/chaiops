@@ -2,12 +2,9 @@
 
 @section('content')
 <div class="banner clearfix">
-    <div class="banner-img">
-        <img src="{{ asset("assets/images/cup.png")}}" alt="image">
-    </div>
+    
     <div class="banner-text">
-        <h2>
-            <span>My Account</span></h2>
+        <h2><span>My Account</span></h2>
     </div>
 </div>
 </div>
