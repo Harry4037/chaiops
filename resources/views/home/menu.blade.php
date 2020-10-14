@@ -45,7 +45,7 @@ background:none;
                 @foreach($category->product as $product)
                 <div class="store-product-wrapper grid-item type{{$category->id}}">
                   <div class=store-product>
-                     <div class="imgLiquidFill imgLiquid item-image"> <img src="./assets/images/menu-bg.png" alt="product item"> </div>
+                     <div class="imgLiquidFill imgLiquid item-image"> <img src="./assets/images/Caramel-Coffee.jpg" alt="product item"> </div>
                      <div class=product-detail>
                
                         <h3>{{ $product->name }}</h3>
