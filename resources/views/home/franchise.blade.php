@@ -3,9 +3,8 @@
 @section('content')
 
 <div class="banner clearfix">
-    <div class=banner-img> <img src="{{ asset("assets/images/cup.png") }}" alt=image> </div>
     <div class=banner-text>
-        <h2>Our special & exclusive <span>Franchise</span></h2>
+        <h2><span>Franchise</span></h2>
     </div>
 </div>
 </div>
