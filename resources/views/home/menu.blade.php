@@ -13,6 +13,9 @@ outline:0px;
 background-color:white;
 background:none;
 }
+.top-menu-img {
+    background: url({{ asset("assets/images/menu-bg.png")}}) center no-repeat;
+}
 
 </style>
 <div class="banner clearfix">
