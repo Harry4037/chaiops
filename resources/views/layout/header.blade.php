@@ -1,3 +1,29 @@
+<header @if(in_array(Route::currentRouteName(), ['site.about']))
+                         {{ "class=about-img" }}
+               @elseif(in_array(Route::currentRouteName(), ['site.menu']))        
+               {{ "class=top-menu-img" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.franchise']))        
+               {{ "class=franchise-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.corporate']))        
+               {{ "class=Corporate-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.blog']))        
+               {{ "class=tea-blog-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.store']))        
+               {{ "class=Store-list-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.contact']))        
+               {{ "class=Contact-us-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.cart']))        
+               {{ "class=cart-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.login']))        
+               {{ "class=bg" }}  
+                         @endif>
+
+            <div @if(in_array(Route::currentRouteName(), ['site.index']))
+                  {{ "class=header-body" }}
+                  @else
+                  {{ "class=container" }}
+                  @endif>
+                  <!-- Header -->
 <nav class="navbar navbar-default">
     <div class=container-fluid>
         <div class=row>

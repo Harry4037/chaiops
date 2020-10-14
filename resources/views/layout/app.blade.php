@@ -74,13 +74,7 @@ var _baseUrl = "{{ URL::to('/') }}";
 <strong>outdated</strong> browser. Please <a
 href="http://browsehappy.com/">upgrade your browser</a> to improve your
 experience.</p> <![endif]-->
-           <header>
-            <div @if(in_array(Route::currentRouteName(), ['site.index']))
-                  {{ "class=header-body" }}
-                  @else
-                  {{ "class=container" }}
-                  @endif>
-                  <!-- Header -->
+           
                   @include('layout.header')
 
 
