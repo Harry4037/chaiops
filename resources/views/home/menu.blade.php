@@ -13,9 +13,6 @@ outline:0px;
 background-color:white;
 background:none;
 }
-.top-menu-img {
-    background: url(./assets/images/menu-bg.png) center no-repeat;
-}
 
 </style>
 <div class="banner clearfix">
@@ -48,7 +45,7 @@ background:none;
                 @foreach($category->product as $product)
                 <div class="store-product-wrapper grid-item type{{$category->id}}">
                   <div class=store-product>
-                     <div class="imgLiquidFill imgLiquid item-image"> <img src="{{$product->name}}" alt="product item"> </div>
+                     <div class="imgLiquidFill imgLiquid item-image"> <img src="./assets/images/menu-bg.png" alt="product item"> </div>
                      <div class=product-detail>
                
                         <h3>{{ $product->name }}</h3>
