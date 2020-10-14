@@ -14,7 +14,7 @@ background-color:white;
 background:none;
 }
 .top-menu-img {
-    background: url({{ asset("assets/images/menu-bg.png")}}) center no-repeat;
+    background: url(./assets/images/menu-bg.png) center no-repeat;
 }
 
 </style>
