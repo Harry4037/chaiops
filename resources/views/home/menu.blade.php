@@ -55,7 +55,7 @@ background:none;
                         @endforeach
                         </select>
                      </div>
-                     <div class="clearfix add-buy"> <a href="javaScript:void(0);" class="add-cart addToCart" data-productid="{{$product->id}}">Add to Cart</a>
+                     <div class="clearfix add-buy"> <a href="javaScript:void(0);" class="add-cart addItemCart" data-id="{{$product->id}}">Add to Cart</a>
 					</div>
                   </div>
                </div>
