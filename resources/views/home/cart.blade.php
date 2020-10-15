@@ -52,9 +52,9 @@ a.remove-from-cart.removeproduct:hover {
                     <div class="item-content">
                         <div class="item-image">
                             @if($cartItem->product && $cartItem->product->image)
-                            <img src="$cartItem->product->image" alt="image">
+                            <img src="{{$cartItem->product->image}}" alt="image">
                             @else
-                            <img src="{{$product->img}}" alt="image">
+                            <img src="./assets/images/Caramel-Coffee.jpg" alt="image">
                             @endif
                         </div>
                         <div class="item-details">
