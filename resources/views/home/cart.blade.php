@@ -1,6 +1,19 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+a.remove-from-cart.removeproduct {
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    color: #dc8068;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+     </style>
 <div class="banner clearfix">
   
     <div class=banner-text>
