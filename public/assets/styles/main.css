@@ -7681,3 +7681,6 @@ section.productPage {
 footer .order-btn:hover {
     background-color: #f8961e;
 }
+sup {
+    text-transform: lowercase !important;
+}
