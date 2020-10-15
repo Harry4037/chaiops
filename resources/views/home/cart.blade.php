@@ -13,6 +13,9 @@ a.remove-from-cart.removeproduct {
     top: 5px;
     right: 5px;
 }
+a.remove-from-cart.removeproduct:hover {
+  color: #333;
+}
      </style>
 <div class="banner clearfix">
   
