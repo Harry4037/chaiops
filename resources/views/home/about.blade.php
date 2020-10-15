@@ -11,6 +11,9 @@
     .col-lg-6.video-left {
         margin-top: 35px;
     }
+    .banner1-details ul {
+    color: #fff;
+}
 </style>
 <div class="banner clearfix">
    
