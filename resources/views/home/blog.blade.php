@@ -5,9 +5,7 @@
         ol, ul {
    margin-top: 30px;  
 }
-.blog-img {
-    height: 250px !important;
-}
+
 @media screen and (min-width: 992px){
 .grid-item {
     width: 33%;
