@@ -3,9 +3,7 @@
 @section('content')
 <div class="banner clearfix">
     
-    <div class="banner-text">
-        <h2><span>My Account</span></h2>
-    </div>
+    
 </div>
 </div>
 <div class="social-icons">
