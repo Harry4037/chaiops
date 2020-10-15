@@ -40,7 +40,7 @@
             @foreach($data['blog'] as $key => $value)
    
                 <div class="blog-item clearfix">
-                    <div class="imgLiquid imgLiquidFill blog-img type1">
+                    <div class="blog-img">
                         <img src="{{ $value->img }}" alt="">
                     </div>
                     <div class="blog-excerpt">

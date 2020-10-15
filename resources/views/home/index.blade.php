@@ -13,6 +13,9 @@ outline:0px;
 background-color:white;
 background:none;
 }
+section.table-book .section-heading .animate {
+    color: #fff;
+}
 </style>
 <div class="banner">
     <div class="container">

@@ -57,6 +57,15 @@
    background: #ea4c89;
   color: white;
 }
+.social-icons>.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0px 10px 10px;
+    margin: 3px;
+}
         </style>
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
