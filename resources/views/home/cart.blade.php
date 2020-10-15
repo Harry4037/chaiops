@@ -17,18 +17,7 @@
 </header>
 <section class=cartpage>
     <div class=container>
-        <div class="cartHeader clearfix">
-            <h1 class=logo>
-                <a href="/"> 
-                    <img src="{{ asset("assets/images/logo.png") }}" alt=image>
-                </a> 
-            </h1>
-            <div class=orderId>
-                <div>
-                    <p class=datetime></p>
-                </div>
-            </div>
-        </div>
+       
         <div class=cartBody>
             <div class="heading clearfix">
                 <h5>confirm your order</h5>
