@@ -63,7 +63,7 @@
             <br>
             <br>
             <br>
-            <ul style="color:#c7a298; text-align: justify; float: left;">
+            <ul style="text-align: justify; float: left;">
                 <br>
                 <li>Chaiops introduce a vast variety of chai and other products to serve lovers living in every corner of the globe and entice them with their simmering pot of magic potion.</li>
                 <br>
