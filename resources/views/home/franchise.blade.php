@@ -1,7 +1,12 @@
 @extends('layout.app')
 
 @section('content')
-
+<style>
+.midpage-banner2 {
+	background: url(./assets/images/Franchise-banner2-bg.jpg) center no-repeat;
+	background-size: cover
+}
+</style>
 <div class="banner clearfix">
     <div class=banner-text>
         <h2><span>Franchise</span></h2>
@@ -19,10 +24,9 @@
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
     <div class="container clearfix">
         <div class="banner4-img-holder">
-            <img src="{{ asset("assets/images/homepage/ipad.png") }}" height="473" width="581"
+            <img src="{{ asset("assets/images//OUR-FAMILY.png") }}" height="473" width="581"
                 class="ipad" alt="">
-            <img src="{{ asset("assets/images/homepage/cap.png") }}" height="206" width="240"
-                class="cap" alt="">
+          
         </div>
         <div class="banner4-details">
             <h3>Become the Part of</h3>
@@ -59,7 +63,7 @@
 
         <div class="reservation-form clearfix">
             <div class="imgLiquidFill imgLiquid">
-                <img src="{{ asset("assets/images/book-table-img.jpg") }}" alt="">
+                <img src="{{ asset("assets/images/franchise-form-img.jpg") }}" alt="">
             </div>
             <form id="reservationorm" class="clearfix" data-parsley-validate="data-parsley-validate" action="{{route('site.franchise.form')}}" method="post">
             {{ csrf_field() }}

@@ -14,6 +14,11 @@
     .banner1-details ul {
     color: #fff;
 }
+.midpage-banner1 {
+	background: url(./assets/images/about-banner1-bg.jpg) center no-repeat;
+
+}
+
 </style>
 <div class="banner clearfix">
    
@@ -85,7 +90,7 @@
         <div class="row justify-content-start align-items-center">
             <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
                 <div class="color"></div>
-                <img class="img-fluid"  style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;"src="{{ asset("assets/images/g5.jpg")}}" alt="">
+                <img class="img-fluid"  style="border-radius: 12px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%;"src="{{ asset("assets/images/scop.jpg")}}" alt="">
                 </a>
             </div>
             <div class="col-lg-6 video-left">

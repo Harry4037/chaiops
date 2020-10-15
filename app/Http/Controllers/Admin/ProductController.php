@@ -115,7 +115,12 @@ class ProductController extends Controller {
                 $product->description = $request->product_description;
                 $product->category_id = $request->category_id;
                 // $product->price = $request->product_price;
-                $product->img = $request->product_img;
+                if ($request->hasFile('product_img')) {
+                    $icon = $request->file("product_img");
+                    $iconImage = Storage::disk('public')->put('product', $icon);
+                    $icon_file_name = basename($iconImage);
+                    $product->img = $icon_file_name;
+                }
                 // $product->type = $request->product_type;
                 $product->created_by = auth()->user()->id;
                 $product->updated_by = auth()->user()->id;
@@ -171,11 +176,20 @@ class ProductController extends Controller {
                 }
 
                 $product = new Product();
+                
                 $product->name = $request->product_name;
                 $product->description = $request->product_description;
                 $product->category_id = $request->category_id;
                 // $product->price = $request->product_price;
-                $product->img = $request->product_img;
+                if ($request->hasFile('product_img')) {
+                    $icon = $request->file("product_img");
+                    $iconImage = Storage::disk('public')->put('product', $icon);
+                    $icon_file_name = basename($iconImage);
+                    $product->img = $icon_file_name;
+                }else{
+                    $product->img = NULL;
+                }
+
                 $product->is_active = 1;
                 // $product->type = $request->product_type;
                 $product->created_by = auth()->user()->id;
