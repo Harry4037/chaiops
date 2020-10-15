@@ -5,7 +5,11 @@
         ol, ul {
    margin-top: 30px;  
 }
-
+.blog-excerpt .button-primary {
+    float: right;
+    border-radius: 10px;
+    padding: 10px 28px;
+}
 @media screen and (min-width: 992px){
 .grid-item {
     width: 33%;
