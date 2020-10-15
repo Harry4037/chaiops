@@ -8,6 +8,8 @@
                {{ "class=Corporate-bg" }}  
                @elseif(in_array(Route::currentRouteName(), ['site.blog']))        
                {{ "class=tea-blog-bg" }}  
+               @elseif(in_array(Route::currentRouteName(), ['site.blog.detail']))        
+               {{ "class=tea-blog-bg" }}  
                @elseif(in_array(Route::currentRouteName(), ['site.store']))        
                {{ "class=Store-list-bg" }}  
                @elseif(in_array(Route::currentRouteName(), ['site.contact']))        

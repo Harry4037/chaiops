@@ -26,7 +26,7 @@ Route::get('/terms_conditions', 'HomeController@termsList')->name('site.terms');
 
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
-Route::get('/blog/{id}', 'BlogController@blogDetails');
+Route::get('/blog/{id}', 'BlogController@blogDetails')->name('site.blog.detail');
 Route::post('/blog/', 'BlogController@blogComment')->name('site.blog.comment');
 Route::get('/franchise', 'HomeController@franchise')->name('site.franchise');
 Route::get('/corporate', 'HomeController@corporate')->name('site.corporate');
