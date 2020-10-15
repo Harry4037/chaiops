@@ -7154,14 +7154,14 @@ img.alignleft {
 
 .cartpage .cart-meta .item-price {
 	height: 200px;
-	padding: 0;
-	line-height: 200px;
-	background: rgba(0, 0, 0, .9);
-	border: none
+    padding: 0;
+    line-height: 200px;
+    background: rgb(240 192 81);
+    border: none;
 }
 
 .cartpage .cart-meta .item-price span {
-	color: #fff
+	color: #333
 }
 
 .cartpage .item-image img {
