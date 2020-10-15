@@ -3,7 +3,7 @@
 @section('content')
 <style>
 a.remove-from-cart.removeproduct {
-    background-color: #fff;
+  
     width: 25px;
     height: 25px;
     text-align: center;
