@@ -38,7 +38,7 @@
                             @if($cartItem->product && $cartItem->product->image)
                             <img src="$cartItem->product->image" alt="image">
                             @else
-                            <img src="/assets/images/gallery/gallery01.jpg" alt="image">
+                            <img src="./assets/images/Caramel-Coffee.jpg" alt="image">
                             @endif
                         </div>
                         <div class="item-details">

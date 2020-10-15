@@ -7689,3 +7689,7 @@ section.productPage {
 footer .order-btn:hover {
     background-color: #f8961e;
 }
+
+.cartpage .salectedProduct {
+    padding: 0px 0;
+}
