@@ -74,8 +74,7 @@
 <section class="contact-sectn">
     <div class="container">
         <div>
-            <div class="section-number">
-                <span>02</span></div>
+           
             <div class="section-heading">
                 <h1>
                     <span>Contact</span></h1>
