@@ -382,7 +382,7 @@ section.table-book .section-heading .animate {
                 </h2>
                 <h3>
                     <span>D- 486</span>
-                    1st Floor, Sec – 7</h3>
+                    1<sup>st</sup> Floor, Sec – 7</h3>
                 <p>Dwarka, New Delhi – 110075</p>
             </div>
         </div>

@@ -40,7 +40,7 @@
                         <i class="fa fa-map-marker"></i>
                     </a>
                     <div class="cont">
-                                    <h4>D- 486, 1st Floor, Sec – 7 <br>Dwarka, New Delhi – 110075</h4>
+                                    <h4>D- 486, 1<sup>st</sup> Floor, Sec – 7 <br>Dwarka, New Delhi – 110075</h4>
                                    
                                 </div>
                 </div>
