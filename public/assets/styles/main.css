@@ -7136,10 +7136,10 @@ img.alignleft {
 }
 
 .cartpage .cart-meta h4 {
-	font-family: "Open Sans", sans-serif;
-	font-size: 22px;
-	font-weight: 300;
-	color: #fff
+	font-family: oswald;
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
 }
 
 .cartpage .cart-meta .item-content {
