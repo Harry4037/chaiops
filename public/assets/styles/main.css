@@ -7235,7 +7235,9 @@ img.alignleft {
 	.cartpage .heading h5,
 	.cartpage .logo,
 	.cartpage .orderId {
-		width: 50%
+		width: 50%;
+		font-family: oswald;
+		color: #333;
 	}
 	.cartpage .logo {
 		text-align: left
@@ -7244,7 +7246,7 @@ img.alignleft {
 		text-align: right
 	}
 	.cartpage .salectedProduct {
-		padding: 50px 0
+		padding: 0px 0
 	}
 	.cartpage .salectedProduct li {
 		height: 200px
@@ -7688,8 +7690,4 @@ section.productPage {
 }
 footer .order-btn:hover {
     background-color: #f8961e;
-}
-
-.cartpage .salectedProduct {
-    padding: 0px 0;
 }
