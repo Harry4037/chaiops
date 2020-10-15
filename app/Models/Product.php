@@ -17,4 +17,7 @@ class Product extends Model {
         return $this->hasMany('App\Models\ProductType', 'product_id');
     }
 
+    public function getImgAttribute($value) {
+        return $value ? asset('storage/product/' . $value) : asset('assets/images/Caramel-Coffee.jpg');
+    }
 }
