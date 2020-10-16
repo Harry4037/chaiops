@@ -1961,7 +1961,7 @@ textarea:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 115%;
     background: 0 0;
     border-radius: 32px;
     background: #2a2a2d;
