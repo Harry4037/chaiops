@@ -13,7 +13,12 @@ outline:0px;
 background-color:white;
 background:none;
 }
-
+.categories button.selected {
+    background: #f0c051;
+    color: #fff;
+    border-color: #f0c051;
+    letter-spacing: 1px !important;
+}
 </style>
 <div class="banner clearfix">
    
