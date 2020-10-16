@@ -7401,7 +7401,8 @@ img.alignleft {
 	}
 	.addressbar {
 		float: left;
-		width: 41.6666666667%
+		/* width: 41.6666666667% */
+		display:flex;
 	}
 }
 
@@ -7415,7 +7416,7 @@ img.alignleft {
 	.addressbar .marker a,
 	.addressbar .support-mail a {
 		float: left;
-		width: 16.6666666667%
+		/* width: 16.6666666667% */
 	}
 }
 
@@ -7436,14 +7437,14 @@ img.alignleft {
 	.addressbar .marker .cont,
 	.addressbar .support-mail .cont {
 		float: left;
-		width: 83.3333333333%
+		/* width: 83.3333333333% */
 	}
 }
 
 .addressbar .marker h4,
 .addressbar .support-mail h4 {
 	font-family: Oswald,sans-serif;
-    font-size: 25px;
+    font-size: 23px;
     color: #404045;
     font-weight: 400;
     word-break: break-all;
@@ -7476,7 +7477,7 @@ img.alignleft {
 
 @media screen and (min-width: 992px) {
 	.contactpage .cont-wrap {
-		height: 450px
+		height: 70px
 	}
 	.mapwrapper {
 		left: 50%;
