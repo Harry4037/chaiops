@@ -17,7 +17,7 @@ section.table-book .section-heading .animate {
     color: #fff;
 }
 .order-type {
-    height: 434px;
+    height: 455px;
 }
 </style>
 <div class="banner">
