@@ -16,6 +16,9 @@ background:none;
 section.table-book .section-heading .animate {
     color: #fff;
 }
+.order-type {
+    height: 434px;
+}
 </style>
 <div class="banner">
     <div class="container">
