@@ -42,7 +42,9 @@ class ProductController extends Controller {
                 $query->where("is_active", 1);
             });
             if ($searchKeyword) {
-                $query->where('name', 'LIKE', "%$searchKeyword%");
+                $query->whereHas("productCategory", function($query) use($searchKeyword) {
+                    $query->where("description", "LIKE", "%$searchKeyword%");
+                })->orWhere("name", "LIKE", "%$searchKeyword%");
             }
             $data['recordsTotal'] = $query->count();
             $data['recordsFiltered'] = $query->count();
