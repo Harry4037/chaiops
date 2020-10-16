@@ -18,7 +18,7 @@
                             <th>Sr. No.</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th>Price</th>
+                                 
                                     <th>Status</th>
                                     <th>Action</th>
                             </tr>
@@ -53,7 +53,7 @@
             },
             {"data": "name", sortable: false},
             {"data": "category", sortable: false},
-            {"data": "price", sortable: false},
+      
             {"data": "status", sortable: false},
             {"data": "action", sortable: false},
         ]

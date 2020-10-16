@@ -52,7 +52,7 @@ class ProductController extends Controller {
             foreach ($products as $k => $product) {
                 $productsArray[$k]['name'] = $product->name;
                 $productsArray[$k]['category'] = $product->productCategory->description;
-                $productsArray[$k]['price'] = $product->price;
+             
                 $checked_status = $product->is_active ? "checked" : '';
                 $productsArray[$k]['status'] ="<label class='c-switch c-switch-label c-switch-pill c-switch-success'><input class='c-switch-input update_status' type='checkbox' id=" . $product->id . " data-status=" . $product->is_active . " " . $checked_status . ">
                 <span class='c-switch-slider' data-checked='✓' data-unchecked='✕'></span>
