@@ -35,15 +35,9 @@ small.pull-right {
                     @elseif($order->status == 2)
                     <label class="btn btn-warning disabled">Accepted</label>
                     @elseif($order->status == 3)
-                    <label class="btn btn-info disabled">Order Assigned </label>
-                    <span style="font-size: 18px; font-weight: 600; color: darkorange;">To {{$boy->name}} ( {{$boy->mobile_number}} )</span>
-                    @elseif($order->status == 4)
                     <label class="btn btn-success disabled">Delivered </label>
-                    @elseif($order->status == 5)
-                    <label class="btn btn-danger disabled">CANCELLED BY ADMIN</label>
-                    @if($order->cancel_by == "CANCELLED BY STAFF")
-                    <span style="font-size: 18px; font-weight: 600; color: darkorange;">{{$boy->name}} </span><span style="font-size: 18px; font-weight: 600; color: #3c8dbc;">(Due To:{{$order->cancel_description}})</span>
-                    @endif
+                    @elseif($order->status == 4)
+                    <label class="btn btn-danger disabled">{{$order->cancel_by}}</label>
                     @else
                     <label class="btn btn-danger disabled">Failed </label>
                     @endif
@@ -179,12 +173,9 @@ small.pull-right {
                 <a href="javaScript:void(0)" class="btn btn-danger pull-right bunk" id="cancel_order">Cancel Order</a>
                 <a href="javaScript:void(0)" class="btn btn-success pull-right" id="accept_order">Accept Order</a>
                 @elseif($order->status == 2)
-                @if(($order->address_lat && $order->address_long))
-                <a href="{{route('admin.order.staff-list', $order)}}" class="btn btn-info pull-right" >Delivery Boys</a>
-                @else
                 <a href="javaScript:void(0)" class="btn btn-info pull-right" id="order_complete" data-order="{{$order->id}}">Mark as Delivered</a>
-                @endif
-                @elseif($order->order_type == 'ONLINE' && $order->status == 5 && $order->payment_text != 'REFUNDED' && $order->pay_mode > 0)
+               
+                @elseif($order->order_type == 'ONLINE' && $order->status == 4 && $order->payment_text != 'REFUNDED' )
                 <form method="post" action="@if($order->pay_mode == 1){{route('admin.order.paytm-refund')}} @elseif($order->pay_mode == 2){{route('admin.order.payUrefund')}}@else{{''}}@endif" name="orderRefund" id="orderRefund">
                     @csrf
                     <input type="hidden" name="order_id" id="order_id" value="{{$order->id}}" >

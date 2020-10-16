@@ -28,6 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('mobile_number')->nullable();
             $table->tinyInteger('status')->default(1)->comment('0=>Failed,1=>Pending,2=>Confirmed,3=>Delivered,4=>cancelled');
             $table->enum('payment_text', ["PENDING", "CONFIRMED", "FAILED", "REFUNDED", "CANCELLED"]);
+            $table->enum('cancel_by', ["CANCELLED BY USER", "CANCELLED BY ADMIN"])->nullable();
             $table->string('transaction_id')->nullable();
             $table->string('created_by')->default(1);
             $table->string('updated_by')->default(1);

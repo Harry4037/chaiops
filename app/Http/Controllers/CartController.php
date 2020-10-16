@@ -471,4 +471,25 @@ class CartController extends Controller {
         return response()->json("deleted");
     }
 
+    public function cancelOrder(Request $request) {
+        $order = Order::find($request->id);  
+ 
+        if (!$order) {
+            dd("product not found");
+        }
+
+        if (auth()->check()) {
+            if ($order->status == 4) {
+                return redirect()->route('site.dashboard');
+            } else {
+                $order->status = 4;
+                $order->cancel_by = 'CANCELLED BY USER';
+                $order->save();
+                return redirect()->route('site.dashboard');
+            }
+        } else {
+            return redirect()->route('site.index');
+        }
+        return redirect()->route('site.index');
+    }
 }

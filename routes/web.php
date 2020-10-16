@@ -53,6 +53,7 @@ Route::post('/add-cart', 'CartController@addCart');
 Route::post('/increase-cart-quantity', 'CartController@increaseCartQuantity');
 Route::post('/decrease-cart-quantity', 'CartController@decreaseCartQuantity');
 Route::post('/delete-cart-product', 'CartController@deleteCartProduct');
+Route::get('/cancel/{id}', 'CartController@cancelOrder')->name('site.order.cancel');
 
 Route::patch('update-cart', 'CartController@update');
 

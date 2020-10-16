@@ -88,7 +88,7 @@ a.remove-from-cart.removeproduct:hover {
                         </div>
                     </div>
                     <div class=item-price> 
-                        <span id=carttoutal>₹{{$total+$tax}}</span> 
+                        <span id=carttoutal>₹{{max(round($total+$tax), 0)}}</span>
                     </div>
                 </div>
             </div>

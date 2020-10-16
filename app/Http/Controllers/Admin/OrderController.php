@@ -78,11 +78,9 @@ class OrderController extends Controller {
                 } elseif ($order->status == 2) {
                     $orderTxt = "<label class='btn btn-warning btn-xs disabled'>ACCEPTED</label>";
                 } elseif ($order->status == 3) {
-                    $orderTxt = "<label class='btn btn-info btn-xs disabled'>ORDER ASSIGNED</label>";
+                    $orderTxt = "<label class='btn btn-info btn-xs disabled'>DELIVERED</label>";
                 } elseif ($order->status == 4) {
-                    $orderTxt = "<label class='btn btn-success btn-xs disabled'>DELIVERED</label>";
-                } elseif ($order->status == 5) {
-                    $orderTxt = "<label class='btn btn-danger btn-xs disabled'>CANCELLED BY ADMIN</label>";
+                    $orderTxt = "<label class='btn btn-danger btn-xs disabled'>".$order->cancel_by."</label>";
                 } else {
                     $orderTxt = "<label class='btn btn-danger btn-xs disabled'>FAILED</label>";
                 }
@@ -178,12 +176,11 @@ class OrderController extends Controller {
         try {
             $order = Order::find($request->order_id);
             if ($order) {
-                if ($order->status == 5) {
+                if ($order->status == 4) {
                     return response()->json(["status" => FALSE, 'message' => 'order already cancelled by user.']);
                 } else {
-                    $order->status = 5;
-                    // $order->cancel_by = 'CANCELLED BY ADMIN';
-                    // $order->cancel_description = 'Order has been cancelled by admin';
+                    $order->status = 4;
+                     $order->cancel_by = 'CANCELLED BY ADMIN';
                     $order->save();
 
                     return response()->json(["status" => TRUE, 'message' => 'order Cancelled']);
