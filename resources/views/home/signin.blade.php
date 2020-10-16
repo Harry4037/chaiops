@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="banner clearfix">
-    
-    
-</div>
-</div>
+            
+              
+            </div>
+         </div>
 <div class="social-icons">
                   <a href="https://www.facebook.com/officialchaiops/" class="fa fa-facebook"></a>
                   <a href="https://twitter.com/officialchaiops/" class="fa fa-twitter"></a>
