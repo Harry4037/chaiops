@@ -175,12 +175,7 @@ small.pull-right {
                 @elseif($order->status == 2)
                 <a href="javaScript:void(0)" class="btn btn-info pull-right" id="order_complete" data-order="{{$order->id}}">Mark as Delivered</a>
                
-                <!-- @elseif($order->order_type == 'ONLINE' && $order->status == 4 && $order->payment_text != 'REFUNDED' )
-                <form method="post" action="@if($order->pay_mode == 1){{route('admin.order.paytm-refund')}} @elseif($order->pay_mode == 2){{route('admin.order.payUrefund')}}@else{{''}}@endif" name="orderRefund" id="orderRefund">
-                    @csrf
-                    <input type="hidden" name="order_id" id="order_id" value="{{$order->id}}" >
-                    <input type="submit" name="order_refund" id="order_refund" value="Refund" class="btn btn-info pull-right">
-                </form> -->
+              
                 @else
                 @endif
                 @endif
