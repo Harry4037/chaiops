@@ -82,8 +82,8 @@ a.remove-from-cart.removeproduct:hover {
                     <div class=item-content>
                         <div>
                             <h4>Your total order value is</h4>
-                            <?php $tax = ($total * 18)/100; ?>
-                            <p> After added 18% tax (₹{{$tax}})</p>
+                            <?php $tax = ($total * 5)/100; ?>
+                            <p> After added 5% tax (₹{{$tax}})</p>
                           
                         </div>
                     </div>
