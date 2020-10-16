@@ -142,7 +142,7 @@ class OrderController extends Controller {
     public function acceptStatus(Request $request) {
         $order = Order::find($request->order_id);
         if ($order) {
-            if ($order->status == 5) {
+            if ($order->status == 4) {
                 return response()->json(["status" => FALSE, 'message' => 'Order cancelled by user.']);
             }
 
@@ -161,7 +161,7 @@ class OrderController extends Controller {
             $orderId = $request->order_id;
             $order = Order::find($orderId);
             $order->payment_text = 'CONFIRMED';
-            $order->status = 4;
+            $order->status = 3;
             // $order->time_4 = date("H:i:s");
             $order->save();
 
