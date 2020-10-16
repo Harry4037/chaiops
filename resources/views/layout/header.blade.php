@@ -16,8 +16,9 @@
                {{ "class=Contact-us-bg" }}  
                @elseif(in_array(Route::currentRouteName(), ['site.cart']))        
                {{ "class=cart-bg" }}  
-               @elseif(in_array(Route::currentRouteName(), ['site.login']))        
+               @else   
                {{ "class=bg" }}  
+
                          @endif>
 
             <div @if(in_array(Route::currentRouteName(), ['site.index']))
