@@ -2165,7 +2165,7 @@ color: #333;
 	}
 	.categories button:hover {
 	background: #f0c051;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     color: #fff;
     border-color: #f0c051;
 	}
