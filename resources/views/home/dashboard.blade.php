@@ -92,7 +92,7 @@
                         <td>{{ $order->payment_text}}</td>
                         <td>@if($order->status == 1) Pending @elseif($order->status == 2) Accepted @elseif($order->status ==3) Delivered @elseif($order->status == 4) {{$order->cancel_by}} @endif</td>
                         <td>₹{{$order->total_amount}} for {{count($order->orderItem)}} item</td>
-                        <td><button type="button" onclick="openCity('vieworder{{$i}}')" class="btn btn-danger">View</button>  @if($order->status == 1)<a href="/cancel/{{$order->id}}">Cancel</a>@endif</td>
+                        <td><button type="button" onclick="openCity('vieworder{{$i}}')" class="btn btn-primary">View</button>  @if($order->status == 1)<a class="btn btn-danger" href="/cancel/{{$order->id}}">Cancel</a>@endif</td>
                      </tr>
                      @endforeach
                
