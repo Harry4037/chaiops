@@ -147,6 +147,15 @@ border-radius: 6px;
     background: #fff;
     box-shadow: 0px 0px 2px #b5b5b5;
 }
+.cartItemContainer .qtyWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100px;
+    background: #fefcf8;
+    box-shadow: 0 1px 2px 0 #fefcf8;
+    border: solid 2px #fefcf8;
+}
      </style>
 <div class="banner clearfix">
   
