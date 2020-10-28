@@ -118,6 +118,9 @@ border-radius: 6px;
     height: 32px;
     margin: 0 8px 8px 0;
 }
+.cartBox.cartItemContainer {
+    margin-top: 22px;
+}
      </style>
 <div class="banner clearfix">
   
@@ -231,7 +234,7 @@ border-radius: 6px;
                     </p>
                 </div>
                 <div class=order-btn> 
-                    <a href='{{route("site.login")}}' class=button-secondary>Order Now</a> 
+                    <a href='{{route("site.menu")}}' class=button-secondary>Order Now</a> 
                 </div>
             </div>
             @endif
@@ -246,7 +249,7 @@ border-radius: 6px;
                     </p>
                 </div>
                 <div class=order-btn> 
-                    <a href='{{route("site.menu")}}' class=button-secondary>Order Now</a> 
+                    <a href='{{route("site.login")}}' class=button-secondary>Order Now</a> 
                 </div>
             </div>
             @endif
