@@ -128,6 +128,13 @@ border-radius: 6px;
 .cartBox.cartItemContainer {
     margin-top: 22px;
 }
+.cartpage .cart-meta .item-price {
+    height: 132px;
+    padding: 0;
+    line-height: 136px;
+    background: rgb(240 192 81);
+    border: none;
+}
      </style>
 <div class="banner clearfix">
   
