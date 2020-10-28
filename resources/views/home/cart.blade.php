@@ -135,6 +135,14 @@ border-radius: 6px;
     background: rgb(240 192 81);
     border: none;
 }
+@media screen and (min-width: 992px){
+.cartpage .cart-meta .item-content {
+    padding: 21px 30px;
+}}
+.cartpage .cart-meta {
+    background: rgba(0, 0, 0, .7);
+    margin-top: 39px;
+}
      </style>
 <div class="banner clearfix">
   
