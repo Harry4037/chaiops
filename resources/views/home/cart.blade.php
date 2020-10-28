@@ -187,6 +187,7 @@ border-radius: 6px;
                 </div>
             </div>
             @if(auth()->check())
+            @if($total != 0)
             <div class=mail-cart>
                 <h3><span>your</span> details</h3>
                 <form data-parsley-validate class="formcontact row" method="post" action="{{route('site.checkout')}}" id=orderfrm>
@@ -219,6 +220,7 @@ border-radius: 6px;
                     <div class="ajaxmessage for-orderform hidden container"></div>
                 </form>
             </div>
+            @endif
             @else
             <div class="clearfix order-box">
                 <div class=complete-order>
