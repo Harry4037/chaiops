@@ -3,7 +3,6 @@
 @section('content')
 <style>
 a.remove-from-cart.removeproduct {
-  
     width: 25px;
     height: 25px;
     text-align: center;
@@ -55,8 +54,8 @@ border-radius: 6px;
 .cartItemContainer .qtyWrapper .incr, .cartItemContainer .qtyWrapper .dcr {
     text-align: center;
     display: inline-block;
-    color: #5e7e47;
-    background-color: #fff;
+    color: #4c4b4a;
+    background-color: #f0c051;
     width: 35px;
     height: 35px;
     line-height: 37px;
