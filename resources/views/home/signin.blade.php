@@ -1,6 +1,24 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+.form-control {
+    padding: 30px 9pt;
+    }
+    button.btn.btn-effect.section-button.text-uppercase {
+    margin: 23px 0;
+    padding: 15px 49px;
+    font-size: 18px;
+    background-color: #f0c051;
+    color: #2f2f2f;
+    float: none;
+    width: auto;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    font-weight: 600;
+    border-radius: 58px;
+}
+</style>
 <div class="banner clearfix">
             
               
