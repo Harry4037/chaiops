@@ -153,12 +153,12 @@ border-radius: 6px;
             <div class="rel">
             <div class="pic" style="background-image: url({{$cartItem->product->img}});">
             </div>
-            <div class="itemTitle ellipsis">Drinking Chocolate</div>
+            <div class="itemTitle ellipsis">{{ $cartItem->product->name }}</div>
             <div class="itemPrice">
             <img class="rupeeIcon" src="../../img/rupee.png">
             <!-- react-text: 1990 -->{{$cartItem->productType->price * $cartItem->quantity}}<!-- /react-text --></div>
             <div class="rel"><div class="itemDetail"><div>
-            </div><div><span>Regular</span></div>
+            </div><div><span>{{$cartItem->productType->type}}</span></div>
             <div class="removeItem" style="float: left;">Remove</div>
             </div><div class="qtyWrapper"><div class="incr">+</div>
             <div class="qty">{{$cartItem->quantity}}</div><div class="dcr">-</div></div>
