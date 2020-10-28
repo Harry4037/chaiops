@@ -164,6 +164,13 @@ border-radius: 6px;
     width: 39px;
     line-height: 35px;
 }
+.qtyWrapper input {
+    cursor: pointer;
+    width: 33px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 20px;
+}
      </style>
 <div class="banner clearfix">
   
