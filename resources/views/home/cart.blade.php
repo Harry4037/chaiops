@@ -184,8 +184,8 @@ border-radius: 6px;
             <div class="rel"><div class="itemDetail"><div>
             </div><div><span>{{$cartItem->productType->type}}</span></div>
             <div class="removeItem" style="float: left;">Remove</div>
-            </div><div class="qtyWrapper"><div class="incr">+</div>
-            <div class="qty">{{$cartItem->quantity}}</div><div class="dcr">-</div></div>
+            </div><div class="qtyWrapper"> <input type="button" value="-" class="minus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
+            <div class="qty">{{$cartItem->quantity}}</div> <input type="button" value="+" class="plus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"></div>
             </div>
             </div></div>
          
