@@ -220,6 +220,20 @@ border-radius: 6px;
                     <div class="ajaxmessage for-orderform hidden container"></div>
                 </form>
             </div>
+            @else
+            <div class="clearfix order-box">
+                <div class=complete-order>
+                    <h2>Cart Is Empty</h2>
+               
+                </div>
+                <div class=selected-item-no>
+                    <p>You have selected <span>{{ $cartCount }}</span> items
+                    </p>
+                </div>
+                <div class=order-btn> 
+                    <a href='{{route("site.login")}}' class=button-secondary>Order Now</a> 
+                </div>
+            </div>
             @endif
             @else
             <div class="clearfix order-box">
@@ -232,7 +246,7 @@ border-radius: 6px;
                     </p>
                 </div>
                 <div class=order-btn> 
-                    <a href='{{route("site.login")}}' class=button-secondary>Order Now</a> 
+                    <a href='{{route("site.menu")}}' class=button-secondary>Order Now</a> 
                 </div>
             </div>
             @endif
