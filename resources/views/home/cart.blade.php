@@ -171,6 +171,11 @@ border-radius: 6px;
     font-weight: 700;
     font-size: 20px;
 }
+.cartBox.cartItemContainer {
+    margin-top: 22px;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+}
      </style>
 <div class="banner clearfix">
   
