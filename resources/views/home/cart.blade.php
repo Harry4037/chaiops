@@ -16,6 +16,108 @@ a.remove-from-cart.removeproduct {
 a.remove-from-cart.removeproduct:hover {
   color: #333;
 }
+.movingContainer .cartItemContainer {
+    margin-right: 1%;
+    margin-bottom: 0;
+    border-bottom: #f4f4f4 1px solid;
+    padding: 15px;
+}
+.support-mail.clearfix {
+background: #fbfbfb;
+padding: 26px 26px 20px;
+border: 1px solid #d8d8d8;
+border-radius: 6px;
+}
+.rel {
+    position: relative;
+}
+.cartItemContainer .rupeeIcon {
+    margin-right: 5px;
+}
+.cartItemContainer .qtyWrapper .incr, .cartItemContainer .qtyWrapper .dcr {
+    text-align: center;
+    display: inline-block;
+    color: #5e7e47;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    line-height: 37px;
+    font-size: 27px;
+}
+.cartItemContainer .qtyWrapper .qty {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    background: #5e7e47;
+    width: 36px;
+    line-height: 35px;
+}
+.cartItemContainer .qtyWrapper .incr, .cartItemContainer .qtyWrapper .dcr {
+    text-align: center;
+    display: inline-block;
+    color: #5e7e47;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    line-height: 37px;
+    font-size: 27px;
+}
+.cartItemContainer .qtyWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100px;
+    background: #5e7e47;
+    box-shadow: 0 1px 2px 0 #c8c8c3;
+    border: solid 2px #5e7e47;
+    width: 110px;
+}
+.cartItemContainer .removeItem {
+    color: #368101;
+    text-decoration: underline;
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 0 5px;
+    cursor: pointer;
+}
+.cartItemContainer .itemDetail {
+    color: #62635e;
+    margin: 5px 115px 5px 0;
+    font-size: 12px;
+    min-height: 40px;
+    line-height: 16px;
+}
+.cartItemContainer .rupeeIcon {
+    height: 12px;
+    margin: 0 3px -1px 0;
+}
+.cartItemContainer .itemPrice {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    text-align: right;
+    width: 70px;
+    font-size: 14px;
+    line-height: 18px;
+}
+.cartItemContainer .itemTitle {
+    color: #292826;
+    margin: 0 80px 0 0;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 9px 0;
+}
+.cartItemContainer .pic {
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin: 0 8px 8px 0;
+}
      </style>
 <div class="banner clearfix">
   
@@ -36,46 +138,38 @@ a.remove-from-cart.removeproduct:hover {
        
         <div class=cartBody>
             <div class="heading clearfix">
-                <h5>confirm your order</h5>
-                <p>you have selected 
+                <h5>My Cart</h5>
+                <p>
                     <span class="red caxrtitems">
                         {{$cartCount}}
                     </span> 
-                    product
+                    items
                 </p>
             </div>
-            <ul class=salectedProduct id=cartItems4Type2>
-                <?php $total = 0; ?>
+            <?php $total = 0; ?>
                 @if($cartItems)
                 @foreach($cartItems as $cartItem)
-                <li class="clearfix">
-                    <div class="item-content">
-                        <div class="item-image">
-                           
-                            <img src="{{$cartItem->product->img}}" alt="image">
-                           
-                        </div>
-                        <div class="item-details">
-                            <h6>{{ $cartItem->product->name }} ({{$cartItem->productType->type}})</h6>
-                            <div class="productQuantity">
-                                <input type="button" value="-" class="minus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
-                                <input type="number" name="quantity" value="{{$cartItem->quantity}}" style="width: 40%;" disabled>
-                                <input type="button" value="+" class="plus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-price">
-                        <span>₹{{$cartItem->productType->price * $cartItem->quantity}}</span>
-                    </div>
-
-                    <a href="javaScript:void(0);" class="remove-from-cart removeproduct" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"/>
-                        <i class="fa fa-times"></i>
-                    </a>
-                </li>
-                <?php $total = $total + ($cartItem->productType->price * $cartItem->quantity); ?>
+            <div class="cartBox cartItemContainer">
+            <div class="rel">
+            <div class="pic" style="background-image: url({{$cartItem->product->img}});">
+            </div>
+            <div class="itemTitle ellipsis">Drinking Chocolate</div>
+            <div class="itemPrice">
+            <img class="rupeeIcon" src="../../img/rupee.png">
+            <!-- react-text: 1990 -->{{$cartItem->productType->price * $cartItem->quantity}}<!-- /react-text --></div>
+            <div class="rel"><div class="itemDetail"><div>
+            </div><div><span>Regular</span></div>
+            <div class="removeItem" style="float: left;">Remove</div>
+            </div><div class="qtyWrapper"><div class="incr">+</div>
+            <div class="qty">{{$cartItem->quantity}}</div><div class="dcr">-</div></div>
+            </div>
+            </div></div>
+         
+            <?php $total = $total + ($cartItem->productType->price * $cartItem->quantity); ?>
                 @endforeach
                 @endif
-            </ul>
+         
+     
 
             <div class=cart-meta>
                 <div class=clearfix>
