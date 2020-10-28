@@ -142,6 +142,11 @@ border-radius: 6px;
     background: rgba(0, 0, 0, .7);
     margin-top: 39px;
 }
+.cartpage .cartBody {
+    padding: 36px;
+    background: #fff;
+    box-shadow: 0px 0px 2px #b5b5b5;
+}
      </style>
 <div class="banner clearfix">
   
