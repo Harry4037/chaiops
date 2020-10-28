@@ -70,7 +70,7 @@ border-radius: 6px;
     background: #5e7e47;
     box-shadow: 0 1px 2px 0 #c8c8c3;
     border: solid 2px #5e7e47;
-    width: 110px;
+  
 }
 .cartItemContainer .removeItem {
     color: #368101;
@@ -117,6 +117,13 @@ border-radius: 6px;
     width: 32px;
     height: 32px;
     margin: 0 8px 8px 0;
+}
+.qtyWrapper .incr, .qtyWrapper .dcr {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 27px;
+    cursor: pointer;
 }
 .cartBox.cartItemContainer {
     margin-top: 22px;
