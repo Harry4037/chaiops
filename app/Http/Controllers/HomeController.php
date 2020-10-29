@@ -59,7 +59,7 @@ class HomeController extends Controller {
 
     public function menuPage() {
         $categories = Category::where(["is_active" => 1])->with(['product' => function($query) {
-                        $query->with(['productType'])->where("is_active", 1);
+                        $query->with(['productType'])->where("is_active", 1)->whereNull("deleted_at");
                     }])->get();
         return view('home.menu', [
             "categories" => $categories
