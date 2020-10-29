@@ -39,13 +39,14 @@ background:none;
     <ul class="categories row">
     @if($categories)
    
-    <li><button data-filter=* class=selected>All</button></li>
+  <?php $w=0; ?>
     @foreach($categories as $category)
                
-               <li><button data-filter=.type{{$category->id }}>{{ $category->description }}</button></li>
+               <li><button @if($w == 0) class=selected {{ $w++}} @endif data-filter=.type{{$category->id }}>{{ $category->description }}</button></li>
                
                @endforeach
         @endif
+        <li><button data-filter=*  >All</button></li>
             </ul>
             <div class="store-product-list row">
         <?php $i = 1; ?>
@@ -76,4 +77,9 @@ background:none;
         </div>
     </div>
 </section>
+    <script>
+$(document).ready(function() {
+    $('[data-filter=".type5"]').trigger('click');
+});
+</script>
 @endsection
