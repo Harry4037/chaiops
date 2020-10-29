@@ -217,7 +217,7 @@ border-radius: 6px;
             <!-- react-text: 1990 -->{{$cartItem->productType->price * $cartItem->quantity}}<!-- /react-text --></div>
             <div class="rel"><div class="itemDetail"><div>
             </div><div><span>{{$cartItem->productType->type}}</span></div>
-            <div class="removeItem" style="float: left;">Remove</div>
+            <div class="removeItem" style="float: left;" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">Remove</div>
             </div><div class="qtyWrapper"> <input type="button" value="-" class="minus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}">
             <div class="qty">{{$cartItem->quantity}}</div> <input type="button" value="+" class="plus" data-type="{{$cartItem->productType->id}}" data-id="{{$cartItem->product->id}}"></div>
             </div>
@@ -348,7 +348,7 @@ border-radius: 6px;
             });
         });
 
-        $(document).on("click", ".removeproduct", function () {
+        $(document).on("click", ".removeItem", function () {
             var product_id = $(this).data("id");
             var product_type_id =$(this).data("type");
             if (confirm("Are you sure want to delete this item.")) {

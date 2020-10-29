@@ -313,7 +313,7 @@ class CartController extends Controller {
                 }
             }
 
-            return redirect()->route('site.dashboard')->with('success', 'Order successfully.');
+            return redirect()->route('site.complete')->with('success', 'Order successfully.');
             // You can create this page
 //            return view('payment-success-page');
         } else {

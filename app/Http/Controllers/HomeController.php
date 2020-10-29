@@ -88,6 +88,9 @@ class HomeController extends Controller {
     public function franchise() {
         return view('home.franchise');
     }
+    public function completePayment() {
+        return view('home.order');
+    }
 
     public function privacyList() {
         return view('home.privacy');

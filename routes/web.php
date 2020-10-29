@@ -23,6 +23,7 @@ Route::post('/address', 'HomeController@addressSubmit')->name('site.address.form
 Route::get('/store', 'HomeController@storeList')->name('site.store');
 Route::get('/privacy-policy', 'HomeController@privacyList')->name('site.privacy');
 Route::get('/terms_conditions', 'HomeController@termsList')->name('site.terms');
+Route::get('/complete', 'HomeController@completePayment')->name('site.complete');
 
 Route::post('/checkout', 'CartController@checkout')->name('site.checkout');
 Route::get('/blog', 'BlogController@blog')->name('site.blog');
