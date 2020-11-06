@@ -76,11 +76,7 @@
                          @endif>
                          <a href="{{route('site.store')}}">Store</a>
                     </li>
-                    <li @if(in_array(Route::currentRouteName(), ['site.contact']))
-                         {{ "class=active" }}
-                         @endif>
-                         <a href="{{route('site.contact')}}">Contact Us</a>
-                    </li>
+                   
                     <li @if(in_array(Route::currentRouteName(), ['site.cart']))
                          {{ "class=active" }}
                          @endif>
