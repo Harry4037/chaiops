@@ -11,6 +11,7 @@
     color: #fff;
     background-color: #f0c051;
     border-color: #ef715f
+    height: 45px;
 }
 .order-types-available .type-one {
     background-color: #ffffff00!important;
@@ -245,10 +246,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Who is the potential candidate for Chaiops Franchise?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#1">Who is the potential candidate for Chaiops Franchise?</a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse">
+            <div id="1" class="panel-collapse collapse">
                 <div class="panel-body">
                    A dedicated, disciplined, outgoing, positive, customer-friendly person who is passionate about people, Chai and coffee. Right prospect will be someone who believes in commitment to Chaiops system.
                 </div>
@@ -257,10 +258,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">How can I get started right away?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#2">How can I get started right away?</a>
                 </h4>
             </div>
-            <div id="collapseTen" class="panel-collapse collapse">
+            <div id="2" class="panel-collapse collapse">
                 <div class="panel-body">
                   Fill out the franchise application form online and submit it. One of Chaiops team member will contact you immediately.
                 </div>
@@ -269,10 +270,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">How much do I need to invest?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#3">How much do I need to invest?</a>
                 </h4>
             </div>
-            <div id="collapseEleven" class="panel-collapse collapse">
+            <div id="3" class="panel-collapse collapse">
                 <div class="panel-body">
                    The initial investment depends exclusively on the franchise model you opt for.
                 </div>
@@ -283,10 +284,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">How long does it take to get my store open?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#4">How long does it take to get my store open?</a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
+            <div id="4" class="panel-collapse collapse">
                 <div class="panel-body">
                    Depending on the inquiry, obtainability of site, its condition, reviewing, permitting and financing, it may take 60 to 90 Days.
                 </div>
@@ -295,22 +296,35 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">What if I want a franchise model with minimum investment?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#5">What if I want a franchise model with minimum investment?</a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse">
+            <div id="5" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Franchisee fee varies from model to model. Typically, it is anywhere between 1 Lacs and 8 Lacs.
+                    Currently, we have three unique franchise models- Standalone model, Compact model and Kiosk model. You can choose from the three in accordance with your budget.
+                </div>
+            </div>
+        </div>
+
+                <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#6">How much is the franchisee fee?</a>
+                </h4>
+            </div>
+            <div id="6" class="panel-collapse collapse">
+                <div class="panel-body">
+                   Franchisee fee varies from model to model. Typically, it is anywhere between 1 Lacs and 8 Lacs.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">What business support will I receive as part of Chaiops Franchise System?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#7">What business support will I receive as part of Chaiops Franchise System?</a>
                 </h4>
             </div>
-            <div id="collapseFive" class="panel-collapse collapse">
+            <div id="7" class="panel-collapse collapse">
                 <div class="panel-body">
                    You will get a step by step program for opening and operating your new store. Business support includes site selection, store launch, inventory management, store operation manuals, merchandise supply, assistance in marketing promotions, billing software and training program, etc.
                 </div>
@@ -319,10 +333,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Do I need to have any prior experience to run my new store?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#8">Do I need to have any prior experience to run my new store?</a>
                 </h4>
             </div>
-            <div id="collapseSix" class="panel-collapse collapse">
+            <div id="8" class="panel-collapse collapse">
                 <div class="panel-body">
                   All we need is customer service skills and a great passion for our products. Moreover, we provide store operations manual to help you run your new store efficiently on a regular basis.
                 </div>
@@ -331,10 +345,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What is the minimum area required to set up the store?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#9">What is the minimum area required to set up the store?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="9" class="panel-collapse collapse">
                 <div class="panel-body">
                    100-200 sq. feet. This is in reference to the Kiosk model.
                 </div>
@@ -343,10 +357,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">How much will the complete franchise investment cost me?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#10">How much will the complete franchise investment cost me?</a>
                 </h4>
             </div>
-            <div id="collapseNine" class="panel-collapse collapse">
+            <div id="10" class="panel-collapse collapse">
                 <div class="panel-body">
 
                      <p>Total investment cost differs from model to model.</p>            
@@ -380,12 +394,12 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Is there any royalty fee?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#11">Is there any royalty fee?</a>
                 </h4>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse">
+            <div id="11" class="panel-collapse collapse">
                 <div class="panel-body">
-                But we may help you find a qualified financing.
+                Yes. Chaiops royalty fee is 8% on net sales.
                 </div>
             </div>
         </div>
@@ -393,12 +407,12 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Is there a direct financing available to franchisees?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#12">Is there a direct financing available to franchisees?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="12" class="panel-collapse collapse">
                 <div class="panel-body">
-                   100-200 sq. feet. This is in reference to the Kiosk model.
+                   But we may help you find a qualified financing.
                 </div>
             </div>
         </div>
@@ -406,10 +420,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What is the initial term of the franchise agreement?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#13">What is the initial term of the franchise agreement?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="13" class="panel-collapse collapse">
                 <div class="panel-body">
                   Five years.
                 </div>
@@ -419,10 +433,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Are there any marketing or advertising fees?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#14">Are there any marketing or advertising fees?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="14" class="panel-collapse collapse">
                 <div class="panel-body">
                   Yes. Its depend on the requirement and area.
                 </div>
@@ -431,36 +445,25 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Will I receive guidance on purchase of inventory and supplies?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#15">Will I receive guidance on purchase of inventory and supplies?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="15" class="panel-collapse collapse">
                 <div class="panel-body">
                  We give guidance on buying of supplies and inventory to satisfy seasonal needs.
                 </div>
             </div>
         </div>
 
-         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">How can I renew my Franchise Agreement?</a>
-                </h4>
-            </div>
-            <div id="collapseEight" class="panel-collapse collapse">
-                <div class="panel-body">
-                After completing the initial agreement term of five years, you may renew your then agreement for another five years.
-                </div>
-            </div>
-        </div>
+
 
          <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What are the site requirements for Chaiops store?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#16">What are the site requirements for Chaiops store?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="16" class="panel-collapse collapse">
                 <div class="panel-body">
               Traffic pattern at the site, peak business hours, local residents, surrounding markets, nearby attractions, local competition, local hotels and restaurants are few of the many site requirements. We also provide guidance on selecting a suitable location. However, the final decision resides with you.
                 </div>
@@ -470,10 +473,22 @@
          <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Can I sell my franchise store? If yes, how and to whom can I sell it?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#17">How can I renew my Franchise Agreement?</a>
                 </h4>
             </div>
-            <div id="collapseEight" class="panel-collapse collapse">
+            <div id="17" class="panel-collapse collapse">
+                <div class="panel-body">
+                After completing the initial agreement term of five years, you may renew your then agreement for another five years.
+                </div>
+            </div>
+        </div>
+         <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#18">Can I sell my franchise store? If yes, how and to whom can I sell it?</a>
+                </h4>
+            </div>
+            <div id="18" class="panel-collapse collapse">
                 <div class="panel-body">
                 You can sell your store by paying a transfer fee in relation to each resale. However, the buyer must be qualified and approved by Chaiops.
                 </div>
