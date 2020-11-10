@@ -55,6 +55,13 @@
         transform: rotate(90deg);
         color: #454444;
     }
+    @media only screen and (max-width: 600px) {
+
+.panel-default>.panel-heading {
+    height:55px;
+}
+
+}
 </style>
 <div class="banner clearfix">
     <div class=banner-text>
