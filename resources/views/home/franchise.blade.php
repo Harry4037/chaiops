@@ -68,7 +68,6 @@
     letter-spacing: .5px;
 }
 
-
 .panel-heading [data-toggle="collapse"]:after {
     font-size: 12px;
 }

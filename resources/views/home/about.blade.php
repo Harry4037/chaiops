@@ -31,6 +31,18 @@ and (max-device-width : 1024px){
     text-align: center;
     padding: 0;
 }
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .about-img {
+    background: #333;
+}
+  
+}
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+    .about-img {
+    background: #333;
+}
+
+}
 }
 </style>
 <div class="banner clearfix">
