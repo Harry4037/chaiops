@@ -39,7 +39,7 @@
 <section class="video-sec-area pb-100 pt-40" id="about">
     <div class="container">
         <div class="row justify-content-start align-items-center">
-            <div class="col-lg-6 video-right">
+            <div class="col-lg-6 video-right yogi">
                 <h1>Our Story</h1>
   
                 <p style="text-align: justify;">
