@@ -60,6 +60,7 @@
 .panel-default>.panel-heading {
     height:55px;
 }
+}
 .panel-default>.panel-heading {
     color: #4e4e4e;
     background-color: #ffffff;
@@ -71,7 +72,7 @@
 .panel-heading [data-toggle="collapse"]:after {
     font-size: 12px;
 }
-}
+
 </style>
 <div class="banner clearfix">
     <div class=banner-text>
