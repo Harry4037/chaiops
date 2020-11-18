@@ -43,7 +43,9 @@ and (max-device-width : 1024px){
 }
 
 }
-
+header {
+    background: #333;
+}
 </style>
 <div class="banner clearfix">
    
