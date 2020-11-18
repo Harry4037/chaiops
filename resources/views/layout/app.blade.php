@@ -18,6 +18,13 @@
         <!-- <script src="/assets/scripts/vendor/modernizr.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
+        .navbar-collapse.collapse ul, .navbar-collapse.collapsing ul {
+    margin-top: 0;
+    background: #252525;
+}
+header {
+    background: #333;
+}
             .pagination>.active>span {
                 background-color: #dc8068 !important;
                 border-color: #dc8068 !important;
