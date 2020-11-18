@@ -21,7 +21,17 @@
 .col-lg-6.video-right.yogi {
     margin-top: 154px;
 }
-
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px){
+    .about-img {
+    background: url(../images/about-bg.jpg) center no-repeat;
+    background-size: auto;
+    background-size: cover;
+    text-align: center;
+    padding: 0;
+}
+}
 </style>
 <div class="banner clearfix">
    
