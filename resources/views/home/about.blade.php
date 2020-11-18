@@ -18,6 +18,9 @@
 	background: url(./assets/images/about-banner1-bg.jpg) center no-repeat;
 
 }
+.col-lg-6.video-right.yogi {
+    margin-top: 154px;
+}
 
 </style>
 <div class="banner clearfix">
