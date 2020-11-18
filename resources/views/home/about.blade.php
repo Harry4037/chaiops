@@ -41,10 +41,14 @@
         <div class="row justify-content-start align-items-center">
             <div class="col-lg-6 video-right">
                 <h1>Our Story</h1>
-                <h5>Live Coffee making process.</h5>
+  
                 <p style="text-align: justify;">
-                    Chaiops is entering the food and beverage industry with an aim to keep the authentic taste of ‘Chai’ or ‘Tea’ alive. We have focused on maintaining the original taste of tea while infusing different flavors to keep people glued to our ancestral beverage. We at Chaiops are coming with an idea to let every tea lover throughout the nation taste our tea type. With this beverage serving concept, we want to take people to the retro world of ‘Guram Chai Ki Pyali’ serving the best-brewed tea with a line of lip-smacking beverages to enhance your tea time experience with us. No matter you want to have a Kadak Chai after your hectic con-calls or relish a cup of elaichi Chai on a romantic date with the love of your life, we at Chaiops have made arrangements to make your tea-time truly valuable. Having so many international brands in the market has made the present generation untie the strings with an ancient and heritage-rich drink like Chai. And our motive of bringing Chaiops is to refuel the eminence of connecting to the roots of our culture and values over again. Through Chaiops, we are coming with tea flavors, which are a perfect blend of authentic taste with a tinge of modern flavors. Be it sipping a half-cutting chai with crispy samosa or diving deep into the goodness of honey-flavored tea; we have a series of tea flavors to entitle you as yet another ‘tea-lover’ of your group. To add more to the experience of having your favorite tea, we have crafted the Chaiops outlets with unique infrastructure. We’ll soon announce the list of cities where we have arrived with our unique taste of tea.
-                </p>
+                Chaiops is India's largest company delivering the delicious taste of Chai to our customers. We bring a brewed cup of Chai to tea lovers across the nation. 
+Chaiops is revolutionizing the way of consuming Chai in India. </p>
+<p style="text-align: justify;">We are rapidly growing to become a must-go-to brand for tea lovers in India. </p>
+<p style="text-align: justify;">Chaiops source the premium quality tea from chai estates of India to offer our customers the best ever brews.</p>
+<p style="text-align: justify;">The recipes for Chai are created after thorough research. We have a variety of Chai like fruit and flower chai, non-milk chai, milk chai, chocolate chai, and many more.    
+ </p>
             </div>
             <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
                 <div class="color1">

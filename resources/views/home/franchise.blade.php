@@ -10,7 +10,7 @@
 .panel-default>.panel-heading {
     color: #fff;
     background-color: #f0c051;
-    border-color: #ef715f
+    border-color: #ef715f;
     height: 45px;
 }
 .order-types-available .type-one {
@@ -85,15 +85,11 @@
           
         </div>
         <div class="banner4-details">
-            <h3>Become the Part of</h3>
-            <h3>Our Family</h3>
-            <p>The challenges to open & operate a food joint / outlet is tremendous, the biggest being total dependency
-                on the skilled labour & high cost incurred in the operation of the outlet. All the core raw material is
-                provided by the company at the door step. All you have to do is follow the instructions provided & your
-                product is ready to be served & enjoyed. To operate a food joint / outlet the owner has to take care of
-                many things at the same time like:-</p>
-
-            <p>We have overcome all these hurdles. We have developed a huge range of delightful Chai, Coffees, Snacks &
+            <h3 style="text-align: justify;">Become the Part of</h3>
+            <h3 style="text-align: justify;">Our Family</h3>
+            <p style="text-align: justify;">Chaiops is the best and most preferred option for tea lovers. Opening and operating an outlet has many tremendous challenges. But as a leading brand Chaiops has highly skilled and professional labours to run an outlet.</p> 
+            <p style="text-align: justify;">We have overcome all these hurdles. We have developed an enormous range of delightful Chai, Coffees, Snacks & much more is to follow.
+</p><p style="text-align: justify;">We have overcome all these hurdles. We have developed a huge range of delightful Chai, Coffees, Snacks &
                 much more is to follow</p>
 
         </div>
@@ -162,7 +158,23 @@
 
     </div>
 </section>
+<section class="midpage-banner4 banner-section" id="midpage-banner4">
+    <div class="container clearfix">
+        <div class="banner4-img-holder">
+            <img src="{{ asset("assets/images//OUR-FAMILY.png") }}" height="303" width="451"
+                class="ipad" alt="">
+          
+        </div>
+        <div class="banner4-details">
+            <h3 style="text-align: left;">How To Take Our Franchise?</h3>
+            <p style="text-align: justify;">Chaiops provides all raw materials for making the best beverages at your doorstep. All you need to do is apply for our franchise.</p>
+            <p style="text-align: justify;">You just have to follow instructions and fill the franchise form. You can serve customers the special tea with the name of CHAIOPS.</p> 
+            <p style="text-align: justify;">Chaiops bring to you a product that is a perfect combination of the world's most favourite taste and 'TEA' for healing stress and refreshing your mood. </p>
+            <p style="text-align: justify;">Chaiops is committed to bringing unbeatable chai experience to our beloved customers.</p>
 
+        </div>
+    </div>
+</section>
 <section class="table-book">
     <div class="container">
 

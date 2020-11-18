@@ -59,21 +59,17 @@ section.table-book .section-heading .animate {
         <div class="row">
             <img src="{{ asset("assets/images/Our-Story-png.png")}}" class="service-side-img" alt="">
             <div class="service-details">
-                <h3>Our Story</h3>
-                <p>Chaiops is entering the food and beverage industry with an aim to keep the authentic taste of ‘Chai’ or ‘Tea’
-                 alive. We have focused on maintaining the original taste of tea while infusing different flavors to keep people
-                  glued to our ancestral beverage. We at Chaiops are coming with an idea to let every tea lover throughout the nation 
-                  taste our tea type. With this beverage serving concept, we want to take people to the retro world of ‘Guram Chai Ki Pyali’ 
-                  serving the best-brewed tea with a line of lip-smacking beverages to enhance your tea time experience with us. No matter you want
-                   to have a Kadak Chai after your hectic con-calls or relish a cup of elaichi Chai on a romantic date with the love of your life,
-                    we at Chaiops have made arrangements to make your tea-time truly valuable. Having so many international brands in the market 
-                    has made the present generation untie the strings with an ancient and heritage-rich drink like Chai. And our motive of bringing 
-                    Chaiops is to refuel the eminence of connecting to the roots of our culture and values over again. Through Chaiops, we are coming 
-                    with tea flavors, which are a perfect blend of authentic taste with a tinge of modern flavors. Be it sipping a half-cutting chai 
-                    with crispy samosa or diving deep into the goodness of honey-flavored tea; we have a series of tea flavors to entitle you as yet 
-                    another ‘tea-lover’ of your group. To add more to the experience of having your favorite tea, we have crafted the Chaiops outlets
-                     with unique infrastructure. We’ll soon announce the list of cities where we have arrived with our unique taste of tea.</p>
                 
+                <p>Chaiops aims to be a leader of the food and beverage industry. We bring you a TEA that is great in healing stress and aids. We are striving to provide the original taste of tea while infusing different flavours to keep people
+                 glued to our traditional beverage. Our Teas in Chaiops are processed and sourced naturally.</p>
+                 <h4>A new concept of TEA</h4>                 
+<p>No matter you want to have a Kadak Chai after your hectic con-calls or relish a cup of elaichi Chai, 
+a romantic date with the love of your life, sipping a half-cutting chai with crispy samosa or diving deep into the 
+goodness of honey-flavored tea, we at Chaiops strives to make your tea-time truly valuable.</p>
+                 <h4>Keep TEA alive</h4>
+<p>Chaiops aim to keep the taste and feel of having Tea or Chai alive. We have a series of tea flavours to entitle you as yet another ‘tea-lover’ of your group. To add more to the experience of having your favourite tea, we have crafted the Chaiops outlets with unique infrastructure. 
+
+Apart from unmatched taste and beautiful colour our teas also comes with various health benefits. Along with the taste teas in Chaiops will help you to stay well, you will surely enjoy them.</p>
             </div>
         </div>
     </div>
