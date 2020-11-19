@@ -171,7 +171,7 @@
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
     <div class="container clearfix">
         <div class="banner4-img-holder">
-            <img src="{{ asset("assets/images//OUR-FAMILY.png") }}" height="303" width="451"
+            <img src="{{ asset("assets/images/franchise.png") }}" 
                 class="ipad" alt="">
           
         </div>
