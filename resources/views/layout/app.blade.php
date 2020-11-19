@@ -20,7 +20,7 @@
         <style>
         .navbar-collapse.collapse ul, .navbar-collapse.collapsing ul {
     margin-top: 0;
-    background: #252525;
+   
 }
 header {
     background: #333;
