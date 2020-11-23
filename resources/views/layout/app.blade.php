@@ -73,6 +73,10 @@ header {
     border-radius: 0px 10px 10px;
     margin: 3px;
 }
+.navbar-collapse.collapse, .navbar-collapse.collapsing {
+    width: 100%;
+    background: #252525;
+}
         </style>
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
