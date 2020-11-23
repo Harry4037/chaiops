@@ -2,7 +2,16 @@
 
 @section('content')
 <style>
-
+@media screen and (min-width: 992px){
+.midpage-banner4 .ipad {
+    top: -50px;
+    left: 0;
+    -webkit-transform: translate(0, -100px);
+    -ms-transform: translate(0, -100px);
+    transform: translate(0, -100px);
+    opacity: 1;
+}
+}
 .accordion-toggle:hover {
     text-decoration: none
 }
@@ -170,7 +179,7 @@
 </section>
 <section class="midpage-banner4 banner-section" id="midpage-banner4">
     <div class="container clearfix">
-        <div class="banner4-img-holder">
+        <div class="banner4-img-holder yut">
             <img src="{{ asset("assets/images/franchise.png") }}" 
                 class="ipad" alt="">
           
