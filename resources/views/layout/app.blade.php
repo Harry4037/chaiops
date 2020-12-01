@@ -12,6 +12,7 @@
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="icon" href="assets/images/fav-icon.png" sizes="32x32" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="{{ asset("assets/styles/vendor.css")}}">
         <link rel="stylesheet" href="{{ asset("assets/styles/main.css")}}">

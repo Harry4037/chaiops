@@ -19,6 +19,13 @@ section.table-book .section-heading .animate {
 .order-type {
     height: 455px;
 }
+.order-types-available .order-type h3 span {
+    font-family: "Great Vibes", cursive;
+}
+.section-heading h2 {
+    font-family: "Great Vibes", cursive;
+}
+
 </style>
 <div class="banner">
     <div class="container">
