@@ -14,6 +14,9 @@
 .store-product {
     margin-bottom: 30px;
 }
+.carousel-inner {
+    height: 226px;
+}
     </style>
 <div class="banner clearfix">
   
