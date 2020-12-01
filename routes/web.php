@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('site.index');
 Route::get('/menu', 'HomeController@menuPage')->name('site.menu');
 Route::get('/about', 'HomeController@aboutPage')->name('site.about');
+Route::get('/thanku', 'HomeController@thankuPage')->name('site.thanku');
 Route::get('/store', 'HomeController@storePage')->name('site.store');
 Route::get('/contact', 'HomeController@contactPage')->name('site.contact');
 Route::post('/contact', 'HomeController@contactSubmit')->name('site.contact.form');

@@ -99,7 +99,13 @@ experience.</p> <![endif]-->
 
                   @yield('content')
                   <!-- Footer -->
-                  @include('layout.footer')
+                  @if(in_array(Route::currentRouteName(), ['site.thanku']))
+    
+           @else
+           @include('layout.footer')
+           @endif
+
+                 
 
                   <!--=======================================
                         All Jquery Script link

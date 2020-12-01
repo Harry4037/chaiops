@@ -134,7 +134,7 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
-        return redirect()->route('site.index');
+        return redirect()->route('site.thanku');
     }
 
     public function corporateSubmit(Request $request) {
@@ -145,7 +145,7 @@ class HomeController extends Controller {
         $corporate->mob = $request->mob;
         $corporate->message = $request->message;
         $corporate->save();
-        return redirect()->route('site.index');
+        return redirect()->route('site.thanku');
     }
 
     public function contactSubmit(Request $request) {
@@ -156,7 +156,7 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
-        return redirect()->route('site.index');
+        return redirect()->route('site.thanku');
     }
 
     public function bookTable(Request $request) {
@@ -167,7 +167,7 @@ class HomeController extends Controller {
         $reservation->occassion = $request->occassion;
         $reservation->message = $request->contactMessage;
         $reservation->save();
-        return redirect()->route('site.index');
+        return redirect()->route('site.thanku');
     }
     public function addressSubmit(Request $request) {
 
@@ -193,7 +193,7 @@ class HomeController extends Controller {
                     return redirect()->route('site.dashboard');
                 }
             } else {
-                return redirect()->route('site.index')->withErrors("Something went be wrong.")->withInput();
+                return redirect()->route('site.thanku');
             }
         }
 
@@ -227,6 +227,8 @@ class HomeController extends Controller {
 
         return redirect()->route('site.dashboard');
     }
-    
+    public function thankuPage() {
+        return view('home.thanks');
+    }
 
 }

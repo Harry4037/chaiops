@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Old+Standard+TT:400,700|Great+Vibes|Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Old+Standard+TT:400,700|Great+Vibes|Oswald:400,300,700);
 .banner-section h3,
 .button-menu,
 .menu-btn-holder a,
@@ -7616,6 +7616,7 @@ section {
 
 a.header-logo {
 	max-width: 188px;
+	z-index: 111;
 }
 
 .menu-page .pricing-carte {
