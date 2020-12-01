@@ -84,7 +84,7 @@ class StoreController extends Controller {
                                 'required',
                               
                             ],
-                            'icon1' => ['required', 'mimes:jpeg,jpg,png'],
+                            'icon1' => ['mimes:jpeg,jpg,png'],
                             'icon2' => ['mimes:jpeg,jpg,png'],
                             'icon3' => ['mimes:jpeg,jpg,png'],
                 ]);

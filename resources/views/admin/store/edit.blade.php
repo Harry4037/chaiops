@@ -7,7 +7,7 @@
         <div class="col-lg-10">
             <div class="card">
                 @include('errors.errors-and-messages')
-                <div class="card-header"><i class="fa fa-align-justify"></i> Add Store</div>
+                <div class="card-header"><i class="fa fa-align-justify"></i> Edit Store</div>
                 
                 <div class="card-body">
                     <form class="form-horizontal" action="{{ route('admin.store.edit', $store) }}" method="post" id="storeForm" enctype="multipart/form-data">
@@ -26,7 +26,6 @@
         $("#storeForm").validate({
             rules: {
                 icon1: {
-                    required: true,
                     accept: "image/*",
                 },
                 icon2: {

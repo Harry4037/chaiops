@@ -6,6 +6,14 @@
     .add-buy a {
     width: 100% !important;
 }
+.product-detail {
+    background-color: #f2f2f2;
+    height: 324px;
+}
+
+.store-product {
+    margin-bottom: 30px;
+}
     </style>
 <div class="banner clearfix">
   
@@ -81,7 +89,7 @@
                            <p>TIMINGS</p>
                         </div>
                         <div class="col-md-3">
-                           <p style="margin-right:50px">{{ $store->timing }}
+                           <p style="margin-right:50px">{{ $store->timings }}
                            </p>
                         </div>
                      </div>
