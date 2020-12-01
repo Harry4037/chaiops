@@ -19,6 +19,12 @@ background:none;
     border-color: #f0c051;
     letter-spacing: 1px !important;
 }
+.product-detail h3 {
+    color: #30271c;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 15px;
+}
 </style>
 <div class="banner clearfix">
    

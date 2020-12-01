@@ -8,7 +8,7 @@
 }
 .product-detail {
     background-color: #f2f2f2;
-    height: 324px;
+    height: 255px;
 }
 
 .store-product {
