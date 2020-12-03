@@ -15,6 +15,15 @@
     width: 33%;
   
 }}
+.blog-excerpt p {
+    line-height: 1.8;
+    margin: 9px 0;
+    color: #77625a;
+}
+
+.blog-excerpt h2 {
+    font-size: 32px;
+}
      </style>
 
 <div class="banner clearfix">
