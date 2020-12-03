@@ -7,7 +7,6 @@
     margin-top: 20px;
 }
 
-
 .blog-img-wrap {
     text-align: center;
 }
@@ -43,7 +42,7 @@
                     <h5>Author, <span>Western</span></h5>
                 </div>
                 <div class=blog-details-wrap>
-                    <div class=blog-img-wrap> <img src="{{ $data->img }}" alt="" height=351 width=1141> </div>
+                    <div class=blog-img-wrap> <img src="{{ $data->img }}" > </div>
 
                     <div class=content-entry>
 
