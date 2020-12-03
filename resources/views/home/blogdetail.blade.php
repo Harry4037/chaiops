@@ -10,6 +10,11 @@
 .blog-img-wrap {
     text-align: center;
 }
+@media screen and (min-width: 992px){
+.leave-comment .form-group {
+    width: 33.33%;
+    padding: 7px 15px;
+}}
 </style>
 <div class="banner clearfix">
   
