@@ -1,6 +1,17 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+.content-entry {
+    color: #77625a;
+    margin-top: 20px;
+}
+
+
+.blog-img-wrap {
+    text-align: center;
+}
+</style>
 <div class="banner clearfix">
   
     <div class="banner-text">
