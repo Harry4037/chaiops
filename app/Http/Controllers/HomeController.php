@@ -16,7 +16,7 @@ use App\Models\Contact;
 use App\Models\Store;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\Book;
+use App\Mail\Register;
 use Validator;
 use session;
 
@@ -134,6 +134,12 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
+        try {
+
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
+            
+        }
         return redirect()->route('site.thanku');
     }
 
@@ -145,6 +151,12 @@ class HomeController extends Controller {
         $corporate->mob = $request->mob;
         $corporate->message = $request->message;
         $corporate->save();
+        try {
+
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
+            
+        }
         return redirect()->route('site.thanku');
     }
 
@@ -156,6 +168,12 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
+        try {
+
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
+            
+        }
         return redirect()->route('site.thanku');
     }
 
@@ -167,6 +185,12 @@ class HomeController extends Controller {
         $reservation->occassion = $request->occassion;
         $reservation->message = $request->contactMessage;
         $reservation->save();
+        try {
+
+            Mail::to($request->email)->send(new Register($request->inputEmail));
+        } catch (\Exception $e) {
+            
+        }
         return redirect()->route('site.thanku');
     }
     public function addressSubmit(Request $request) {

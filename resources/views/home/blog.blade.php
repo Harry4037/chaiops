@@ -57,7 +57,7 @@
                     <div class="blog-excerpt">
                         <h5>{{ $value->created_at }}</h5>
                         <h2>{{ $value->title }}</h2>
-                        <p>{{ $value->description }}</p>
+                        <p>{{ Illuminate\Support\Str::limit($value->description, 400) }}</p>
                         <div class="author-details">
                             <div class="imgLiquid imgLiquidFill auth-icon">
                                 <img src="{{ asset("assets/images/blog-list/author-icon.png") }}"

@@ -44,7 +44,7 @@
                     <div class="imgLiquid imgLiquidFill auth-icon"> <img
                             src="{{ asset("assets/images/blog-list/author-icon.png") }}" alt="">
                     </div>
-                    <h5>Author, <span>Western</span></h5>
+                    <h5>Author, <span>Chaiops</span></h5>
                 </div>
                 <div class=blog-details-wrap>
                     <div class=blog-img-wrap> <img src="{{ $data->img }}" > </div>
