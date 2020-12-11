@@ -51,7 +51,7 @@
 
                     <div class=content-entry>
 
-                        <p>{{ $data->description }}</p>
+                       {!! $data->description !!}
                     </div>
                     <div class=leave-comment>
                   <h4>Leave a comment</h4>

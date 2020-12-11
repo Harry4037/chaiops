@@ -42,7 +42,7 @@
     <div class="form-group">
         <label class="col-md-3 col-form-label">Description Or Youtube Link(Video)<span class="error">*</span></label>
         <div class="col-md-6 col-sm-8 col-xs-8">
-            <textarea class="form-control" name="blog_description" id="blog_description">@if(isset($blog)){{$blog->description}}@endif</textarea>
+            <textarea class="form-control" name="blog_description" rows="10" id="blog_description">@if(isset($blog)){{$blog->description}}@endif</textarea>
         </div>
     </div>
   
