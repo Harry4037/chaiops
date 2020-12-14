@@ -208,6 +208,7 @@ class HomeController extends Controller {
         $reservation = new Reservation();
         $reservation->name = $request->name;
         $reservation->email = $request->inputEmail;
+        $dddd = $request->inputEmail;
         $reservation->person = $request->person;
         $reservation->occassion = $request->occassion;
         $reservation->message = $request->contactMessage;
@@ -225,7 +226,7 @@ class HomeController extends Controller {
         Mail::send('emails.book', $data, function ($message) {
             $message->from('hariom@rizilianttech.com', 'Chaiops');
             $message->subject('Thank You');
-            $message->to('nitish3939@gmail.com');
+            $message->to($dddd);
         });
         return redirect()->route('site.thanku');
     }
