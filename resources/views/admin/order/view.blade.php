@@ -144,7 +144,7 @@ small.pull-right {
                                 <td><i class="fa fa-rupee"></i> {{round($order->item_total_amount,2)}}</td>
                             </tr>
                             <tr>
-                                <th>Tax :</th>
+                                <th>Tax(5%) :</th>
                                 <td><i class="fa fa-rupee"></i> {{ round($order->tax_amount,2)}}</td>
                             </tr>
                           

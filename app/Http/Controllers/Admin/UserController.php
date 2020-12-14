@@ -54,7 +54,7 @@ class UserController extends Controller {
                 $checked_status = $user->is_block_admin ? "checked" : '';
                 $usersArray[$k]['status'] = "<label class='c-switch c-switch-label c-switch-pill c-switch-success'>
                         <input class='c-switch-input update_status' type='checkbox' id=" . $user->id . " data-status=" . $user->is_block_admin . " " . $checked_status . ">
-                        <span class='c-switch-slider' data-checked='✓' data-unchecked='✕'></span>
+                        <span class='c-switch-slider' data-checked='✕' data-unchecked='✓'></span>
                       </label>";
               
             }

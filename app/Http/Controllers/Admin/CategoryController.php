@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Cart;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Validation\Rule;
@@ -61,10 +62,18 @@ class CategoryController extends Controller {
     }
 
     public function categoryDelete(Request $request) {
-      
         try {
             $category = Category::find($request->id);
             if ($category) {
+             
+                $tems = Category::where(["id" => $category->id])->with(['product'])->first(); 
+         
+             //   $tems = Cart::Where('product_id',$product->id)->get();
+                
+                foreach($tems->product as $ite){
+                    Cart::where('product_id',$ite->id)->delete();
+                    
+                }
                 Product::where('category_id',$category->id)->delete();
                 $category->delete();
                 return ['status' => true, "message" => "Category deleted."];

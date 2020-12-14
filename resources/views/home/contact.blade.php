@@ -134,4 +134,18 @@
                            </div>
     </div>
 </section>
+<script>
+ $(document).ready(function() {
+    var text_max = 200;
+    $('#textarea_feedback').html(text_max + ' Characters Remaining');
+
+    $('#area').keyup(function() {
+        var text_length = $('#area').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' Characters Remaining');
+    });
+});
+
+ </script>
 @endsection

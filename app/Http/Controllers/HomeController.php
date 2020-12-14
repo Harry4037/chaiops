@@ -23,7 +23,7 @@ use session;
 class HomeController extends Controller {
 
     public function index(Request $request) {
-
+   
         if (session()->get('cart') and auth()->check()) {
             $user = auth()->user();
             foreach (session('cart') as $id => $product) {
@@ -134,21 +134,21 @@ class HomeController extends Controller {
         $franchise->state = $request->state;
         $franchise->message = $request->message;
         $franchise->save();
-        // try {
+        try {
 
-        //     Mail::to($request->email)->send(new Register($request->email));
-        // } catch (\Exception $e) {
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
             
-        // }
-        $data = [
-            'key'     => 'value'
-        ];
+        }
+        // $data = [
+        //     'key'     => 'value'
+        // ];
     
-        Mail::send('emails.book', $data, function ($message) {
-            $message->from('hariom@rizilianttech.com', 'Chaiops');
-            $message->subject('Thank You');
-            $message->to('nitish3939@gmail.com');
-        });
+        // Mail::send('emails.book', $data, function ($message) {
+        //     $message->from('hariom@rizilianttech.com', 'Chaiops');
+        //     $message->subject('Thank You');
+        //     $message->to('nitish3939@gmail.com');
+        // });
         return redirect()->route('site.thanku');
     }
 
@@ -160,21 +160,21 @@ class HomeController extends Controller {
         $corporate->mob = $request->mob;
         $corporate->message = $request->message;
         $corporate->save();
-        // try {
+        try {
 
-        //     Mail::to($request->email)->send(new Register($request->email));
-        // } catch (\Exception $e) {
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
             
-        // }
-        $data = [
-            'key'     => 'value'
-        ];
+        }
+        // $data = [
+        //     'key'     => 'value'
+        // ];
     
-        Mail::send('emails.book', $data, function ($message) {
-            $message->from('hariom@rizilianttech.com', 'Chaiops');
-            $message->subject('Thank You');
-            $message->to('nitish3939@gmail.com');
-        });
+        // Mail::send('emails.book', $data, function ($message) {
+        //     $message->from('hariom@rizilianttech.com', 'Chaiops');
+        //     $message->subject('Thank You');
+        //     $message->to('nitish3939@gmail.com');
+        // });
         return redirect()->route('site.thanku');
     }
 
@@ -186,21 +186,21 @@ class HomeController extends Controller {
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
-        // try {
+        try {
 
-        //     Mail::to($request->email)->send(new Register($request->email));
-        // } catch (\Exception $e) {
+            Mail::to($request->email)->send(new Register($request->email));
+        } catch (\Exception $e) {
             
-        // }
-        $data = [
-            'key'     => 'value'
-        ];
+        }
+        // $data = [
+        //     'key'     => 'value'
+        // ];
     
-        Mail::send('emails.book', $data, function ($message) {
-            $message->from('hariom@rizilianttech.com', 'Chaiops');
-            $message->subject('Thank You');
-            $message->to('nitish3939@gmail.com');
-        });
+        // Mail::send('emails.book', $data, function ($message) {
+        //     $message->from('hariom@rizilianttech.com', 'Chaiops');
+        //     $message->subject('Thank You');
+        //     $message->to('nitish3939@gmail.com');
+        // });
         return redirect()->route('site.thanku');
     }
 
@@ -208,25 +208,18 @@ class HomeController extends Controller {
         $reservation = new Reservation();
         $reservation->name = $request->name;
         $reservation->email = $request->inputEmail;
+        $dddd = $request->inputEmail;
         $reservation->person = $request->person;
         $reservation->occassion = $request->occassion;
         $reservation->message = $request->contactMessage;
         $reservation->save();
-        // try {
+        try {
 
-        //     Mail::to($request->email)->send(new Register($request->inputEmail));
-        // } catch (\Exception $e) {
+            Mail::to($request->inputEmail)->send(new Register($request->inputEmail));
+        } catch (\Exception $e) {
             
-        // }
-        $data = [
-            'key'     => $request->inputEmail
-        ];
-    
-        Mail::send('emails.book', $data, function ($message) {
-            $message->from('hariom@rizilianttech.com', 'Chaiops');
-            $message->subject('Thank You');
-            $message->to($data->key);
-        });
+        }
+
         return redirect()->route('site.thanku');
     }
     public function addressSubmit(Request $request) {

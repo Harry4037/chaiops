@@ -103,7 +103,7 @@ class ProductController extends Controller {
 //                            'product_description' => ['required'],
                             // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
                          
-                            // 'product_type' => ['required'],
+                            'other_products' => ['required'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.product.edit', $product->id)->withErrors($validator)->withInput();
@@ -167,7 +167,7 @@ class ProductController extends Controller {
 //                            'product_description' => ['required'],
                             // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
                     
-                            // 'product_type' => ['required'],
+                           'other_products' => ['required'],
                 ]);
                 if ($validator->fails()) {
                     return redirect()->route('admin.product.add')->withErrors($validator)->withInput();

@@ -217,7 +217,7 @@ Apart from unmatched taste and beautiful colour our teas also comes with various
                                 <span class="selectbox__item" data-value="6 person">8 person</span>
                                 <span class="selectbox__item" data-value="6 person">10 person</span>
                             </div>
-                            <input type="text" id="reservationFor" name="person" class="selectbox__input">
+                            <input type="text" id="reservationFor" name="person" class="selectbox__input" required="required">
                         </div>
                     </div>
                     <div class="form-group occassion">
@@ -232,7 +232,7 @@ Apart from unmatched taste and beautiful colour our teas also comes with various
                                 <span class="selectbox__item" data-value="Anniversary">Anniversary</span>
                                 <span class="selectbox__item" data-value="Holiday">Holiday</span>
                             </div>
-                            <input type="text" id="occassion" name="occassion" class="selectbox__input">
+                            <input type="text" id="occassion" name="occassion" class="selectbox__input" required="required">
                         </div>
                     </div>
                 </div>
@@ -262,6 +262,8 @@ Apart from unmatched taste and beautiful colour our teas also comes with various
                     <label for="contactMessage">Leave a message</label>
                     <div>
                         <textarea
+                        id="area"
+                              maxlength="200"
                             name="contactMessage"
                             class="form-control"
                             id="contactMessage"
@@ -270,6 +272,7 @@ Apart from unmatched taste and beautiful colour our teas also comes with various
                     </div>
                 </div>
                 <button type="submit" class="button-type-three">Submit</button>
+                <div id="textarea_feedback" style="color: red;"></div>
                 <div class="ajaxmessage for-reservation hidden"></div>
             </form>
         </div>
@@ -396,4 +399,18 @@ Apart from unmatched taste and beautiful colour our teas also comes with various
                            </div>
     </div>
 </section>
+<script>
+ $(document).ready(function() {
+    var text_max = 200;
+    $('#textarea_feedback').html(text_max + ' Characters Remaining');
+
+    $('#area').keyup(function() {
+        var text_length = $('#area').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' Characters Remaining');
+    });
+});
+
+ </script>
 @endsection

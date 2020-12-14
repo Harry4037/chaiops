@@ -126,7 +126,7 @@
                            <td>Rs {{ $order->item_total_amount}}</td>
                         </tr>
                         <tr>
-                           <td colspan="4"><strong>Tax(18%)</strong></td>
+                           <td colspan="4"><strong>Tax(5%)</strong></td>
                            <td>Rs {{ $order->tax_amount}}</td>
                         </tr>
                         <tr>
