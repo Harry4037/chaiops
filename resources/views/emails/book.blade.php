@@ -66,14 +66,14 @@ font-family: sans-serif;
 				<tr>
           <td valign="middle" class="hero">
 		  <div class="logo">
-		    <img src="images/Color-Change-Logo.png" alt="Girl in a jacket" width="200" height="86">
+		    <img src="images/Color-Change-Logo.png{{ asset("assets/images/Color-Change-Logo.png") }}" alt="chaiops" width="200" height="86">
 		  </div>
            
           </td>
 	      </tr><!-- end tr -->
 		  
 		  <tr>
-		  <td valign="middle" class="hero" style="background-image: url(images/bg_1.jpg); background-size: cover; height: 510px;">
+		  <td valign="middle" class="hero" style="background-image: url({{ asset("assets/images/bg_1.jpg") }}); background-size: cover; height: 510px;">
            
           </td></tr>
 	      <tr>
