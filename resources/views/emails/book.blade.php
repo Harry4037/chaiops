@@ -66,7 +66,7 @@ font-family: sans-serif;
 				<tr>
           <td valign="middle" class="hero">
 		  <div class="logo">
-		    <img src="images/Color-Change-Logo.png{{ asset("assets/images/Color-Change-Logo.png") }}" alt="chaiops" width="200" height="86">
+		    <img src="{{ asset("assets/images/llogo.png") }}" alt="chaiops" width="200" height="86">
 		  </div>
            
           </td>
