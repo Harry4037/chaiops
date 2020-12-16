@@ -65,14 +65,14 @@ class CategoryController extends Controller {
         try {
             $category = Category::find($request->id);
             if ($category) {
-             
-                $tems = Category::where(["id" => $category->id])->with(['product'])->first(); 
-         
+
+                $tems = Category::where(["id" => $category->id])->with(['product'])->first();
+
              //   $tems = Cart::Where('product_id',$product->id)->get();
-                
+
                 foreach($tems->product as $ite){
                     Cart::where('product_id',$ite->id)->delete();
-                    
+
                 }
                 Product::where('category_id',$category->id)->delete();
                 $category->delete();
@@ -187,6 +187,10 @@ class CategoryController extends Controller {
                 $updat->is_active = $request->status;
                 $updat->updated_at = Carbon::now();
                 $updat->save();
+                $tems = Cart::Where('product_id',$updat->id)->get();
+                foreach($tems as $ite){
+                    Cart::where('id',$ite->id)->delete();
+                }
 
                     }
                     return ['status' => true, 'data' => ["status" => $request->status, "message" => "Status updated successfully."]];

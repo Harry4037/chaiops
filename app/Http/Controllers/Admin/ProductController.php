@@ -54,7 +54,7 @@ class ProductController extends Controller {
             foreach ($products as $k => $product) {
                 $productsArray[$k]['name'] = $product->name;
                 $productsArray[$k]['category'] = $product->productCategory->description;
-             
+
                 $checked_status = $product->is_active ? "checked" : '';
                 $productsArray[$k]['status'] ="<label class='c-switch c-switch-label c-switch-pill c-switch-success'><input class='c-switch-input update_status' type='checkbox' id=" . $product->id . " data-status=" . $product->is_active . " " . $checked_status . ">
                 <span class='c-switch-slider' data-checked='✓' data-unchecked='✕'></span>
@@ -102,7 +102,7 @@ class ProductController extends Controller {
                             'category_id' => ['required'],
 //                            'product_description' => ['required'],
                             // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
-                         
+
                             'other_products' => ['required'],
                 ]);
                 if ($validator->fails()) {
@@ -124,7 +124,7 @@ class ProductController extends Controller {
                 $product->updated_by = auth()->user()->id;
                 if ($product->save()) {
                     ProductType::where('product_id',$product->id)->delete();
-                    foreach($request->other_products as $i=> $product_type){                    
+                    foreach($request->other_products as $i=> $product_type){
                         $productType = new ProductType();
                         $productType->product_id = $product->id;
                         $productType->type = $product_type;
@@ -137,12 +137,12 @@ class ProductController extends Controller {
                 }
             }
 
-         
+
             $categories = Category::all();
             $types = ProductType::where('product_id',$product->id)->get();
             return view('admin.product.edit', [
                 'product' => $product,
-                'categories' => $categories,      
+                'categories' => $categories,
                 'types' => $types,
             ]);
         } catch (\Exception $ex) {
@@ -166,7 +166,7 @@ class ProductController extends Controller {
                             'category_id' => ['required'],
 //                            'product_description' => ['required'],
                             // 'product_price' => ['bail', 'required', 'numeric', 'min:0'],
-                    
+
                            'other_products' => ['required'],
                 ]);
                 if ($validator->fails()) {
@@ -174,7 +174,7 @@ class ProductController extends Controller {
                 }
 
                 $product = new Product();
-                
+
                 $product->name = $request->product_name;
                 $product->description = $request->product_description;
                 $product->category_id = $request->category_id;
@@ -194,7 +194,7 @@ class ProductController extends Controller {
                 $product->updated_by = auth()->user()->id;
                 if ($product->save()) {
                     foreach($request->other_products as $i=> $product_type){
-                      
+
                         $productType = new ProductType();
                         $productType->product_id = $product->id;
                         $productType->type = $product_type;
@@ -224,6 +224,10 @@ class ProductController extends Controller {
                 $product->is_active = $request->status;
                 $product->updated_at = Carbon::now();
                 if ($product->save()) {
+                     $tems = Cart::Where('product_id',$product->id)->get();
+                foreach($tems as $ite){
+                    Cart::where('id',$ite->id)->delete();
+                }
                     return ['status' => true, 'data' => ["status" => $request->status, "message" => "Status updated successfully."]];
                 } else {
                     return ['status' => false, "message" => "Something went be wrong."];
